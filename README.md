@@ -14,9 +14,9 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 * Lucía Riva 
 * Kimberlly Barraza
 * Emilce Fernandez
-Florencio Quelca
-Pablo Giaferro
-Valentin Banegas
-Miguel Bazzarelli
+* Florencio Quelca
+* Pablo Giaferro
+* Valentin Banegas
+* Miguel Bazzarelli
 
-TL: Sebastian Sanchez
+### **TL:** Sebastian Sanchez
