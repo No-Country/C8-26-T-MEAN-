@@ -31,5 +31,7 @@ TL: Sebastian Sanchez
 Probando primer commit Miguel
  Bazzarelli
 Probando primer commit Luli:)
+=======
+Probando primer commit Pablo
+===============
 florencio quelca 
->>>>>>> 38805fa22ce3ac155cec0f0c72b145739d19fdd8
