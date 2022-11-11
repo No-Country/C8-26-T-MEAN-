@@ -1,7 +1,7 @@
 # C8-26-T-MEAN-
 Sistema de canjes de puntos por premios
 
-Breve descripción del Proyecto
+<h2>Breve descripción del Proyecto</h2>
 
 Partimos del supuesto de que una empresa tiene sus clientes registrados con un mail y les ha asignado puntos por sus compras y los invita a hacer uso de esos puntos en la plataforma que vamos a diseñar.
 
@@ -11,15 +11,25 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 
 
 ### Integrantes:
-Lucía Riva 
-Kimberlly Barraza
-Emilce Fernandez
-Florencio Quelca
-Pablo Giaferro
-Valentin Banegas
-Miguel Bazzarelli
+* Lucía Riva 
+* Kimberlly Barraza
+* Emilce Fernandez
+* Florencio Quelca
+* Pablo Giaferro
+* Valentin Banegas
+* Miguel Bazzarelli
 
+<<<<<<< HEAD
 TL: Sebastian Sanchez  
 
 
 HOLA AMIG@S ESTE ES MI FIRST COMMIT
+=======
+TL: Sebastian Sanchez
+
+
+Probando primer commit Miguel
+ Bazzarelli
+Probando primer commit Luli:)
+florencio quelca 
+>>>>>>> 38805fa22ce3ac155cec0f0c72b145739d19fdd8
