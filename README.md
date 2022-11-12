@@ -2,7 +2,7 @@
 <p align = "center">Sistema de canjes de puntos por premios. </p>
 <p align = "center">Un proyecto del equipo:  C8-26-T-MEAN</p>
 
-<h2>Breve descripción del proyecto 📜 :</h2>
+<h2>Breve descripción del proyecto 📜 </h2>
 
 Partimos del supuesto de que una empresa tiene clientes registrados con un mail y les ha asignado puntos por sus compras por lo que los invita a hacer uso de los mismos en la plataforma que vamos a diseñar.
 
