@@ -1,8 +1,8 @@
 <h1 align = "center"> GiftClub! </h1>
-<p align = "center">Un proyecto del equipo:  C8-26-T-MEAN</p>
 <p align = "center">Sistema de canjes de puntos por premios. </p>
+<p align = "center">Un proyecto del equipo:  C8-26-T-MEAN</p>
 
-<h2>Breve descripción del Proyecto</h2>
+<h2>Breve descripción del proyecto 📜 :</h2>
 
 Partimos del supuesto de que una empresa tiene clientes registrados con un mail y les ha asignado puntos por sus compras por lo que los invita a hacer uso de los mismos en la plataforma que vamos a diseñar.
 
@@ -22,13 +22,3 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 
 ### Team Leader:
 * Sebastian Sanchez  
-
-
-HOLA AMIG@S ESTE ES MI FIRST COMMIT
-Probando primer commit Miguel
- Bazzarelli
-Probando primer commit Luli:)
-=======
-Probando primer commit Pablo
-===============
-florencio quelca 
