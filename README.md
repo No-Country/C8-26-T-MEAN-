@@ -11,13 +11,13 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 
 
 ### Integrantes:
-* Lucía Riva : [LinkedIn]() | [GitHub]()
-* Kimberlly Barraza
-* Emilce Fernandez
-* Florencio Quelca
-* Pablo Giaferro
-* Valentin Banegas
-* Miguel Bazzarelli
+* Lucía Riva: [LinkedIn]() | [GitHub]()
+* Kimberlly Barraza: [LinkedIn]() | [GitHub]()
+* Emilce Fernandez: [LinkedIn]() | [GitHub]()
+* Florencio Quelca: [LinkedIn]() | [GitHub]()
+* Pablo Giaferro: [LinkedIn]() | [GitHub]()
+* Valentin Banegas: [LinkedIn]() | [GitHub]()
+* Miguel Bazzarelli: [LinkedIn]() | [GitHub]()
 
 TL: Sebastian Sanchez  
 
