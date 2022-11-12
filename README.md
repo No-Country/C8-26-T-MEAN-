@@ -10,7 +10,7 @@ El proyecto a desarrollar apunta a empresas que en función de su estrategia de 
 Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por productos / merchandising del mundial.
 
 
-### Integrantes:
+### Integrantes 🚀:
 * Lucía Riva: [LinkedIn]() | [GitHub]()
 * Kimberlly Barraza: [LinkedIn]() | [GitHub]()
 * Emilce Fernandez: [LinkedIn]() | [GitHub]()
