@@ -12,20 +12,19 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 
 
 ### Integrantes 🚀:
-* Lucía Riva: [LinkedIn]() | [GitHub]()
-* Kimberlly Barraza: [LinkedIn]() | [GitHub]()
-* Emilce Fernandez: [LinkedIn]() | [GitHub]()
-* Florencio Quelca: [LinkedIn]() | [GitHub]()
-* Pablo Giaferro: [LinkedIn]() | [GitHub]()
-* Valentin Banegas: [LinkedIn]() | [GitHub]()
-* Miguel Bazzarelli: [LinkedIn]() | [GitHub]()
+* Lucía Riva: [LinkedIn]() | [GitHub](https://github.com/LuciaRiva)
+* Kimberlly Barraza: [LinkedIn]() | [GitHub](https://github.com/KNBT)
+* Emilce Fernandez: [LinkedIn]() | [GitHub](https://github.com/EmilceF)
+* Florencio Quelca: [LinkedIn]() | [GitHub](https://github.com/FlorencioQuelca)
+* Pablo Giaferro: [LinkedIn]() | [GitHub](https://github.com/pgianferro)
+* Valentin Banegas: [LinkedIn]() | [GitHub](https://github.com/ValenUNPL)
+* Miguel Bazzarelli: [LinkedIn]() | [GitHub](https://github.com/Migbazz)
 
-TL: Sebastian Sanchez  
+### Team Leader:
+* Sebastian Sanchez  
 
 
 HOLA AMIG@S ESTE ES MI FIRST COMMIT
-
-
 Probando primer commit Miguel
  Bazzarelli
 Probando primer commit Luli:)
