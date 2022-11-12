@@ -1,5 +1,5 @@
 <h1 align = "center"> GiftClub </h1>
-Sistema de canjes de puntos por premios
+<p align = "center"> Sistema de canjes de puntos por premios. </p>
 
 <h2>Breve descripción del Proyecto</h2>
 
@@ -11,7 +11,7 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 
 
 ### Integrantes:
-* Lucía Riva 
+* Lucía Riva : [LinkedIn]() | [GitHub]()
 * Kimberlly Barraza
 * Emilce Fernandez
 * Florencio Quelca
@@ -23,8 +23,6 @@ TL: Sebastian Sanchez
 
 
 HOLA AMIG@S ESTE ES MI FIRST COMMIT
-=======
-TL: Sebastian Sanchez
 
 
 Probando primer commit Miguel
