@@ -1,5 +1,6 @@
-<h1 align = "center"> GiftClub </h1>
-<p align = "center"> Sistema de canjes de puntos por premios. </p>
+<h1 align = "center"> GiftClub! </h1>
+<p align = "center">Un proyecto del equipo:  C8-26-T-MEAN</p>
+<p align = "center">Sistema de canjes de puntos por premios. </p>
 
 <h2>Breve descripción del Proyecto</h2>
 
