@@ -12,7 +12,7 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 
 ### Tecnologías :
 
-<h3> Integrantes 🚀: </h3>
+### Integrantes 🚀: 
 * Lucía Riva: [LinkedIn]() | [GitHub](https://github.com/LuciaRiva)
 * Kimberlly Barraza: [LinkedIn]() | [GitHub](https://github.com/KNBT)
 * Emilce Fernandez: [LinkedIn]() | [GitHub](https://github.com/EmilceF)
