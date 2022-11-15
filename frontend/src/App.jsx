@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+import './styles/App.css'
 
 function App() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
   const [count, setCount] = useState(0)
