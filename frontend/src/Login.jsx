@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './styles/App.css'
+import './styles/index.css'
 
 function Login() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
   return (
