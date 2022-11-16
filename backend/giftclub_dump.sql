@@ -30,7 +30,7 @@ INSERT INTO users_roles (name) VALUES ('admin');
 INSERT INTO users_roles (name) VALUES ('customer');
 
 -- Poblar la tabla de USUARIOS
-INSERT INTO users (first_name, last_name, phone_number, email, birth_date, address,  password, image_url, user_role_id, points) VALUES ('Santiago', 'Chaves', 1199999999, 'admin@gmail.com', '1992-03-17', 'Av. Siempreviva 1945', 'admin123', 'user1.jpg', '1', "");
+INSERT INTO users (first_name, last_name, phone_number, email, birth_date, address,  password, image_url, user_role_id, points) VALUES ('Santiago', 'Chaves', 1199999999, 'admin@gmail.com', '1992-03-17', 'Av. Siempreviva 1945', 'admin123', 'user1.jpg', '1', "0");
 INSERT INTO users (first_name, last_name, phone_number, email, birth_date, address,  password, image_url, user_role_id, points) VALUES ('Carlos', 'Peréz', 1193229999, 'customer@gmail.com', '1990-06-29', 'Av. Siempremuerta 1925', 'customer123', 'user12.jpg', '2', "100000");
 
 -- Poblar la tabla PRODUCTOS VISITADOS DEL USUARIO
