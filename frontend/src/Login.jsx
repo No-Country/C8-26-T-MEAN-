@@ -19,7 +19,7 @@ function Login() { //los componentes en React son funciones. Su nombre comienza 
         <MDBRow>
           <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
             <h1 className="my-5 display-3 fw-bold ls-tight px-3">
-               ¡Bienvenido a<br />
+              ¡Bienvenido a<br />
               <span className="text-primary">GIFTClub!</span>
             </h1>
             <p className='px-3'>
