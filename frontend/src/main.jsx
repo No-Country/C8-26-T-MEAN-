@@ -10,7 +10,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 ReactDOM.createRoot(document.getElementById('root')).render( //se selecciona el elemento con ID root del HTML
   <React.StrictMode> {/* el modo estricto de JS permite hacer comprobaciones. El de React es un poco mejor. Sirve para debugear, para el desarrollo.*/}
-    <App /> {/*componente de React. Se rederiza App.jsx*/}
-    <Login />
+    {/*<App /> */} 
+    <Login />{/*componente de React. Se rederiza Login.jsx*/}
   </React.StrictMode>
 )
