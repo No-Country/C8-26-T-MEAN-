@@ -1,13 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Home from './components/Home'
 import {Route, Routes} from 'react-router-dom'
+import Home from './components/Home'
 import Gift from './components/Gift'
 import Faq from './components/Faq'
 
 function App() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
-
 
   return (
     <div className="App">

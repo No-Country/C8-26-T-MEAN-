@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/logo.png'
-import '../Styles/gift.css'
+import '../styles/gift.css'
 import {Link} from 'react-router-dom'
 const Gift = () => {
   return (

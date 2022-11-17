@@ -1,4 +1,6 @@
 import React from 'react'
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import {
   MDBBtn,
   MDBContainer,
@@ -13,17 +15,13 @@ import {
   from 'mdb-react-ui-kit';
 
 function Login() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
-
-
-
-  
   return (
     <div className="Login">
       <MDBContainer fluid className='p-4'>
         <MDBRow>
           <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
             <h1 className="my-5 display-3 fw-bold ls-tight px-3">
-              ¡Bienvenido a<br />
+               ¡Bienvenido a<br />
               <span className="text-primary">GIFTClub!</span>
             </h1>
             <p className='px-3'>
