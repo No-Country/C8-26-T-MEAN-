@@ -15,14 +15,6 @@ export default function App() {
           </li>
           <li><a href="#">PREGUNTAS FRECUENTES</a>
           </li>
-          <li>
-            <a href="#">Portfolio ￬</a>
-            <ul className="hidden">
-              <li><a href="#">Photography</a></li>
-              <li><a href="#">Web & User Interface Design</a></li>
-              <li><a href="#">Illustration</a></li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
