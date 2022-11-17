@@ -1,0 +1,49 @@
+.gift{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    min-height: 100vh;
+    gap: 2rem;
+    padding: 0 200px 
+}
+
+p{
+    font-size: 25px;
+    font-weight: 300;
+    color: #000000;
+    font-style: normal;
+    text-align: left;
+    line-height: 35px;
+}
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    
+    text-align: left;
+}
+.arrow{
+   font-size: 50px;
+}
+.faq-text{
+    font-weight: 600;
+    font-size: 25px;
+    margin: 50px 0;
+  
+}
+.faq-p{
+    font-weight: 600;
+    text-align: left;
+}
+.faq-span{
+    font-weight: 200;
+    text-align: left;
+
+}
+@media ( max-width: 600px) {
+    .gift{
+
+        flex-wrap: wrap;
+    }
+}

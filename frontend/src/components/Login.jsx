@@ -13,6 +13,10 @@ import {
   from 'mdb-react-ui-kit';
 
 function Login() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
+
+
+
+  
   return (
     <div className="Login">
       <MDBContainer fluid className='p-4'>
