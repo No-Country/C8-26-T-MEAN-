@@ -15,7 +15,7 @@ import {
   MDBDropdownItem,
 } from 'mdb-react-ui-kit';
 
- function Navbar() {
+function Navbar() {
   const [showNavCentred, setShowNavCentred] = useState(true);
 
   return (
@@ -46,7 +46,10 @@ import {
             <MDBNavbarItem>
               <MDBNavbarLink  > <Link to ='/Faq' >QUE ES GIFT CLUB? </Link></MDBNavbarLink>
             </MDBNavbarItem>
-           
+
+            <MDBNavbarItem>
+              <MDBNavbarLink  > <Link to ='/Products' >PRODUCTOS!!</Link></MDBNavbarLink>
+            </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>
