@@ -12,6 +12,8 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 
 ### Tecnologías :
 
+### ¿Cómo inicializar el proyecto en mi ordenador? 👩🏻‍💻👨🏽‍💻:
+
 ### Integrantes 🚀: 
 * Lucía Riva: [LinkedIn](https://www.linkedin.com/in/lucia-riva) | [GitHub](https://github.com/LuciaRiva)
 * Kimberlly Barraza: [LinkedIn](https://pe.linkedin.com/in/kimberllynbarrazat/es) | [GitHub](https://github.com/KNBT)
