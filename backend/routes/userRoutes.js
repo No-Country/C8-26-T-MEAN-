@@ -1,15 +1,23 @@
-import { Router } from 'express';
-import {
-    getUsers,
-    // getProducts
-} from '../controllers/userController.js'
-// import apiUserControllers  from '../controllers/api/apiUserController.js'
-const router = Router();
+const express = require('express');
+const router = express.Router();
+const apiUserController = require('../controllers/userController');
 
-router.get("api/users", getUsers )
+//MOSTRAR TODOS LOS USUARIOS - API
+router.get('/users', apiUserController.list);
+
+//MOSTRAR ULTIMO USUARIO
+router.get('/users/last', apiUserController.last);
+module.exports = router;
+
+// import { Router } from 'express';
+// import { getUsers } from '../controllers/userController.js'
+// // import apiUserControllers  from '../controllers/api/apiUserController.js'
+// const router = Router();
+
+// router.get("api/users", getUsers )
 
 
-// router.get("/product", getProducts )
+// // router.get("/product", getProducts )
 
 
-export default router;
+// export default router;

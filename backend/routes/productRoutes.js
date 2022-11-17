@@ -1,8 +1,20 @@
-import { Router } from "express";
-import { getProducts } from "../controllers/productsController.js";
+const express = require('express');
+const router = express.Router();
+const apiProductController = require('../controllers/productController');
 
-const router = Router();
+//MOSTRAR TODOS LOS USUARIOS - API
+router.get('/products', apiProductController.list);
 
-router.get("/api/products", getProducts)
+//MOSTRAR ULTIMO USUARIO
+router.get('/products/last', apiProductController.last);
+module.exports = router;
 
-export default getProducts
+
+// import { Router } from "express";
+// import { getProducts } from "../controllers/productsController.js";
+
+// const router = Router();
+
+// router.get("/api/products", getProducts)
+
+// export default getProducts

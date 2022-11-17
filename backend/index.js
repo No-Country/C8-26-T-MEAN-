@@ -1,16 +1,17 @@
-import express from "express";
-import userRoutes from './routes/userRoutes.js'
-import indexRoutes from './routes/indexRoutes.js'
+const express = require('express');
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
-import morgan from 'morgan'
-import cors from 'cors'
+
+const morgan = require('morgan');
+const cors = require('cors');
 
 const PORT = 3000;
 const app = express();
 
 app.use(express.json())
-app.use(indexRoutes)
 app.use(userRoutes)
+app.use(productRoutes)
 app.use(cors({
     origin: 'http://127.0.0.1:5173/'
 }))
