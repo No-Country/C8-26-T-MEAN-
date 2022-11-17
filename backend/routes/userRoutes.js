@@ -6,7 +6,8 @@ import {
 // import apiUserControllers  from '../controllers/api/apiUserController.js'
 const router = Router();
 
-router.get("/user", getUsers )
+router.get("api/users", getUsers )
+
 
 // router.get("/product", getProducts )
 
