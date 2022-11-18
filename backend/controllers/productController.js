@@ -1,7 +1,9 @@
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
+
 const apiProductController = {
     list: (req, res) => {
+        
         totals = db.Product.findAll()
         .then(products => {
             totals=products.length
@@ -24,8 +26,9 @@ const apiProductController = {
                 data: products,
                 status:200})
     })
-    }
+    },
 }
+
 module.exports = apiProductController;
 
 // import { pool } from '../database/config/config.js'
