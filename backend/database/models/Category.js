@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
     const Category = sequelize.define(alias, cols, config); 
 
     Category.associate = function (models) {
-        Category.hasMany(models.Product, { // models.Product -> Product es el valor de alias en movie.js
+        Category.hasMany(models.Product, { // models.Product -> Product es el valor de alias en Product.js
             as: 'product_categories',
             foreignKey: 'category_id',
         })

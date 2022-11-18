@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.png'
-import '../Styles/gift.css'
+import '../styles/gift.css'
+
 const Faq = () => {
   return (
   

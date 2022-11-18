@@ -21,8 +21,8 @@ module.exports = (sequelize, dataTypes) => {
         long_description: {
             type: dataTypes.TEXT,
         },
-        regular_price: {
-            type: dataTypes.DECIMAL(10, 2).UNSIGNED,
+        price: {
+            type: dataTypes.MEDIUMINT.UNSIGNED,
             allowNull: false
         },
         discount: {

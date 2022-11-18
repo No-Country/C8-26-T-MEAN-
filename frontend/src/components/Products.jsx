@@ -1,22 +1,21 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import { useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+
 const Products = () => {
-
-    useEffect(()=> {
-        async function loadTasks()
-
-    })
-    return (
-        <div>
-            <Link to='/'  className='arrow'>
-                🠔
-            </Link>
-            <h1>Página de Productos</h1>
-        </div>
-
-
+    const [products, setProducts] = useState(null)
+        useEffect(() => {
+            const url ="http://localhost:3000/products"
+            axios.get(url)
+            .then( res => setProducts(res.data))
+            .catch(e=>console.log(e, "entro"))
+        }, [])
     
+        console.log(products)
+    return (
+        <section  className='Products'>
+            <h1>Products</h1>
+        </section>
     )
 }
 

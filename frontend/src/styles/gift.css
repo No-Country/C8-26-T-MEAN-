@@ -8,8 +8,8 @@
     padding: 0 200px 
 }
 
-p{
-    font-size: 25px;
+.faq-p{
+    font-size: 19px;
     font-weight: 300;
     color: #000000;
     font-style: normal;
@@ -17,18 +17,17 @@ p{
     line-height: 35px;
 }
 h1{
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: bold;
     color: #000000;
-    
     text-align: left;
 }
 .arrow{
-   font-size: 50px;
+   font-size: 30px;
 }
 .faq-text{
     font-weight: 600;
-    font-size: 25px;
+    font-size: 19px;
     margin: 50px 0;
   
 }
@@ -43,7 +42,6 @@ h1{
 }
 @media ( max-width: 600px) {
     .gift{
-
         flex-wrap: wrap;
     }
 }

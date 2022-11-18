@@ -1,4 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
+
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import axios from 'axios'
 import {
   MDBBtn,
   MDBContainer,
@@ -13,9 +17,18 @@ import {
   from 'mdb-react-ui-kit';
 
 function Login() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
+  
+  const [body, setBody] = useState({email: 'admin@gmail.com', password: 'admin123',})
 
-
-
+  const onSubmit = () => {
+    axios.post('http://localhost:3000/users/auth', body)
+    .then(res => {
+      console.log(res.data);
+    })
+    .catch(e =>{
+      console.log(e);
+    })
+  }
   
   return (
     <div className="Login">
@@ -36,9 +49,17 @@ function Login() { //los componentes en React son funciones. Su nombre comienza 
           <MDBCol md='6'>
             <MDBCard className='my-5'>
               <MDBCardBody className='p-5'>
-                <MDBInput wrapperClass='mb-4' label='Correo electrónico' id='form1' type='email' />
+                <MDBInput 
+                wrapperClass='mb-4' 
+                label='Correo electrónico' 
+                id='form1' 
+                type='email' />
                 <MDBInput wrapperClass='mb-4' label='Contraseña' id='form1' type='password' />
-                <MDBBtn className='w-100 mb-4' size='md'>Ingresar</MDBBtn>
+                <MDBBtn 
+                className='w-100 mb-4' 
+                size='md'
+                onClick={onSubmit}
+                >Ingresar</MDBBtn>
                 <div className="text-center">
                   <p>Olvidé mi usuario o contraseña. :(</p>
                 </div>
