@@ -3,8 +3,12 @@ const Op = db.Sequelize.Op;
 
 const apiProductController = {
     list: (req, res) => {
-        
-        totals = db.Product.findAll()
+
+        totals = db.Product.findAll({
+            include: [
+                { association: 'categories' }
+            ]
+        })
         .then(products => {
             totals=products.length
             return res.status(200).json({
