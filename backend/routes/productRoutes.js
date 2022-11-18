@@ -9,8 +9,11 @@ router.get('/products', apiProductController.list);
 //MOSTRAR ULTIMO PRODUCTO
 router.get('/products/last', apiProductController.last);
 
+//MOSTRAR DETALLE DE PRODUCTO - API
+router.get('/products/:id', apiProductController.detail);
+
 //MOSTRAR CATEGORIAS
-router.get('/products/categories', apiCategoryController.categories);
+router.get('/categories', apiCategoryController.list);
 
 module.exports = router;
 

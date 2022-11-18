@@ -2,7 +2,7 @@ const db = require("../database/models");
 const Op = db.Sequelize.Op;
 
 const apiCategoriesController = {
-    categories: (req, res) => {
+    list: (req, res) => {
         totals = db.Category.findAll()
         .then(categories => {
             totals=categories.length
