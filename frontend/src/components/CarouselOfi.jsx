@@ -4,7 +4,7 @@ import {
   MDBCarouselItem,
 } from 'mdb-react-ui-kit';
 
-export default function App() {
+export default function CarouselOfi() {
   return (
     <MDBCarousel showControls showIndicators dark fade>
       <MDBCarouselItem

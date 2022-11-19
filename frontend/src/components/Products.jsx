@@ -13,10 +13,8 @@ const Products = () => {
       console.log(products)
   return (
       <section  className='Products'>
-
           <h1>Products</h1>
       </section>
-
   )
 }
 
