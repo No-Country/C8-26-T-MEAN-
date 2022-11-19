@@ -4,8 +4,9 @@ import JSONPretty from 'react-json-pretty'
 import 'react-json-pretty/themes/monikai.css'
 const Profile = () => {
     
-    const {user, isAuthenticated} = useAuth0()
+    const {user, isAuthenticated, isLoading} = useAuth0()
     
+    if(isLoading) return <h1>Loading...</h1>
     return (
         isAuthenticated && (
             <div>
@@ -20,7 +21,7 @@ const Profile = () => {
         )
     )
 
-  
+
     
 }
 
