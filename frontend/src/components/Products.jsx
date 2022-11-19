@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const Products = () => {
-    const [products, setProducts] = useState(null)
+    const [products, setProducts] = useState({})
+
         useEffect(() => {
-            const url ="http://localhost:3000/products"
+            const url ="https://127.0.0.1:3000/products/"
             axios.get(url)
-            .then( res => setProducts(res.data))
-            .catch(e=>console.log(e, "entro"))
+            .then( res => console.log(res.data))
+            .catch(e=>console.log(e))
         }, [])
     
         console.log(products)
