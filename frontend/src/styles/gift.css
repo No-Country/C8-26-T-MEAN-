@@ -33,13 +33,136 @@ h1{
 }
 .faq-p{
     font-weight: 600;
-    text-align: left;
+    text-align:center;
+
 }
 .faq-span{
     font-weight: 200;
-    text-align: left;
+    text-align: center;
+    align-items: center;
+    margin-left: 10px;
 
 }
+
+
+/*HOME*/
+
+.slider-container{
+display: flex;
+width: 100%;
+height: 350px;
+}
+
+.slider-container img {
+    flex: 0 0 100%;
+    width: 100%;
+    object-fit:fill;
+}
+
+.gif-club{
+    color:rgb(172, 38, 143)
+}
+.btn-ingresar{
+    display: inline-block;
+    padding: 10px 160px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(172, 38, 143);
+    border: none;
+    border-radius: 10px;
+}
+.btn-ingresar:active{
+    display: inline-block;
+    padding: 10px 160px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(172, 38, 143);
+    border: none;
+    border-radius: 10px;
+    transform: translateY(4px);
+}
+.btn-ingresar:hover{
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/*fin HOME*/
+
+/*CATALOGO*/
+.tex-canjea{
+color:rgb(255, 255, 255);
+text-align: center;
+background-color:rgb(172, 38, 143);
+padding: 15px;
+border-radius: 550px;
+width: 75%;
+margin-left: 140px;
+}
+
+.tex-product{
+color:black;
+font-size: 20px;
+}
+
+.mb-4{
+    color:rgb(40, 40, 40);
+    text-align: center;
+    align-items: center;
+    margin: 40px;
+    margin-top: 4px;
+}
+
+
+/*fin CATALOGO*/
+
+/*QUE ES GIFTCLUB*/
+
+.img-preg{
+    max-width: 25%;
+}
+
+.tex-canjea2{
+        color:rgb(255, 255, 255);
+        text-align: center;
+        background-color:rgb(172, 38, 143);
+        padding: 5px;
+        width: 100%;
+
+        }
+
+.gift{
+    padding-bottom: 180px;
+}
+
+/*FIN QUE ES GIFTCLUB*/
+
+/*PREG FRECUENTES*/
+.faq-preg{
+    color:rgb(255, 255, 255);
+    text-align: center;
+    background-color:rgb(172, 38, 143);
+    padding: 5px;
+    width: 50%;
+    margin-left:280px;
+    align-items: center;
+
+}
+
+.text{
+    text-align: center;
+    align-items: center;
+}
+
+/*FIN PREG FRECUENTES*/
+
 @media ( max-width: 600px) {
     .gift{
         flex-wrap: wrap;

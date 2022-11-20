@@ -7,7 +7,7 @@ import {
   MDBNavbarLink
 } from 'mdb-react-ui-kit';
 
-export default function Navbar) {
+export default function (Navbar) {
 
   return (
     <div>
@@ -16,12 +16,13 @@ export default function Navbar) {
           <label for="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
-            <li><MDBBtn size='lg' rounded className='mx-2' color='secondary'>
+            <li><MDBBtn  href='href="/frontend/src/components/login" ' size='lg' rounded className='mx-2' color='secondary'>
               Ingresar
             </MDBBtn></li>
+            
             <li>
               <MDBNavbarLink id="icono" href='#'>
-                <MDBIcon fas icon='shopping-cart' />
+                <MDBIcon fas icon='shopping-cart'/>
               </MDBNavbarLink>
             </li>
           </ul>
@@ -32,7 +33,7 @@ export default function Navbar) {
           <label for="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
-            <li><a><Link to='/' >CATÁLOGO </Link></a></li>
+            <li><a><Link to='/Categories' >CATÁLOGO </Link></a></li>
             <li><a><Link to='/Gift' >¿QUÉ ES GIFTCLUB?</Link></a></li>
             <li><a><Link to='/Faq' >PREGUNTAS FRECUENTES</Link></a></li>
           </ul>
