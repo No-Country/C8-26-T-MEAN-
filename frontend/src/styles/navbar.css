@@ -1,132 +1,160 @@
 body {
-    margin:0
+    margin: 0
 }
 
-#menuBackground {
-    background:white;
-    width:100%;
-    height:50px;
+.menuBackground {
+    background: white;
+    width: 100%;
+    height: 50px;
     text-align: center;
 }
+
+#menuContainerInfo {
+    text-align: right;
+}
+
 #menuContainer {
     text-align: center;
 }
+
+.fa-solid,
+.fas {
+    font-size: xx-large;
+}
+
 /*Strip the ul of padding and list styling*/
 ul {
-    list-style-type:none;
-    margin:0;
-    padding:0;
+    list-style-type: none;
+    margin: 10px;
+    ;
+    padding: 0;
 }
 
 /*Crear una lista horizontal con espacio*/
 li {
-    display:inline-block;
+    display: inline-block;
     vertical-align: top;
-    margin-right:1px;
+    margin-right: 1px;
 }
 
 /*Estilo para los links del menú*/
+#icono {
+    min-width: 160px;
+}
+
+.btn-lg,
+.btn-group-lg>.btn {
+    padding: .75rem 1.6875rem .6875rem 1.6875rem;
+    padding-right: 50px;
+    padding-left: 50px;
+    line-height: 1.6;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 li a {
-    display:block;
-    min-width:270px;
-    height:50px;
-    text-align:center;
-    line-height:50px;
-    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color:black;
-    background:white;
-    text-decoration:none;
-    font-size: 1rem;
+    display: block;
+    min-width: 300px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    background: white;
+    text-decoration: none;
+    font-size: 19px;
     font-weight: bold;
 }
 
 /*Hover state para los links principales del navbar*/
 li:hover a {
-    background:#FEC310
+    background: #e2e2e2
 }
 
 /*Estilos para los dropdpws links (en caso sea necesario)*/
 li:hover ul a {
-    background:rgb(105, 105, 105);
-    color:white;
-    height:40px;
-    line-height:40px
+    background: rgb(105, 105, 105);
+    color: white;
+    height: 40px;
+    line-height: 40px
 }
 
 /*Hover state for dropdown links*/
 li:hover ul a:hover {
-    background:#FEC310;
-    color:#fff
+    background: #FEC310;
+    color: #fff
 }
 
 /*Hide dropdown links until they are needed*/
 li ul {
     position: absolute;
-    display:none
+    display: none
 }
 
 /*Make dropdown links vertical*/
 li ul li {
-    display:block;
+    display: block;
 }
 
 /*Prevent text wrapping*/
 li ul li a {
-    width:auto;
-    min-width:100px;
-    padding:0 20px
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px
 }
 
 /*Display the dropdown on hover*/
-ul li a:hover + .hidden,.hidden:hover {
-    display:block
+ul li a:hover+.hidden,
+.hidden:hover {
+    display: block
 }
 
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
-    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    text-decoration:none;
-    color:black;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: black;
     font-weight: bold;
-    background:#FEC310;
-    text-align:center;
-    padding:16px 0;
-    display:none;
-    width:100%!important
+    background: #FEC310;
+    text-align: center;
+    padding: 16px 0;
+    display: none;
+    width: 100% !important
 }
 
 /*Hide checkbox*/
 input[type=checkbox] {
-    display:none
+    display: none
 }
 
 /*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #menu {
-    display:block;
-    margin:0 auto
+input[type=checkbox]:checked~#menu {
+    display: block;
+    margin: 0 auto
 }
 
 /*Responsive Styles*/
 @media screen and (max-width : 760px) {
+
     /*Make dropdown links appear inline*/
     ul {
-        position:static;
-        display:none;
+        position: static;
+        display: none;
         white-space: initial;
     }
-    
+
     /*Create vertical spacing*/
     li {
-        margin-bottom:1px
+        margin-bottom: 1px
     }
-    
+
     /*Make all menu links full width*/
-    ul li,li a {
-        width:100%
+    ul li,
+    li a {
+        width: 100%
     }
-    
+
     /*Display 'show menu' link*/
     .show-menu {
-        display:block
+        display: block
     }
 }
