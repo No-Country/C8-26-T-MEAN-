@@ -9,12 +9,8 @@ const Categories = () => {
   return (
     <div>
       <Navbar/>
-      <br></br>
-      <br></br>
       <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
       <p class="mb-4">¡Canjeá tus puntos por momentos felices!</p>
-      <br></br>
-      <br></br>
       <MDBRow>
         <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
           <img
