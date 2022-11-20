@@ -16,7 +16,7 @@ export default function Navbar () {
           <label for="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
-            <li><MDBBtn  href='href="/frontend/src/components/login" ' size='lg' rounded className='mx-2' color='secondary'>
+            <li><MDBBtn  href='#' size='lg' rounded className='mx-2' color='secondary'>
               Ingresar
             </MDBBtn></li>
             
