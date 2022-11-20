@@ -7,7 +7,7 @@ import {
   MDBNavbarLink
 } from 'mdb-react-ui-kit';
 
-export default function (Navbar) {
+export default function Navbar () {
 
   return (
     <div>
