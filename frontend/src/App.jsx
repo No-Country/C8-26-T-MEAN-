@@ -18,7 +18,7 @@ function App() { //los componentes en React son funciones. Su nombre comienza en
 
     <div className="App">
       {
-        isAuthenticated ? <LogoutButton/> : <LoginButton/>
+        isAuthenticated ? <LogoutButton/> : null
       }
       <Profile/>
       <Routes>

@@ -1,4 +1,3 @@
-//Este es el archivo principal que nos permite renderizar el proyecto en el navegador.
 
 import React from 'react'
 import ReactDOM from 'react-dom/client' //para renderizar
