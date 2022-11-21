@@ -3,18 +3,22 @@ const router = express.Router();
 const apiProductController = require('../controllers/productController');
 const apiCategoryController = require('../controllers/CategoriesController');
 
-//MOSTRAR TODOS LOS PRODUCTOS - API
+// MOSTRAR TODOS LOS PRODUCTOS - API
 router.get('/products', apiProductController.list);
 
 
-//MOSTRAR ULTIMO PRODUCTO
+// MOSTRAR ULTIMO PRODUCTO
 router.get('/products/last', apiProductController.last);
 
+<<<<<<< HEAD
 //MOSTRAR DETALLE DE PRODUCTO - API
 router.get('/products/:id', apiProductController.detail);
 
 //MOSTRAR CATEGORIAS
 <<<<<<< HEAD:backend/routes/product.routes.js
+=======
+// MOSTRAR CATEGORIAS
+>>>>>>> migbazz
 router.get('/categories', apiCategoryController.categories);
 =======
 router.get('/categories', apiCategoryController.list);
