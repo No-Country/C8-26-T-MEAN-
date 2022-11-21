@@ -6,7 +6,11 @@ const Op = db.Sequelize.Op;
 
 const apiUserController = {
     list: (req, res) => {
-        totals = db.User.findAll()
+        totals = db.User.findAll(({
+            include: [
+                { association: 'roles' }
+            ]
+        }))
         .then(users => {
             totals=users.length
             return res.status(200).json({
@@ -28,6 +32,29 @@ const apiUserController = {
                 data: users,
                 status:200})
     })
+    },
+    find: async (id) =>  await db.User.findOne({
+        where: {
+            id: id
+        },
+        include: [
+            {association: 'roles'}
+        ]
+    }),
+
+    detail: async (req,res) => {
+        try {
+
+            //Hago los pedidos a la Base de Datos
+            const user = await apiUserController.find(req.params.id);
+            return res.status(200).json({
+                data: user,
+                status:200}) 
+        } catch (e) {
+            //Si hay algun error, los atajo y muestro todo vacio
+            console.log('error,' , e);
+            return res.status(400).json(e);
+        }
     },
 
     auth: async (req,res) => {
@@ -58,7 +85,29 @@ const apiUserController = {
         } catch (e) {
             console.log(e);
         }
-    }
+    },
+    
+    ranking: async (req, res) => {
+        try {
+            
+            const userPoints = await queries.User.userPoints();
+
+            const allRankings = userPoints.map( user => {
+                return {
+                    name: `${user.first_name} ${user.last_name}`,
+                    points: user.points,
+                }
+            })            
+
+            return res.status(200).json({
+                rankings: allRankings
+            })
+        } catch (e) {
+            //Si hay algun error, los atajo y muestro todo vacio
+            console.log('error,' , e);
+            return res.status(400).json(e);
+        }
+    },
 
 }
 module.exports = apiUserController;

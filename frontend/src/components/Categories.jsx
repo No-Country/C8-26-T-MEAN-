@@ -2,7 +2,8 @@ import React from 'react'
 import Navbar from './Navbar'
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import '../styles/gift.css'
-  
+import '../styles/categories.css'
+
 
 const Categories = () => {
 
