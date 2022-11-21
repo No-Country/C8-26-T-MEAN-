@@ -16,7 +16,7 @@ function Navbar() {
     <div>
       <div className="menuBackground">
         <div id="menuContainerInfo">
-          <label for="show-menu" className="show-menu">Mostrar menú</label>
+          <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
             <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='secondary'>
@@ -24,7 +24,7 @@ function Navbar() {
             </MDBBtn></li>
             
             <li>
-              <MDBNavbarLink id="icono" href='#'>
+              <MDBNavbarLink id="icono" to='#'>
                 <MDBIcon fas icon='shopping-cart'/>
               </MDBNavbarLink>
             </li>
@@ -33,7 +33,7 @@ function Navbar() {
       </div>
       <div className="menuBackground">
         <div id="menuContainer">
-          <label for="show-menu" className="show-menu">Mostrar menú</label>
+          <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
             <li><a><Link to='/Categories' >CATÁLOGO </Link></a></li>
