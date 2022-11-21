@@ -15,7 +15,13 @@ module.exports = {
     
     showAll: async () => await db.User.findAll({
         include: [
-            { association: 'interests' }
+            { association: 'roles' }
+        ]
+    }),
+
+    userPoints: async () => await db.User.findAll({
+        order: [
+            ['points','DESC']
         ]
     }),
 
