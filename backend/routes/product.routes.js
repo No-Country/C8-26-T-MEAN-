@@ -6,7 +6,6 @@ const apiCategoryController = require('../controllers/CategoriesController');
 //MOSTRAR TODOS LOS PRODUCTOS - API
 router.get('/products', apiProductController.list);
 
-
 //MOSTRAR ULTIMO PRODUCTO
 router.get('/products/last', apiProductController.last);
 
@@ -14,7 +13,7 @@ router.get('/products/last', apiProductController.last);
 router.get('/products/:id', apiProductController.detail);
 
 //MOSTRAR CATEGORIAS
-//<<<<<<< HEAD:backend/routes/product.routes.js
+
 //router.get('/categories', apiCategoryController.categories);
 //=======
 router.get('/categories', apiCategoryController.list);
