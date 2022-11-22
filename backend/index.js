@@ -1,12 +1,6 @@
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/product.routes');
-<<<<<<< HEAD
-
-
-const morgan = require('morgan')
-const cors = require('cors')
-=======
 const morgan = require('morgan');
 // const cors = require('cors');
 const PORT = 3001;
@@ -19,7 +13,6 @@ const corsOptions ={
 }
 app.use(cors(corsOptions));
 
->>>>>>> dev
 
 
 

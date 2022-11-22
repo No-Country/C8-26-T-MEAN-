@@ -6,23 +6,6 @@ import '../styles/gift.css'
 import Product from './Product';
 
 const Products = () => {
-<<<<<<< HEAD
-    const [products, setProducts] = useState({})
-
-        useEffect(() => {
-            const url ="https://127.0.0.1:3000/products/"
-            axios.get(url)
-            .then( res => console.log(res.data))
-            .catch(e=>console.log(e))
-        }, [])
-    
-        console.log(products)
-    return (
-        <section  className='Products'>
-            <h1>Products</h1>
-        </section>
-    )
-=======
   const [products, setProducts] = useState([])
   useEffect(() => {
     const url = "http://localhost:3001/products"
@@ -205,7 +188,6 @@ const Products = () => {
       </div>
     </section>
   )
->>>>>>> dev
 }
 
 export default Products
