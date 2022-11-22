@@ -7,7 +7,7 @@ import '../styles/gift.css'
 const Products = () => {
   const [products, setProducts] = useState(null)
   useEffect(() => {
-    const url = "http://localhost:3000/products"
+    const url = "http://localhost:3001/products"
     axios.get(url)
       .then(res => setProducts(res.data))
       .catch(e => console.log(e, "entro"))
