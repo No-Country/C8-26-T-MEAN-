@@ -3,16 +3,17 @@ import axios from 'axios'
 import Navbar from './Navbar'
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import '../styles/gift.css'
+import Product from './Product';
 
 const Products = () => {
-  const [products, setProducts] = useState(null)
+  const [products, setProducts] = useState([])
   useEffect(() => {
     const url = "http://localhost:3001/products"
     axios.get(url)
-      .then(res => setProducts(res.data))
+      .then(res => setProducts(res.data.data))
       .catch(e => console.log(e, "entro"))
   }, [])
-  console.log(products)
+  console.log(products);
   
   return (
     <section className='Products'>
@@ -21,6 +22,21 @@ const Products = () => {
         <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
         <p class="mb-4">¡Canjeá tus puntos por momentos felices!</p>
         <MDBRow>
+        {
+            products.map ((product, i) => {
+              return <Product { ...product} key={i}/>
+            })
+          }
+        {/* <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
+            <img
+              src='https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/c/a/camiseta-de-argentina-adidas-oficial-messi-10-blanca-100020fs6565010-1.jpg'
+              className='img-fluid rounded-circle'
+              alt=''
+            />
+            <h3 class="tex-product">abc </h3>
+            <p>ADIDAS OFICIAL MESSI 10 BLANCA</p>
+            <h4>8.000 PUNTOS</h4>
+          </MDBCol>
           <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
             <img
               src='https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/c/a/camiseta-de-argentina-adidas-oficial-messi-10-blanca-100020fs6565010-1.jpg'
@@ -167,7 +183,7 @@ const Products = () => {
               Cuenta con cordones elásticos y ajuste de velcro.</p>
             <h4>750 PUNTOS</h4>
 
-          </MDBCol>
+          </MDBCol> */}
         </MDBRow>
       </div>
     </section>
