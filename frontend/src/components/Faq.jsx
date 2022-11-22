@@ -1,21 +1,15 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { Link } from 'react-router-dom'
-import { MDBIcon } from 'mdb-react-ui-kit';
+import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import logo from '../assets/logo.png'
 import '../styles/gift.css'
 
-
-const Faq = ()=>  {
+const Faq = () => {
   return (
 
     <div>
-      {<Navbar/>}
-      <br/>
-      <br/>
-    
+     <Navbar/>
     <div className='text'>
-    <Link to='/' className='arrow'><MDBIcon fas icon="angle-double-left" />
-    </Link>
     <h1 className='faq-preg'>PREGUNTAS FRECUENTES</h1>
 
     <div className='faq-text'>
@@ -36,7 +30,7 @@ const Faq = ()=>  {
         </div>
       </div>
     </div>
-  
+   
   )
 }
 
