@@ -16,10 +16,9 @@ function Navbar() {
     <div>
       <div className="menuBackground">
         <div id="menuContainerInfo">
-          <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
-            <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='secondary'>
+            <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
               Ingresar
             </MDBBtn></li>
             

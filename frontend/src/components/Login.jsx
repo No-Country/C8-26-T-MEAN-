@@ -11,10 +11,10 @@ import {
   MDBInput,
   MDBCheckbox,
   MDBIcon
-}  from 'mdb-react-ui-kit';
+} from 'mdb-react-ui-kit';
 
 function Login() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
-  
+
   return (
     <div className="Login">
       <MDBContainer fluid className='p-4'>
@@ -22,14 +22,14 @@ function Login() { //los componentes en React son funciones. Su nombre comienza 
           <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
             <h1 className="my-5 display-3 fw-bold ls-tight px-3">
               ¡Bienvenido a<br />
-              <span className="text-primary" class="gif-club">GIFTClub!</span>
+              <span className="text-primary">GIFTClub!</span>
             </h1>
-
-            <h3>¿Qué es GiftClub?</h3>
             <p className='px-3'>
+              ¿Qué es GiftClub?<br />
               GiftClub es un sistema de puntos acumulables que pueden ser canjeados
-              por cualquiera de los productos que se encuentran dentro del catálogo de este sitio. 
-              Recuerda que a más puntos más posibilidades de llevarte todos los productos.¡Que los disfrutes!
+              por cualquiera de los productos que se encuentran dentro del catálogo de este sitio.
+              Recuerda que a más puntos más posibilidades de llevarte todos los productos.<br />
+              ¡Que los disfrutes!
             </p>
           </MDBCol>
           <MDBCol md='6'>
