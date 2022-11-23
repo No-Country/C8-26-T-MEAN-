@@ -1,17 +1,23 @@
 import React from 'react'
+import '../styles/detailProduct.css'
 const DetailCard = ({product}) => {
 
   return (
-    <div>
-         <img
-              src={product.image_url}
-           //  className='img-fluid rounded-circle'
-              alt=''
-              />
-            <h3 class="tex-product">{product.product_name} </h3>
+    <div className='detail--product'>
+          <div className='detail--product-img'>
+             <img
+                src={product.image_url}
+                alt=''
+                />
+          <div>
+        </div>
+         <div className='detail--product-text'>
+            <h3>{product.product_name} </h3>
             <p>{product.short_description}</p>
             <h4>{product.price}</h4>
-            <button>Ver</button><button>Canjear</button>
+            <button>Canjear</button>
+         </div>
+        </div>
     </div>
   )
 }

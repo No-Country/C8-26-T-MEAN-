@@ -1,12 +1,17 @@
 import React from 'react'
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import '../styles/gift.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/product.css'
 const Product = ({props}) => {
+
+  const navigate =useNavigate() 
+  const handleClick=()=>{
+    navigate(`/DetailProduct/${props.id}`);
+  }
   return (
     <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
-    <Link  to='/DetailProduct/1' >
+    <article   onClick={handleClick} >
        <div className='Product-square'>
 
            <h3 class="tex-product">{props.product_name} </h3>
@@ -18,7 +23,7 @@ const Product = ({props}) => {
            
             <h4>{props.price} Puntos</h4>
        </div>
-    </Link>
+    </article>
    </MDBCol>
   )
 }

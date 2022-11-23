@@ -1,0 +1,14 @@
+.detail--product {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.img {
+    width: 100%;
+    background-color: red;
+}
+
+.detail--product-img {
+    max-width: 300px;
+}
