@@ -7,15 +7,10 @@
 //   password: 'Al4m0.t1gr3.t4ng0',
 //   database: 'giftclub_db'
 // })
-
-
-
-
-
 module.exports = {
     "development": {
         "username": "root",
-        "password": "nocountry",
+        "password": "",
         "database": "giftclub_db",
         "host": "127.0.0.1",
         "dialect": "mysql",

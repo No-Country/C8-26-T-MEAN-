@@ -23,8 +23,8 @@ const Products = () => {
         <p class="mb-4">¡Canjeá tus puntos por momentos felices!</p>
         <MDBRow>
         {
-            products.map ((product, i) => {
-              return <Product { ...product} key={i}/>
+            products.map (product => {
+              return <Product props={product} key={product.id}/>
             })
           }
         {/* <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>

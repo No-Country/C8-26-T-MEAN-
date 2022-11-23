@@ -9,6 +9,7 @@ import Categories from './components/Categories'
 // import LoginButton from './components/Login'
 import LogoutButton from './components/LogoutButton'
 import Profile from './components/Profile'
+import DetailProduct from './components/DetailProduct'
 
 function App() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
 
@@ -27,6 +28,7 @@ function App() { //los componentes en React son funciones. Su nombre comienza en
           <Route path='/Gift' element={<Gift/>} />
           <Route path='/Faq' element={<Faq/>} />
           <Route path='/Products' element={<Products/>} />
+          <Route path='/DetailProduct/:id' element={<DetailProduct/>} />
      </Routes>
     </div>
   )
