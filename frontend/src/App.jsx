@@ -10,6 +10,7 @@ import Categories from './components/Categories'
 import LogoutButton from './components/LogoutButton'
 import Profile from './components/Profile'
 import DetailProduct from './components/DetailProduct'
+import Purchase from './components/Purchase'
 
 function App() { //los componentes en React son funciones. Su nombre comienza en mayúscula. Retorna jsx
 
@@ -29,6 +30,7 @@ function App() { //los componentes en React son funciones. Su nombre comienza en
           <Route path='/Faq' element={<Faq/>} />
           <Route path='/Products' element={<Products/>} />
           <Route path='/DetailProduct/:id' element={<DetailProduct/>} />
+          <Route path='/Purchase' element={<Purchase/>} />
      </Routes>
     </div>
   )
