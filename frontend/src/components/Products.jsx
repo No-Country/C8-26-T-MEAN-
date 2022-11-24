@@ -19,8 +19,6 @@ const Products = () => {
     <section className='Products'>
       <div>
         <Navbar />
-        <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
-        <p class="mb-4">¡Canjeá tus puntos por momentos felices!</p>
         <MDBRow>
         {
             products.map (product => {

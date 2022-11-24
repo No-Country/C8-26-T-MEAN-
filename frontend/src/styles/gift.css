@@ -1,14 +1,14 @@
-.gift{
+.gift {
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
     min-height: 100vh;
     gap: 2rem;
-    padding: 0 200px 
+    padding: 0 200px
 }
 
-.faq-p{
+.faq-p {
     font-size: 19px;
     font-weight: 300;
     color: #000000;
@@ -16,27 +16,32 @@
     text-align: left;
     line-height: 35px;
 }
-h1{
+
+h1 {
     font-size: 30px;
     font-weight: bold;
     color: #000000;
     text-align: left;
 }
-.arrow{
-   font-size: 30px;
+
+.arrow {
+    font-size: 30px;
 }
-.faq-text{
+
+.faq-text {
     font-weight: 600;
     font-size: 19px;
     margin: 50px 0;
-  
-}
-.faq-p{
-    font-weight: 600;
-    text-align:center;
 
 }
-.faq-span{
+
+.faq-p {
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.faq-span {
     font-weight: 200;
     text-align: center;
     align-items: center;
@@ -47,19 +52,19 @@ h1{
 
 /*HOME*/
 
-.slider-container{
-display: flex;
-width: 100%;
-height: 350px;
+.slider-container {
+    display: flex;
+    width: 100%;
+    height: 350px;
 }
 
 .slider-container img {
     flex: 0 0 100%;
     width: 100%;
-    object-fit:fill;
+    object-fit: fill;
 }
 
-.btn-ingresar{
+.btn-ingresar {
     display: inline-block;
     padding: 10px 160px;
     font-size: 15px;
@@ -72,7 +77,8 @@ height: 350px;
     border: none;
     border-radius: 10px;
 }
-.btn-ingresar:active{
+
+.btn-ingresar:active {
     display: inline-block;
     padding: 10px 160px;
     font-size: 15px;
@@ -86,31 +92,34 @@ height: 350px;
     border-radius: 10px;
     transform: translateY(4px);
 }
-.btn-ingresar:hover{
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+.btn-ingresar:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 
 /*fin HOME*/
 
 /*CATALOGO*/
-.tex-canjea{
-color:rgb(255, 255, 255);
-text-align: center;
-background-color:rgb(172, 38, 143);
-padding: 15px;
-border-radius: 550px;
-width: 75%;
-margin-left: 140px;
+.tex-canjea {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(172, 38, 143);
+    padding: 15px;
+    border-radius: 550px;
+    width: 75%;
+    margin-left: 140px;
 }
 
-.tex-product{
-color:black;
-font-size: 20px;
+.tex-product {
+    color: black;
+    font-size: 20px;
+    line-height: 3;
+    font-weight: bold;
 }
 
-.mb-4{
-    color:rgb(40, 40, 40);
+.mb-4 {
+    color: rgb(40, 40, 40);
     text-align: center;
     align-items: center;
     margin: 40px;
@@ -122,46 +131,46 @@ font-size: 20px;
 
 /*QUE ES GIFTCLUB*/
 
-.img-preg{
+.img-preg {
     max-width: 25%;
 }
 
-.tex-canjea2{
-        color:rgb(255, 255, 255);
-        text-align: center;
-        background-color:rgb(172, 38, 143);
-        padding: 5px;
-        width: 100%;
+.tex-canjea2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(172, 38, 143);
+    padding: 5px;
+    width: 100%;
 
-        }
+}
 
-.gift{
+.gift {
     padding-bottom: 180px;
 }
 
 /*FIN QUE ES GIFTCLUB*/
 
 /*PREG FRECUENTES*/
-.faq-preg{
-    color:rgb(255, 255, 255);
+.faq-preg {
+    color: rgb(255, 255, 255);
     text-align: center;
-    background-color:rgb(172, 38, 143);
+    background-color: rgb(172, 38, 143);
     padding: 5px;
     width: 50%;
-    margin-left:280px;
+    margin-left: 280px;
     align-items: center;
 
 }
 
-.text{
+.text {
     text-align: center;
     align-items: center;
 }
 
 /*FIN PREG FRECUENTES*/
 
-@media ( max-width: 600px) {
-    .gift{
+@media (max-width: 600px) {
+    .gift {
         flex-wrap: wrap;
     }
 }
