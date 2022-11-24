@@ -1,6 +1,8 @@
 .Product-square {
     border-style: dotted;
+    color: #56042c;
     border-radius: 15px;
+    padding-top: 15px;
 }
 
 .puntos-producto{
