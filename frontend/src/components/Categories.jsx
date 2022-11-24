@@ -7,30 +7,30 @@ import Categorie from './Categorie';
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
 const Categories = () => {
   const [categories, setCategories] = useState()
-   useEffect(() => {
-      const url = "http://localhost:3001/categories"
-      axios.get(url)
-      .then( res =>setCategories(res.data.data))
-      .catch(e =>{console.log(e)})
-   }, [])
-   
-   // console.log(categories)
+  useEffect(() => {
+    const url = "http://localhost:3001/categories"
+    axios.get(url)
+      .then(res => setCategories(res.data.data))
+      .catch(e => { console.log(e) })
+  }, [])
+
+  // console.log(categories)
   return (
     <div>
       <Navbar />
       <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
       <p class="mb-4">¡Canjeá tus puntos por momentos felices!</p>
       <MDBRow>
-      {
-            categories?.map(categorie => (
-             <Categorie  name={categorie.name} key={categorie.id}/>
-            ))
-               
-          
-      }
-    </MDBRow>
+        {
+          categories?.map(categorie => (
+            <Categorie name={categorie.name} key={categorie.id} />
+          ))
 
-     
+
+        }
+      </MDBRow>
+
+
       { /**
          *  <MDBRow>
         <MDBCol lg='2' md='2' className='mb-4 hover-zoom'>
@@ -51,10 +51,10 @@ const Categories = () => {
         </MDBCol>
       </MDBRow>
       */
-       
-      }     
-     
-     
+
+      }
+
+
     </div>
   );
 }

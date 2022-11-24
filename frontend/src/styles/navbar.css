@@ -1,16 +1,19 @@
 body {
     margin: 0
 }
-
+.gitclub-logo{
+    position: absolute;
+    width: 76px;
+    height: 60px;
+    left: 38px;
+    top: 10px;
+    background: url(../assets/logo_2.png);
+}
 .menuBackground {
-    background: white;
+    background: #49BCE3;
     width: 100%;
     height: 50px;
     text-align: center;
-}
-
-#menuContainerInfo {
-    text-align: right;
 }
 
 #menuContainer {
@@ -41,11 +44,16 @@ li {
     flex-flow: row-reverse wrap-reverse;
 }
 
-
-/*Estilo para los links del menú*/
 #icono {
     min-width: 160px;
 }
+
+#icono_li a {
+    min-width: 160px;
+    background: white;
+}
+
+/*Estilo para los links del menú*/
 
 .btn-lg,
 .btn-group-lg>.btn {
@@ -59,12 +67,12 @@ li {
 
 li a {
     display: block;
-    min-width: 300px;
+    min-width: 270px;
     height: 50px;
     text-align: center;
     line-height: 50px;
     color: black;
-    background: white;
+    background: #49BCE3;
     text-decoration: none;
     font-size: 19px;
     font-weight: bold;
@@ -72,13 +80,13 @@ li a {
 
 /*Hover state para los links principales del navbar*/
 li:hover a {
-    background: #e2e2e2
+    background: #49BCE3
 }
 
 /*Estilos para los dropdpws links (en caso sea necesario)*/
 li:hover ul a {
     background: rgb(105, 105, 105);
-    color: white;
+    color: #49BCE3;
     height: 40px;
     line-height: 40px
 }
