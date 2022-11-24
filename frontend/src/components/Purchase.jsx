@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/purchase.css'
 import Navbar from './Navbar'
 import tasa  from '../../public/taza.png'
+import { Link } from 'react-router-dom'
 const Purchase = () => {
   return (
     <div className='purchase'>
@@ -47,7 +48,10 @@ const Purchase = () => {
                      
                 </div>
                 <div className='purchase-btn'>
+                <Link  to ="/Products">
+            
                   <button className='purchase-btn1'> <span>  + </span>  CANJEAR MAS PRODUCTOS</button>
+            </Link>
                   <button className='purchase-btn2'> FINALIZAR PEDIDO</button>
                 </div>
          </div>

@@ -15,7 +15,9 @@ function Navbar() {
   return (
     <div>
       <div>
+      <Link to='/' >
         <span className='gitclub-logo'></span>
+         </Link>
         <ul className='lista-boton-carrito'>
           <li id="icono_li">
             <MDBNavbarLink id="icono" to='#'>
@@ -32,6 +34,7 @@ function Navbar() {
           <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
+            <li><a><Link to='/' >HOME </Link></a></li>
             <li><a><Link to='/Categories' >CATÁLOGO </Link></a></li>
             <li><a><Link to='/Gift' >¿QUÉ ES GIFTCLUB?</Link></a></li>
             <li><a><Link to='/Faq' >PREGUNTAS FRECUENTES</Link></a></li>
