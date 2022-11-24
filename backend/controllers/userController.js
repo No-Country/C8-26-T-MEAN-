@@ -59,21 +59,20 @@ const apiUserController = {
 
     auth: async (req,res) => {
         try {
-            // const privateSeed = 'DigitalHouse';
+            const privateSeed = 'DigitalHouse';
     
-            //Desencripto la contraseña
-            // const hashPassword = crypto.AES.decrypt(req.body.password, "8");
-            // const decryptedPassword = hashPassword.toString(crypto.enc.Utf8);
-    
-            const user = await queries.User.findByUser(req.body.email);
-            if (user !== null && bcrypt.compareSync(req.body.password, user.password)){
+            // Desencripto la contraseña
+            const hashPassword = crypto.AES.decrypt(req.body.password, privateSeed);
+            const decryptedPassword = hashPassword.toString(crypto.enc.Utf8);
+
+            const user = await queries.User.findByUser(req.body.username);
+            if (user !== null && bcrypt.compareSync(decryptedPassword, user.password)){
                 res.status(200).json({
                     access: "Granted",
                     user: {
-                        username: user.user,
+                        email: user.email,
                         name: `${user.first_name} ${user.last_name}`,
-                        image: `${user.image_url}`,
-                        points: `${user.points}`
+                        points: user.points
                     } 
                 })
             } else {

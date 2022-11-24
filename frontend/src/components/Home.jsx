@@ -45,6 +45,7 @@ const Home = () => {
                <a href='#/Products' class="a-product">TECNOLOGÍA</a>
             </MDBCol>
          </MDBRow>
+         <Login/>
       </div>
    );
 }
