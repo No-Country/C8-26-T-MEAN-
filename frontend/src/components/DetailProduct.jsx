@@ -1,6 +1,4 @@
-
 import Navbar from './Navbar'
-import '../styles/categories.css'
 import DetailCard from './DetailCard'
 import axios from 'axios'
 import React,{useState,useEffect} from 'react'
@@ -18,7 +16,6 @@ const DetailProduct = () => {
   return (
     <div>
        <Navbar />
-        <h1>detail Products</h1>
         <DetailCard  product={product}/>
     </div>
    
