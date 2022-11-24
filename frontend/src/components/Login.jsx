@@ -2,17 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 // import { Redirect } from 'react-router-dom';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBCheckbox,
-  MDBIcon
-}  from 'mdb-react-ui-kit';
+// import {
+//   MDBBtn,
+//   MDBContainer,
+//   MDBRow,
+//   MDBCol,
+//   MDBCard,
+//   MDBCardBody,
+//   MDBInput,
+//   MDBCheckbox,
+//   MDBIcon
+// }  from 'mdb-react-ui-kit';
 import crypto from 'crypto-js'
 const BACKEND_ADDRESS = 'http://localhost:3001';
 

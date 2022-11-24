@@ -21,21 +21,14 @@ function Navbar() {
                 <MDBIcon fas icon='shopping-cart'/>
               </MDBNavbarLink>
             </li>
-          </ul>
-        </div>
-      </div>
-      <div className="menuBackground">
-        <div id="menuContainer">
-          <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
-          <input type="checkbox" id="show-menu" role="button" />
-          <ul id="menu">
-            <li><a><Link to='/Categories' >CATÁLOGO </Link></a></li>
-            <li><a><Link to='/Gift' >¿QUÉ ES GIFTCLUB?</Link></a></li>
-            <li><a><Link to='/Faq' >PREGUNTAS FRECUENTES</Link></a></li>
+            <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
+              Ingresar
+            </MDBBtn></li>
           </ul>
         </div>
       </div>
     </div>
+      
   );
 }
 

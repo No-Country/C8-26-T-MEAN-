@@ -1,23 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import Navbar from './Navbar'
+import React from 'react'
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import '../styles/gift.css'
+import { Link, useNavigate } from 'react-router-dom';
+import '../styles/product.css'
+const Product = ({props}) => {
 
-const Product = (props) => {
+  const navigate =useNavigate() 
+  const handleClick=()=>{
+    navigate(`/DetailProduct/${props.id}`);
+  }
   return (
+    <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
+    <article   onClick={handleClick} >
+       <div className='Product-square'>
 
-        <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
+           <h3 class="tex-product">{props.product_name} </h3>
             <img
               src={props.image_url}
               className='img-fluid rounded-circle'
               alt=''
-            />
-            <h3 class="tex-product">{props.product_name} </h3>
-            <p>{props.short_description}</p>
-            <h4>{props.price}</h4>
-            <button>Ver</button><button>Canjear</button>
-        </MDBCol>
+              />
+           
+            <h4>{props.price} Puntos</h4>
+       </div>
+    </article>
+   </MDBCol>
   )
 }
 
