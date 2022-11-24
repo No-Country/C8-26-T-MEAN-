@@ -14,21 +14,17 @@ function Navbar() {
 
   return (
     <div>
-      <div className="menuBackground">
-        <div id="menuContainerInfo">
-          <input type="checkbox" id="show-menu" role="button" />
-          <ul id="menu">
-            <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
-              Ingresar
-            </MDBBtn></li>
-            
-            <li>
+      <div>
+          <ul className='lista-boton-carrito'>
+          <li>
               <MDBNavbarLink id="icono" to='#'>
                 <MDBIcon fas icon='shopping-cart'/>
               </MDBNavbarLink>
             </li>
+            <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
+              Ingresar
+            </MDBBtn></li>
           </ul>
-        </div>
       </div>
       <div className="menuBackground">
         <div id="menuContainer">

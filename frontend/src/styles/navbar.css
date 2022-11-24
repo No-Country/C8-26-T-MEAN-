@@ -36,6 +36,11 @@ li {
     vertical-align: top;
     margin-right: 1px;
 }
+.lista-boton-carrito{
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+}
+
 
 /*Estilo para los links del menú*/
 #icono {
@@ -150,7 +155,7 @@ input[type=checkbox]:checked~#menu {
     /*Make all menu links full width*/
     ul li,
     li a {
-        width: 100%
+        width: auto
     }
 
     /*Display 'show menu' link*/
