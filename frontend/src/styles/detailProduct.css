@@ -11,7 +11,13 @@ img {
 }
 
 .btn-canjear {
-    left: 70px;
+    left: 100px;
+}
+
+.btn-categ-prod {
+    display: flex;
+    margin-left: 3rem !important;
+    margin-top: 20px;
 }
 
 .nombre-product {
