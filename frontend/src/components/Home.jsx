@@ -18,7 +18,7 @@ const Home = () => {
                   className='img-fluid rounded-circle'
                   alt=''
                />
-               <a href='#' class="a-product">AHORROS</a>>
+               <a href='#' class="a-product">AHORROS</a>
             </MDBCol>
             <MDBCol lg='2' md='2' className='mb-4 hover-zoom'>
                <img
