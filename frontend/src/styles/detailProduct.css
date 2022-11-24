@@ -11,7 +11,7 @@ img {
 }
 
 .btn-canjear {
-    left: 100px;
+    left: 70px;
 }
 
 .nombre-product {
@@ -19,6 +19,7 @@ img {
     color: #56042c;
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
 }
 
 .detail--product-img {
