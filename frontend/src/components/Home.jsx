@@ -12,7 +12,7 @@ const Home = () => {
       <div>
          <Navbar />
          <CarouselOfi />
-         <Categories />
+         {/* <Categories /> */}
          {/* <MDBRow>
             <MDBCol lg='2' md='2' className='mb-4 hover-zoom'>
                <img
