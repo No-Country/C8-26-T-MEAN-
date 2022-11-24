@@ -49,9 +49,9 @@ module.exports = {
         where: {
             email: user
         },
-        // include: [
-        //     { association: 'roles' }
-        // ] 
+        include: [
+            { association: 'roles' }
+        ] 
     }),
     
     create: async (user) => await db.User.create(user),
