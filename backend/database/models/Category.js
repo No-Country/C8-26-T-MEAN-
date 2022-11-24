@@ -11,6 +11,10 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(50),
             allowNull: false
+        },
+        image_url: {
+            type: dataTypes.STRING(200),
+            defaultValue: null
         }
     };
 

@@ -23,7 +23,7 @@ const Categories = () => {
       <MDBRow>
         {
           categories?.map(categorie => (
-            <Categorie name={categorie.name} key={categorie.id} />
+            <Categorie props={categorie} key={categorie.id} />
           ))
 
 
