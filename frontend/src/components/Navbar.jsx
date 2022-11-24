@@ -16,7 +16,7 @@ function Navbar() {
     <div>
       <div>
           <ul className='lista-boton-carrito'>
-          <li>
+          <li id="icono_li">
               <MDBNavbarLink id="icono" to='#'>
                 <MDBIcon fas icon='shopping-cart'/>
               </MDBNavbarLink>
