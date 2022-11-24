@@ -15,15 +15,17 @@ function Navbar() {
   return (
     <div>
       <div>
-      <Link to='/' >
-        <span className='gitclub-logo'></span>
-         </Link>
+        <Link to='/' >
+          <span className='gitclub-logo'></span>
+        </Link>
         <ul className='lista-boton-carrito'>
+          {/*
           <li id="icono_li">
             <MDBNavbarLink id="icono" to='#'>
               <MDBIcon fas icon='shopping-cart' />
             </MDBNavbarLink>
           </li>
+          */}
           <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
             Ingresar
           </MDBBtn></li>
