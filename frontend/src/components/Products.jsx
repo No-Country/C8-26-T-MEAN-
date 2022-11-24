@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Navbar from './Navbar'
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import '../styles/gift.css'
 import Product from './Product';
 
 const Products = () => {
