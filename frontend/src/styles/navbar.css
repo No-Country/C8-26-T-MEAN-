@@ -1,16 +1,19 @@
 body {
     margin: 0
 }
-
+.gitclub-logo{
+    position: absolute;
+    width: 76px;
+    height: 60px;
+    left: 38px;
+    top: 10px;
+    background: url(../assets/logo_2.png);
+}
 .menuBackground {
     background: #49BCE3;
     width: 100%;
     height: 50px;
     text-align: center;
-}
-
-#menuContainerInfo {
-    text-align: right;
 }
 
 #menuContainer {
@@ -64,7 +67,7 @@ li {
 
 li a {
     display: block;
-    min-width: 300px;
+    min-width: 270px;
     height: 50px;
     text-align: center;
     line-height: 50px;

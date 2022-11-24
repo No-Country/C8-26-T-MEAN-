@@ -6,25 +6,26 @@ import {
   MDBIcon,
   MDBNavbarLink
 } from 'mdb-react-ui-kit';
-import { useAuth0 } from '@auth0/auth0-react' 
+import { useAuth0 } from '@auth0/auth0-react'
 
 function Navbar() {
 
-  const {loginWithRedirect} = useAuth0();
+  const { loginWithRedirect } = useAuth0();
 
   return (
     <div>
       <div>
-          <ul className='lista-boton-carrito'>
+        <span className='gitclub-logo'></span>
+        <ul className='lista-boton-carrito'>
           <li id="icono_li">
-              <MDBNavbarLink id="icono" to='#'>
-                <MDBIcon fas icon='shopping-cart'/>
-              </MDBNavbarLink>
-            </li>
-            <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
-              Ingresar
-            </MDBBtn></li>
-          </ul>
+            <MDBNavbarLink id="icono" to='#'>
+              <MDBIcon fas icon='shopping-cart' />
+            </MDBNavbarLink>
+          </li>
+          <li><MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
+            Ingresar
+          </MDBBtn></li>
+        </ul>
       </div>
       <div className="menuBackground">
         <div id="menuContainer">
