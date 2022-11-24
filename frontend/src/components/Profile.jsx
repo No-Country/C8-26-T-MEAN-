@@ -1,28 +1,39 @@
-import React from 'react'
-import { useAuth0 } from "@auth0/auth0-react";
-import JSONPretty from 'react-json-pretty'
-import 'react-json-pretty/themes/monikai.css'
-const Profile = () => {
-    
-    const {user, isAuthenticated, isLoading} = useAuth0()
-    
-    if(isLoading) return <h1>Loading...</h1>
-    return (
-        isAuthenticated && (
-            <div>
-    
-            <img src={user.picture} alt={user.name} />
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
-        
-        <JSONPretty data={user}/>
+// import React from 'react'
+// import { useAuth0 } from "@auth0/auth0-react";
+// import JSONPretty from 'react-json-pretty'
+// import 'react-json-pretty/themes/monikai.css'
+// import { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import User from './User'
 
-            </div>
-        )
-    )
+// const Profile = () => {
+
+//     const [users, setUsers] = useState([])
+
+//     useEffect(() =>{
+//         const url = "http://localhost:3001/users"
+//         axios.get(url)
+//         .then(res => setUsers(res.data.data))
+//         .catch(e => console.log(e, "entro"))
+//     },[])
+//     console.log(users);
+    
+//     return (
+    
+//             <div>
+//                 {
+//                     users.map((user, i) =>{
+//                         return i < 1 ? (  <User {...user} key={i}/>) : null
+//                     }) 
+//                 }
+    
+
+//             </div>
+//         )
+    
 
 
     
-}
+// }
 
-export default Profile;
+// export default Profile;
