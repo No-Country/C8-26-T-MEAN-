@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { redirect } from "react-router-dom";
+// import { Redirect } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setValue } from '../store/slices/users.slice';
+import { setValuePoints } from '../store/slices/points.slice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import {
@@ -24,12 +31,15 @@ function Login(){
 	console.log(username);
 	const [loginError, setLoginError] = useState(false);
 	const [redirect, setRedirect] = useState(false);
-	
+	const dispatch = useDispatch();
+
+
+	const notifySucces = () => toast("Ingreso correctamente");
+	const notifyError = () => toast("Error al Ingresar");
 	const loginFetch = (e) => {
 		e.preventDefault();
 		setLoginError(false);
 
-		
 		const cryptedPassword = crypto.AES.encrypt(password.current.value, privateSeed).toString();
 /*		const hashPassword = crypto.AES.decrypt(cryptedPassword, privateSeed);
 		const decryptedPassword = hashPassword.toString(crypto.enc.Utf8); */
@@ -49,7 +59,7 @@ function Login(){
 				
 			}
 		}
-
+	
 		fetch(`${BACKEND_ADDRESS}/users/auth`, {
 			method: 'POST',
 			headers: {
@@ -58,7 +68,18 @@ function Login(){
 			body: JSON.stringify(data),
 		})
 			.then(response => response.json())
-			.then(data => registerLogin(data));
+			.then(data => 
+				{
+					//console.log(data.user)
+					registerLogin(data)
+                   dispatch(setValue(data.user.name))     
+                   dispatch(setValuePoints(data.user.points))     
+                   notifySucces()
+				   
+				}).catch(e=>{
+					console.log(e)
+					notifyError()
+				});
 
 	}
 	
@@ -98,6 +119,18 @@ function Login(){
 			  </MDBCol>
 			</MDBRow>
 		  </MDBContainer>
+		  <ToastContainer 
+		position="top-center"
+		autoClose={1000}
+		hideProgressBar
+		newestOnTop={false}
+		closeOnClick ={false}
+		rtl={false}
+		pauseOnFocusLoss
+		draggable
+		pauseOnHover
+		theme="dark"
+		  />
 		</div>
 	  )
 	//   (

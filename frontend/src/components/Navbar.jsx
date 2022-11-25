@@ -6,7 +6,9 @@ import {
   MDBIcon,
   MDBNavbarLink
 } from 'mdb-react-ui-kit';
-import { useAuth0 } from '@auth0/auth0-react'
+//import { useAuth0 } from '@auth0/auth0-react'
+
+import {useSelector} from 'react-redux'
 
 function Navbar() {
 
@@ -39,22 +41,35 @@ function Navbar() {
 
 const [user, setUser] = useSessionStorage('usuario','');
 
+  //const { loginWithRedirect } = useAuth0();
+   const userName= useSelector(state =>state.user)
+   const points= useSelector(state =>state.points)
 
   return (
     <div>
       <div>
       <Link to='/' >
         <span className='gitclub-logo'></span>
-         </Link>
+      </Link>
         <ul className='lista-boton-carrito'>
           <li id="icono_li">
             <MDBNavbarLink id="icono" to='#'>
               <MDBIcon fas icon='shopping-cart' />
             </MDBNavbarLink>
           </li>
-          <li><MDBBtn size='lg' rounded className='mx-2' color='primary'>
-            Ingresar
-          </MDBBtn></li>
+          <li>
+              <div>
+                {userName}
+              </div>
+              <div>
+                {points} Puntos
+              </div>
+          </li>
+           <li>
+             <MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
+              Ingresar
+             </MDBBtn>
+           </li>
         </ul>
         <div> Bienvenido {user.name} tenés {user.points} puntos para canjear.</div>
       </div>

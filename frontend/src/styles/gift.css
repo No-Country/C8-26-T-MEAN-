@@ -112,9 +112,8 @@ h1 {
 }
 
 .tex-product {
-    color: black;
+    color: #56042c;
     font-size: 20px;
-    line-height: 3;
     font-weight: bold;
 }
 
@@ -122,8 +121,9 @@ h1 {
     color: rgb(40, 40, 40);
     text-align: center;
     align-items: center;
-    margin: 40px;
+    margin: 20px;
     margin-top: 4px;
+    padding-top: 20px;
 }
 
 
