@@ -71,7 +71,6 @@ const [user, setUser] = useSessionStorage('usuario','');
              </MDBBtn>
            </li>
         </ul>
-        <div> Bienvenido {user.name} tenés {user.points} puntos para canjear.</div>
       </div>
       <div className="menuBackground">
         <div id="menuContainer">

@@ -74,7 +74,8 @@ const apiUserController = {
                         email: user.email,
                         name: `${user.first_name} ${user.last_name}`,
                         points: user.points,
-                        role: user.roles.name
+                        role: user.roles.name,
+                        image: user.image_url
                     } 
                 })
             } else {

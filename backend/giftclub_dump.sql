@@ -39,8 +39,8 @@ INSERT INTO users_roles (name) VALUES ('admin');
 INSERT INTO users_roles (name) VALUES ('customer');
 
 -- Poblar la tabla de USUARIOS
-INSERT INTO users (first_name, last_name, phone_number, email, birth_date, address,  password, image_url, user_role_id, points) VALUES ('Santiago', 'Chaves', 1199999999, 'admin@gmail.com', '1992-03-17', 'Av. Siempreviva 1945', '$2a$10$cJpUFecwGlkaUL7bPC5CEO5Ge0vdjbKu4BbgyOLBREA81gn4SfmeC', 'user1.jpg', '1', "0");
-INSERT INTO users (first_name, last_name, phone_number, email, birth_date, address,  password, image_url, user_role_id, points) VALUES ('Carlos', 'Peréz', 1193229999, 'customer@gmail.com', '1990-06-29', 'Av. Siempremuerta 1925', '$2a$10$DjvjQBkS0b8x5r0WlZnMwuM3W7M3wPkYoVMWQ/FJGAA/NNta6qeyq', 'user12.jpg', '2', "100000");
+INSERT INTO users (first_name, last_name, phone_number, email, birth_date, address,  password, image_url, user_role_id, points) VALUES ('Santiago', 'Chaves', 1199999999, 'admin@gmail.com', '1992-03-17', 'Av. Siempreviva 1945', '$2a$10$cJpUFecwGlkaUL7bPC5CEO5Ge0vdjbKu4BbgyOLBREA81gn4SfmeC', 'http://localhost:3000/users-avatar-admin.jpg', '1', "0");
+INSERT INTO users (first_name, last_name, phone_number, email, birth_date, address,  password, image_url, user_role_id, points) VALUES ('Carlos', 'Peréz', 1193229999, 'customer@gmail.com', '1990-06-29', 'Av. Siempremuerta 1925', '$2a$10$DjvjQBkS0b8x5r0WlZnMwuM3W7M3wPkYoVMWQ/FJGAA/NNta6qeyq', 'http://localhost:3000/users-avatar-customer.png', '2', "100000");
 
 -- Poblar la tabla PRODUCTOS VISITADOS DEL USUARIO
 INSERT INTO users_visited_products (user_id, product_id, last_visited) VALUES (2, 1, '2022-10-25');
