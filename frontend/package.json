@@ -20,7 +20,8 @@
     "react-hook-form": "^7.39.4",
     "react-json-pretty": "^2.2.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.4.3"
+    "react-router-dom": "^6.4.3",
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
