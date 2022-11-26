@@ -19,9 +19,7 @@ const DetailProduct = () => {
   return (
     <div>
       <Navbar />
-      <Link to="/Categories">
-        <MDBBtn rounded className='btn-categ-prod' color='dark'>CATEGORÍAS</MDBBtn>
-      </Link>
+      <MDBBtn rounded className='btn-categ-prod' color='dark'>CATEGORÍAS</MDBBtn>
       <DetailCard product={product} />
     </div >
 
