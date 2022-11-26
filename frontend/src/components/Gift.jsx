@@ -8,11 +8,9 @@ import Navbar from './Navbar'
 const Gift = () => {
   return (
     <div>
- <Navbar/>
-      <Link to='/' className='arrow'><MDBIcon fas icon="angle-double-left" />
-      </Link>
+      <Navbar />
       <div className='gift'>
-        <img src={logo} alt="logo" class="img-preg"/>
+        <img src={logo} alt="logo" class="img-preg" />
         <div className='text'>
           <h1 class="tex-canjea2">¿QUÉ ES GIFT CLUB?</h1>
           <p>Es un programa gratuito de beneficios que permite acumular puntos para ser canjeados por premios dentro de un amplio catálogo. Este programa de fidelización permite sumar puntos cada vez que se realizan consumos con tarjeta de débito y crédito, según los siguientes criterios:
