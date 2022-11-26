@@ -77,10 +77,9 @@ const [user, setUser] = useSessionStorage('usuario','');
           <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
-            <li><a><Link to='/' >HOME </Link></a></li>
-            <li><a><Link to='/Categories' >CATÁLOGO </Link></a></li>
-            <li><a><Link to='/Gift' >¿QUÉ ES GIFTCLUB?</Link></a></li>
-            <li><a><Link to='/Faq' >PREGUNTAS FRECUENTES</Link></a></li>
+            <li><a><Link to='/' >INICIO</Link></a></li>
+            <li><a><Link to='/Categories' >CATÁLOGO</Link></a></li>
+            <li><a><Link to='/Gift' >¿QUÉ ES GIFTCLUB? | PREGUNTAS FRECUENTES</Link></a></li>
           </ul>
         </div>
       </div>
