@@ -2,10 +2,49 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50 200px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
 
-    min-height: 100vh;
-    gap: 2rem;
-    padding: 0 200px
+.img-gift{
+    max-width: 20%;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/*NAV BAR*/
+
+#menu{
+    background-color: black;
+    color: #fff !important;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+
+    
+}
+
+#menuContainer{
+background-color: black;
+}
+
+#icono{
+    color:#56042c;
+}
+.user-name{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px !important;
+    font-stretch: extra-condensed !important;
+
+}
+
+.user-points{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px !important;
+    font-stretch: extra-condensed !important;
+    color:#56042c;
+    font-style: italic;
 }
 
 .faq-p {
@@ -32,12 +71,15 @@ h1 {
     font-weight: 600;
     font-size: 19px;
     margin: 50px 0;
+    width: 90%;
+    text-align: start;
 
 }
 
 .faq-p {
     font-weight: 600;
     text-align: center;
+    font-size: 30px !important;
 
 }
 
@@ -46,9 +88,17 @@ h1 {
     text-align: center;
     align-items: center;
     margin-left: 10px;
+    font-size: 25px !important;
+    width: 50% !important;
 
 }
-
+/*MENU MOBIL*/
+.show-menu{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
 
 /*HOME*/
 
@@ -66,22 +116,23 @@ h1 {
 
 .btn-ingresar {
     display: inline-block;
-    padding: 10px 160px;
-    font-size: 15px;
+    padding: 10px 30px;
+    font-size: 20px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     outline: none;
     color: rgb(255, 255, 255);
-    background-color: rgb(172, 38, 143);
+    background-color: rgb(0, 0, 0);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
 }
 
 .btn-ingresar:active {
     display: inline-block;
-    padding: 10px 160px;
-    font-size: 15px;
+    padding: 10px 30px;
+    font-size: 20px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -89,7 +140,7 @@ h1 {
     color: rgb(255, 255, 255);
     background-color: rgb(172, 38, 143);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     transform: translateY(4px);
 }
 
@@ -102,13 +153,12 @@ h1 {
 
 /*CATALOGO*/
 .tex-canjea {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-align: center;
-    background-color: rgb(172, 38, 143);
     padding: 15px;
-    border-radius: 550px;
-    width: 75%;
-    margin-left: 140px;
+    width: 100%;
+    font-size: 30px;
+    background-color: aliceblue;
 }
 
 .tex-product {
@@ -132,9 +182,15 @@ h1 {
 /*QUE ES GIFTCLUB*/
 
 .img-preg {
-    max-width: 25%;
+    max-width: 30%;
+    margin-left: 0px;
+    margin-right: 25px;
 }
-
+.vl {
+    border-left: 20px solid rgb(172, 38, 143);
+    height: 500px;
+    
+  }
 .tex-canjea2 {
     color: rgb(255, 255, 255);
     text-align: center;
@@ -152,19 +208,22 @@ h1 {
 
 /*PREG FRECUENTES*/
 .faq-preg {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    background-color: rgb(172, 38, 143);
+    color:black;
+    text-align: center !important;
+    background-color:#fff;
     padding: 5px;
-    width: 50%;
-    margin-left: 280px;
+    width: 100%;
     align-items: center;
+    margin-top: 25px;
+    font-size: 40px;
+    
 
 }
 
 .text {
     text-align: center;
     align-items: center;
+   
 }
 
 /*FIN PREG FRECUENTES*/

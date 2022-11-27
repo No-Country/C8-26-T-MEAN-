@@ -6,11 +6,13 @@ import {
   MDBIcon,
   MDBNavbarLink
 } from 'mdb-react-ui-kit';
+
 //import { useAuth0 } from '@auth0/auth0-react'
 
 import {useSelector} from 'react-redux'
 
 function Navbar() {
+
 
   const useSessionStorage = (keyName, defaultValue) => {
 		const [storedValue, setStoredValue] = React.useState(() => {
@@ -58,15 +60,15 @@ const [user, setUser] = useSessionStorage('usuario','');
             </MDBNavbarLink>
           </li>
           <li>
-              <div>
+              <div class="user-name">
                 {userName}
               </div>
-              <div>
+              <div class="user-points">
                 {points} Puntos
               </div>
           </li>
            <li>
-             <MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
+             <MDBBtn onClick={() => loginWithRedirect(login)} size='lg' rounded className='mx-2' class="btn-ingresar">
               Ingresar
              </MDBBtn>
            </li>
@@ -77,10 +79,10 @@ const [user, setUser] = useSessionStorage('usuario','');
           <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
           <input type="checkbox" id="show-menu" role="button" />
           <ul id="menu">
-            <li><a><Link to='/' >HOME </Link></a></li>
-            <li><a><Link to='/Categories' >CATÁLOGO </Link></a></li>
-            <li><a><Link to='/Gift' >¿QUÉ ES GIFTCLUB?</Link></a></li>
-            <li><a><Link to='/Faq' >PREGUNTAS FRECUENTES</Link></a></li>
+            <li><a><Link to='/' id="menu" >HOME </Link></a></li>
+            <li><a><Link to='/Categories' id="menu" >CATÁLOGO </Link></a></li>
+            <li><a><Link to='/Gift' id="menu">¿QUÉ ES GIFTCLUB?</Link></a></li>
+            <li><a><Link to='/Faq' id="menu">PREGUNTAS FRECUENTES</Link></a></li>
           </ul>
         </div>
       </div>
@@ -89,5 +91,4 @@ const [user, setUser] = useSessionStorage('usuario','');
   );
 }
 
-
-export default Navbar
+export default Navbar;

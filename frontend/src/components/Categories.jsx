@@ -18,7 +18,7 @@ const Categories = () => {
   return (
     <div>
       <Navbar />
-      <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
+      <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo:</h1>
       <MDBRow>
         {
           categories?.map(categorie => (
@@ -27,6 +27,7 @@ const Categories = () => {
 
 
         }
+    
       </MDBRow>
 
 
