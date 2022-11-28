@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.png'
 import '../styles/gift.css'
-import { MDBAccordion, MDBAccordionItem, MDBIcon } from 'mdb-react-ui-kit';
+import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
 import Navbar from './Navbar'
 
 const Gift = () => {
