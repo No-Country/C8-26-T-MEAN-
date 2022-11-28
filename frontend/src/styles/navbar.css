@@ -1,7 +1,7 @@
 body {
     margin: 0
 }
-.gitclub-logo{
+.gitclub-logo {
     position: absolute;
     width: 76px;
     height: 60px;
@@ -38,7 +38,8 @@ li {
     vertical-align: top;
     margin-right: 1px;
 }
-.lista-boton-carrito{
+
+.lista-boton-carrito {
     display: flex;
     flex-flow: row-reverse wrap-reverse;
 }
