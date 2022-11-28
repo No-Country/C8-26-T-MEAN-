@@ -4,7 +4,7 @@ import '../styles/categories.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Categorie from './Categorie';
-import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { MDBRow} from 'mdb-react-ui-kit';
 const Categories = () => {
   const [categories, setCategories] = useState()
   useEffect(() => {
@@ -19,16 +19,15 @@ const Categories = () => {
     <div>
       <Navbar />
       <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
-      <MDBRow>
-        {
-          categories?.map(categorie => (
-            <Categorie props={categorie} key={categorie.id} />
-          ))
-
-
-        }
-      </MDBRow>
-
+      <div className='container'>
+        <MDBRow>
+          {
+            categories?.map(categorie => (
+              <Categorie props={categorie} key={categorie.id} />
+            ))
+          }
+        </MDBRow>
+      </div>
 
       { /**
          *  <MDBRow>
