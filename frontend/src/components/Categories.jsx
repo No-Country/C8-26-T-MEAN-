@@ -1,9 +1,8 @@
-import React from 'react'
-import Navbar from './Navbar'
-import '../styles/categories.css'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import Navbar from './Navbar'
 import Categorie from './Categorie';
+import '../styles/categories.css'
 import { MDBRow} from 'mdb-react-ui-kit';
 const Categories = () => {
   const [categories, setCategories] = useState()
@@ -28,31 +27,6 @@ const Categories = () => {
           }
         </MDBRow>
       </div>
-
-      { /**
-         *  <MDBRow>
-        <MDBCol lg='2' md='2' className='mb-4 hover-zoom'>
-          <img
-            src='https://wallpapercave.com/wp/wp7304269.jpg'
-            className='img-fluid rounded-circle'
-            alt=''
-          />
-          <a href='#' class="a-product">AHORROS</a>
-        </MDBCol>
-        <MDBCol lg='2' md='2' className='mb-4 hover-zoom'>
-          <img
-            src='https://wallpapercave.com/wp/wp7304269.jpg'
-            className='img-fluid rounded-circle'
-            alt=''
-          />
-          <a href='#' class="a-product">BEBÉS</a>
-        </MDBCol>
-      </MDBRow>
-      */
-
-      }
-
-
     </div>
   );
 }
