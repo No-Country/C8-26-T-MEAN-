@@ -92,12 +92,6 @@ function Login(){
 				   ¡Bienvenido a<br />
 				  <span className="text-primary">GIFTClub!</span>
 				</h1>
-				<p className='px-3'>
-				  ¿Qué es GiftClub? GiftClub es un sistema de puntos acumulables que pueden ser canjeados
-				  por cualquiera de los productos que se encuentran dentro del catálogo de este sitio. 
-				  Recuerda que a más puntos más posibilidades de llevarte todos los productos. (;
-				  <br />¡Que los disfrutes!
-				</p>
 			  </MDBCol>
 			  <MDBCol md='6'>
 				<MDBCard className='my-5'>
