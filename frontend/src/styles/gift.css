@@ -233,3 +233,10 @@ h1 {
         flex-wrap: wrap;
     }
 }
+
+
+.login-modal{
+    text-align: center !important;
+    margin-left: 80px !important;
+
+}
