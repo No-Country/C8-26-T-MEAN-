@@ -79,7 +79,7 @@ const [user, setUser] = useSessionStorage('usuario','');
           <ul id="menu">
             <li><a><Link to='/' >INICIO</Link></a></li>
             <li><a><Link to='/Categories' >CATÁLOGO</Link></a></li>
-            <li><a><Link to='/Gift' >¿QUÉ ES GIFTCLUB? | PREGUNTAS FRECUENTES</Link></a></li>
+            <li><a><Link to='/Gift' >FAQ's</Link></a></li>
           </ul>
         </div>
       </div>
