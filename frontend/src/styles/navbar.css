@@ -1,6 +1,7 @@
 body {
     margin: 0
 }
+
 .gitclub-logo {
     position: absolute;
     width: 76px;
@@ -9,6 +10,7 @@ body {
     top: 10px;
     background: url(../assets/logo_2.png);
 }
+
 .menuBackground {
     background: #49BCE3;
     width: 100%;
@@ -123,11 +125,10 @@ ul li a:hover+.hidden,
 
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     color: black;
     font-weight: bold;
-    background: #FEC310;
+    background: #49BCE3;
     text-align: center;
     padding: 16px 0;
     display: none;
@@ -168,6 +169,9 @@ input[type=checkbox]:checked~#menu {
 
     /*Display 'show menu' link*/
     .show-menu {
-        display: block
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 19px
     }
 }

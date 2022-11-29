@@ -74,8 +74,8 @@ const [user, setUser] = useSessionStorage('usuario','');
       </div>
       <div className="menuBackground">
         <div id="menuContainer">
-          <label htmlFor="show-menu" className="show-menu">Mostrar menú</label>
-          <input type="checkbox" id="show-menu" role="button" />
+          <label htmlFor="show-menu" className="show-menu">¡BIENVENIDO!</label>
+          {/*<input type="checkbox" id="show-menu" role="button" />*/}
           <ul id="menu">
             <li><a><Link to='/' >INICIO</Link></a></li>
             <li><a><Link to='/Categories' >CATÁLOGO</Link></a></li>
