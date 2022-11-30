@@ -29,20 +29,23 @@
     border-radius: 20px;
     box-sizing: border-box;
     width: 892px;
-    height: 582px;
+    height: auto;
+    margin-bottom: 20px;
     
 }
 .purchase-box-title{
     background: #FEC310;
     border-radius: 20px 20px 0px 0px;
     width: 894px;
-    height: 64px;
+    height: 55px;
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.1px;
     padding-left: 48px;
-    color: #333333;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
 }
 .purchase-product{
     padding-top: 50px;
@@ -78,8 +81,8 @@
    color:  #56042C;
    font-family: 'Roboto';
    font-style: normal;
-   font-weight: 600;
-   font-size: 20px;
+   font-weight: bold;
+   font-size: 19px;
    line-height: 40px;
 }
 .purchase-total-number{
@@ -105,10 +108,9 @@
 .purchase-btn1{
     width: 345px;
     height: 59px;
-  
+    margin-bottom: 20px;
     border: 2px solid #FEC310;
     border-radius: 30px;
-  
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 700;
@@ -124,7 +126,7 @@
 .purchase-btn2{
     width: 257px;
     height: 59px;
-   
+    margin-bottom: 20px;
     background: rgba(254, 195, 16, 0.8);
     border: none;
     border-radius: 30px;

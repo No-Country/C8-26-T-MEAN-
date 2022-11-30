@@ -9,11 +9,11 @@ const Purchase = () => {
       <Navbar />
       <div className='purchase-global'>
         <div className='purchase-global-left'>
-          <h1 className='purchase-global-title'>Carrito de Compras</h1>
+          <h2 className='purchase-global-title'>Carrito de Compras</h2>
 
         </div>
         <div className='purchase-box'>
-          <h1 className='purchase-box-title'>Detalle de Productos</h1>
+          <h3 className='purchase-box-title'>DETALLE DE PRODUCTOS</h3>
           <div className='purchase-product'>
             <div>
               <img src={tasa} alt="" />
@@ -30,15 +30,15 @@ const Purchase = () => {
                 <option value="">2</option>
                 <option value="">3</option>
               </select>
-              <button>Eliminar product</button>
+              <button>Eliminar producto</button>
             </div>
           </div>
           <div className='purchase-total'>
 
             <div className='purchase-total-text'>
-              <span> Tus Puntos:   </span>
-              <span> Puntos a Canjear</span>
-              <span> Puntos Restantes</span>
+              <span> Tus puntos:   </span>
+              <span> Puntos a canjear:</span>
+              <span> Puntos restantes:</span>
             </div>
             <div className='purchase-total-number'>
               <span> 3200</span>
