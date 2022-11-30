@@ -31,5 +31,8 @@ img {
 .detail--product-img {
     max-width: 300px;
 }
+.p{
+    margin-left: 20px;
+}
 
 .detail--product-text {}
