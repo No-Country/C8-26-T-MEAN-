@@ -34,6 +34,14 @@ module.exports = {
         ]
     }),
 
+    findAmmount: async (userId) => await db.Order.findOne({
+        where: {
+            user_id: userId,
+            status_id: 1
+        },
+        attributes: ['ammount'],
+    }),
+
     create: async (user) => await db.Order.create({
         user_id: user.id,
         shipping_address: user.address,

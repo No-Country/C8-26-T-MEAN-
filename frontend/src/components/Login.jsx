@@ -51,6 +51,7 @@ function Login(){
 		const registerLogin = data => {
 			if (data.access === 'Granted') {
 				sessionStorage.setItem('usuario', JSON.stringify(data.user));
+				// localStorage.setItem('usuario', JSON.stringify(data.user));
 				setRedirect(true);
 
 			} else {

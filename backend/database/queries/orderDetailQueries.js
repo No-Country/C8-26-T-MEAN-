@@ -41,7 +41,7 @@ module.exports = {
 
         create: async (orderId, productId) =>{
             let product = await queries.Product.find(productId);
-            if (product.discount > 0) product.regular_price *= 1 - (parseInt(product.discount) / 100);
+            // if (product.discount > 0) product.regular_price *= 1 - (parseInt(product.discount) / 100);
 
             let isProductAdded = await queries.OrderDetail.findMatch(orderId, productId);
 
@@ -62,7 +62,7 @@ module.exports = {
 
             items_q += 1;
 
-            ammount = parseFloat(ammount) + product.regular_price;
+            ammount = parseFloat(ammount) + product.price;
 
 
             //Agrego el producto y precio en la tabla orders

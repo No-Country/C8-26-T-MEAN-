@@ -2,6 +2,7 @@ const db = require("../database/models");
 const queries = require('../database/queries/index')
 const crypto = require("crypto-js");
 const bcrypt = require('bcryptjs');
+const orderQueries = require("../database/queries/orderQueries");
 const Op = db.Sequelize.Op;
 
 const apiUserController = {
@@ -38,7 +39,8 @@ const apiUserController = {
             id: id
         },
         include: [
-            {association: 'roles'}
+            {association: 'roles'},
+            {association: 'orders_user'},
         ]
     }),
 
@@ -66,16 +68,21 @@ const apiUserController = {
             const decryptedPassword = hashPassword.toString(crypto.enc.Utf8);
 
             const user = await queries.User.findByUser(req.body.username);
-            console.log(user);
+            // console.log(user);
             if (user !== null && bcrypt.compareSync(decryptedPassword, user.password)){
+                
+                const orderPoints = await orderQueries.findAmmount(user.id)
+
                 res.status(200).json({
                     access: "Granted",
                     user: {
+                        id: user.id,
                         email: user.email,
                         name: `${user.first_name} ${user.last_name}`,
                         points: user.points,
                         role: user.roles.name,
-                        image: user.image_url
+                        image: user.image_url,
+                        orderPoints:orderPoints
                     } 
                 })
             } else {
