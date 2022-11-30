@@ -47,12 +47,14 @@ module.exports = {
 
     findByUser: async (user) => await db.User.findOne({
         where: {
-            email: user
+            email: user,
         },
         include: [
-            { association: 'roles' }
-        ] 
+            { association: 'roles' },
+            { association: 'orders_user' },
+        ]
     }),
+    
     
     create: async (user) => await db.User.create(user),
 

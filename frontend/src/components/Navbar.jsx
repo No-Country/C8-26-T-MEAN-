@@ -3,14 +3,28 @@ import { Link } from 'react-router-dom';
 import '../styles/navbar.css'
 import {
   MDBBtn,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
   MDBIcon,
-  MDBNavbarLink
+  MDBNavbarLink,
+  MDBContainer,
+  MDBInput,
+  MDBCheckbox,
 } from 'mdb-react-ui-kit';
+
+
 //import { useAuth0 } from '@auth0/auth0-react'
 
 import {useSelector} from 'react-redux'
+import Login from './Login';
 
 function Navbar() {
+
 
   const useSessionStorage = (keyName, defaultValue) => {
 		const [storedValue, setStoredValue] = React.useState(() => {
@@ -41,6 +55,7 @@ function Navbar() {
 
 const [user, setUser] = useSessionStorage('usuario','');
 
+
   //const { loginWithRedirect } = useAuth0();
    const userLog= useSelector(state =>state.user)
    //const points= useSelector(state =>state.points)
@@ -66,9 +81,7 @@ const [user, setUser] = useSessionStorage('usuario','');
               </div>
           </li>
            <li>
-             <MDBBtn onClick={() => loginWithRedirect()} size='lg' rounded className='mx-2' color='primary'>
-              Ingresar
-             </MDBBtn>
+
            </li>
         </ul>
       </div>
@@ -88,5 +101,4 @@ const [user, setUser] = useSessionStorage('usuario','');
   );
 }
 
-
-export default Navbar
+export default Navbar;
