@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/purchase.css'
 import Navbar from './Navbar'
-import tasa from '../../public/taza.png'
+import tasa from '../assets/taza.png'
 import { Link } from 'react-router-dom'
 const Purchase = () => {
   return (
