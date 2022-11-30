@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Navbar from './Navbar'
-import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { MDBRow, MDBContainer } from 'mdb-react-ui-kit';
 import Product from './Product';
 
 const Products = () => {
@@ -16,16 +16,15 @@ const Products = () => {
 
   return (
     <section className='Products'>
-      <div>
-        <Navbar />
-        <div className='container'>
-          <MDBRow>
-            {
-              products.map(product => {
-                return <Product props={product} key={product.id} />
-              })
-            }
-            {/* <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
+      <Navbar />
+      <MDBContainer className='d-flex'>
+        <MDBRow className='d-flex justify-content-center'>
+          {
+            products.map(product => {
+              return <Product props={product} key={product.id} />
+            })
+          }
+          {/* <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
             <img
               src='https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/c/a/camiseta-de-argentina-adidas-oficial-messi-10-blanca-100020fs6565010-1.jpg'
               className='img-fluid rounded-circle'
@@ -46,9 +45,8 @@ const Products = () => {
               Cuenta con cordones elásticos y ajuste de velcro.</p>
             <h4>750 PUNTOS</h4>
           </MDBCol> */}
-          </MDBRow>
-        </div>
-      </div>
+        </MDBRow>
+      </MDBContainer>
     </section>
   )
 }
