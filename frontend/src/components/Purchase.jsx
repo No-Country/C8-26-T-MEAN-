@@ -50,7 +50,7 @@ const Purchase = () => {
           <div className='purchase-btn'>
             <Link to="/Products">
 
-              <button className='purchase-btn1'> <span>  + </span>  CANJEAR MAS PRODUCTOS</button>
+              <button className='purchase-btn1'> <span>  + </span>  CANJEAR MÁS PRODUCTOS</button>
             </Link>
             <button className='purchase-btn2'> FINALIZAR PEDIDO</button>
           </div>
