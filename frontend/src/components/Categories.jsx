@@ -18,8 +18,8 @@ const Categories = () => {
     <div>
       <Navbar />
       <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
-      <div className='container'>
-        <MDBRow>
+      <div className='container d-flex'>
+        <MDBRow className='d-flex justify-content-center'>
           {
             categories?.map(categorie => (
               <Categorie props={categorie} key={categorie.id} />

@@ -22,8 +22,8 @@ const Home = () => {
          <Navbar />
          <CarouselOfi />
          <Login />
-         <div className='container'>
-            <MDBRow>
+         <div className='container d-flex'>
+            <MDBRow className='d-flex justify-content-center'>
                {
                   categories?.map(categorie => (
                      <Categorie props={categorie} key={categorie.id} />
