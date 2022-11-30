@@ -19,7 +19,7 @@ router.get('/products/:id', apiProductController.detail);
 router.get('/categories', apiCategoryController.list);
 
 //AGREGAR AL CARRITO
-// router.post('/agregar', apiShoppingCartController.addProduct)
+router.post('/agregar', apiShoppingCartController.addProduct)
 
 
 module.exports = router;

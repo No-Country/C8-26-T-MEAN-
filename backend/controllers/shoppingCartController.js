@@ -65,10 +65,11 @@ const apiShoppingCartController = {
     // }
     addProduct: async (req,res) => {
         
-        let currentUser = req.user;
-        let currentUserPoints = req.user.points
-        let currentProductPoints = req.product.points
-        let currentUserOrderPoints = req.user.order.points
+        let currentUser = req.body.user;
+        let currentUserPoints = req.body.user.points
+        let currentProductPoints = req.body.product.points
+        let currentUserOrderPoints = req.body.user.orderPoints
+        let productId = req.body.product.id
         
         try {
 
@@ -87,7 +88,7 @@ const apiShoppingCartController = {
         //Creo la orden en blanco        
         order = await queries.Order.create(currentUser);
         //Agrego el producto si no existe
-        orderDetail = await queries.OrderDetail.create(order.id,req.params.id)
+        orderDetail = await queries.OrderDetail.create(order.id,productId)
 
         res.status(200).json({
             order,
@@ -104,15 +105,14 @@ const apiShoppingCartController = {
                 }
             } else {
             //Agrego el producto si no existe
-        order = await orderQueries.find(user.id)
-        orderDetail = await queries.OrderDetail.create(order.id,req.params.id)
+        order = await orderQueries.find(currentUser.id)
+        orderDetail = await queries.OrderDetail.create(order.id,productId)
         res.status(200).json({
             order,
             orderDetail
             })
             }
         }
-        
         
         } catch (e) {
             console.log(e);

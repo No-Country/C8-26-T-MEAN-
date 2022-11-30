@@ -46,12 +46,37 @@ module.exports = {
             let isProductAdded = await queries.OrderDetail.findMatch(orderId, productId);
 
             //Agrego el produco en la tabla intermedia orders_details
-            if( isProductAdded === null) await db.OrderDetail.create({
+            if( isProductAdded === null) {await db.OrderDetail.create({
                 order_id: orderId,
                 product_id: productId,
-                price: product.regular_price,
+                price: product.price,
                 quantity: 1
-            })
+            })} else {
+                let {quantity,price} = await db.OrderDetail.findOne({
+                    where: {
+                        order_id: orderId,
+                        product_id: productId
+                    }
+                })
+    
+                quantity += 1;
+    
+                price = parseFloat(price) + product.price;
+    
+                await db.OrderDetail.update(
+                    {
+                        quantity,
+                        price
+                    },
+                    {
+                        where:
+                        {
+                            order_id: orderId,
+                            product_id: productId
+                        }
+                    }
+                )
+            }
 
             //Me fijo la cantidad de items y el precio de la orden
             let {items_q,ammount} = await db.Order.findOne({
@@ -78,6 +103,8 @@ module.exports = {
                     }
                 }
             )
+
+            
         },
 
         update: async (productDetail) => await db.OrderDetail.update(

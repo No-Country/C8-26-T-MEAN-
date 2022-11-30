@@ -82,6 +82,7 @@ const apiUserController = {
                         points: user.points,
                         role: user.roles.name,
                         image: user.image_url,
+                        address: user.address,
                         orderPoints:orderPoints
                     } 
                 })
