@@ -3,7 +3,6 @@ import { redirect } from "react-router-dom";
 // import { Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setValue } from '../store/slices/users.slice';
-import { setValuePoints } from '../store/slices/points.slice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -36,6 +35,7 @@ function Login(){
 
 	const notifySucces = () => toast("Ingreso correctamente");
 	const notifyError = () => toast("Error al Ingresar");
+
 	const loginFetch = (e) => {
 		e.preventDefault();
 		setLoginError(false);
@@ -70,10 +70,18 @@ function Login(){
 			.then(response => response.json())
 			.then(data => 
 				{
-					//console.log(data.user)
+					console.log(data.user)
 					registerLogin(data)
-                   dispatch(setValue(data.user.name))     
-                   dispatch(setValuePoints(data.user.points))     
+					const id=data.user.id
+					const name=data.user.name
+					const email=data.user.email
+					const orderPoints=data.user.orderPoints
+					const points=data.user.points
+					const role=data.user.role
+					const address=data.user.adress
+
+                   dispatch(setValue({id,name,email,orderPoints,points,role,address}))     
+                  // dispatch(setValuePoints(data.user.points))     
                    notifySucces()
 				   
 				}).catch(e=>{

@@ -17,6 +17,7 @@ const FormLogin = ({createNewUser,updateInfo,updateUserById,setUpdateInfo,setFor
   },[updateInfo])
 
 const {register,reset, handleSubmit}=useForm()
+
 const submit =(data) =>{
   if(updateInfo){
     //update
@@ -47,18 +48,6 @@ const submit =(data) =>{
             <label className='form__label' htmlFor='password'>Pasword</label>
             <input className='form__input' placeholder='Enter your Password'type="password" id="password" {...register('password')}/>
         </div>
-        <div className='form__div'>
-            <label  className='form__label' htmlFor='first_name'>First Name</label>
-            <input  className='form__input' placeholder='Enter your First Name' type="text" id="first_name" {...register('first_name')}/>
-        </div>
-        <div className='form__div'>
-            <label className='form__label' htmlFor='last_name'>Last Name</label>
-            <input className='form__input' placeholder='Enter your Last Name' type="text" id="last_name" {...register('last_name')} />
-        </div>
-        <div className='form__div'>
-            <label className='form__label' htmlFor='birthday'>BirthDay</label>
-            <input className='form__input' placeholder='DD/MM/AAAA' type="date" id="birthday"  {...register('birthday')} />
-        </div >
         <button  className='form__btn'> {updateInfo  ?'Update' :'Create' }</button>
     </form>
   )

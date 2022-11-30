@@ -42,8 +42,8 @@ function Navbar() {
 const [user, setUser] = useSessionStorage('usuario','');
 
   //const { loginWithRedirect } = useAuth0();
-   const userName= useSelector(state =>state.user)
-   const points= useSelector(state =>state.points)
+   const userLog= useSelector(state =>state.user)
+   //const points= useSelector(state =>state.points)
 
   return (
     <div>
@@ -59,10 +59,10 @@ const [user, setUser] = useSessionStorage('usuario','');
           </li>
           <li>
               <div>
-                {userName}
+                {userLog.name}
               </div>
               <div>
-                {points} Puntos
+                {userLog.points} Puntos
               </div>
           </li>
            <li>
