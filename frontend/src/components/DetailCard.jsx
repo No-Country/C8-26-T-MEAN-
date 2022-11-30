@@ -6,7 +6,7 @@ import { MDBBtn } from 'mdb-react-ui-kit';
 const DetailCard = ({ product }) => {
 
   return (
-    <div className='detail--product'>
+    <div className='detail--product d-flex'>
       <div className='detail--product-img'>
         <img
           src={product.image_url}

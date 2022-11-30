@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from './Navbar'
 import DetailCard from './DetailCard'
 import '../styles/detailProduct.css'
-import { MDBBtn } from 'mdb-react-ui-kit';
+import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
 
 const DetailProduct = () => {
   const { id } = useParams()
@@ -20,7 +20,9 @@ const DetailProduct = () => {
     <div>
       <Navbar />
       <MDBBtn rounded className='btn-categ-prod' color='dark'>CATEGORÍAS</MDBBtn>
-      <DetailCard product={product} />
+      <MDBContainer className='d-flex justify-content-center'>
+        <DetailCard product={product} />
+      </MDBContainer>
     </div >
 
   )
