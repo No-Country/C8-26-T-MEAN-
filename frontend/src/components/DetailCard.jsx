@@ -1,20 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import '../styles/detailProduct.css'
 import { MDBBtn } from 'mdb-react-ui-kit';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {useSelector} from 'react-redux'
+import axios from 'axios';
+
+
 
 const DetailCard = ({ product }) => {
-
-  const user=useSelector(state =>state.user)
+  const navigate = useNavigate() 
+  const user = useSelector(state =>state.user)
  
- const notifySuccess = () => toast("Agregado al Carrito");
- const notifyError = () => toast("NO tiene los puntos necesarios para Canjear el Producto");
+ const notifySuccess = () => toast("Agregado al Carrito")
+ const notifyError = (e) => toast(`Error al adicionar al carrito ${e}`)
  
 
 const handleClick =()=>{
-   const url='http://localhost:3001/guardar';
+   const url='http://localhost:3001/agregar';
     const data={
       user:{
           id:user.id,
@@ -29,13 +33,21 @@ const handleClick =()=>{
          id:product.id,
          points:product.price
        }
-
     }
     axios.post(url, data)
     .then(res =>{
-      res.data
+      console.log(res.data)
+      notifySuccess()
+      setTimeout(() => {
+        console.log("Delayed for 1 second.");
+        navigate("/Purchase")
+      }, "1000")
+
     })
-    .catch(e=>console.log(e))
+    .catch(e=>{
+      notifyError("error")
+      console.log(e)
+    })
 }
   return (
     <div className='detail--product d-flex'>
@@ -49,9 +61,9 @@ const handleClick =()=>{
         <h3 className='nombre-product'>{product.product_name} </h3>
         <p>{product.short_description} <br />Descripción: {product.long_description} <br />Lo puedes canjear por: {product.price} puntos.
         </p>
-        <Link to="/Purchase">
+       
           <MDBBtn rounded className='mx-2 btn-canjear' color='secondary' onClick={handleClick} >CANJEAR</MDBBtn>
-        </Link>
+    
       </div>
       <ToastContainer 
 		position="top-center"
