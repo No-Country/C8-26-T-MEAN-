@@ -39,7 +39,7 @@ module.exports = {
             user_id: userId,
             status_id: 1
         },
-        attributes: ['ammount'],
+        attributes: ['ammount','items_q'],
     }),
 
     create: async (user) => await db.Order.create({
@@ -54,15 +54,26 @@ module.exports = {
     }),
     
     update: async (order) => await db.Order.update({
-            items_q: order.totalQuantity,
+            // items_q: order.totalQuantity,
             status_id: 3,  
-            ammount: order.ammount
+            // ammount: order.ammount
         },
         {
             where: {
                 id: order.id
             }
     }),
+
+    updateOrder: async (order) => await db.Order.update({
+        // items_q: order.totalQuantity,
+        status_id: 3,  
+        // ammount: order.ammount
+    },
+    {
+        where: {
+            id: order.id
+        }
+}),
 
     showMeTheMoney: async () => await sequelize.query('SELECT SUM(ammount) AS sales FROM orders WHERE status_id=3 GROUP BY status_id')
 }
