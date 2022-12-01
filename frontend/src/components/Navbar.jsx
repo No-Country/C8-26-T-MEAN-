@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/navbar.css'
 import {
   MDBBtn,
+  MDBIcon,
+  MDBNavbarLink,
   MDBModal,
   MDBModalDialog,
   MDBModalContent,
@@ -10,79 +12,101 @@ import {
   MDBModalTitle,
   MDBModalBody,
   MDBModalFooter,
-  MDBIcon,
-  MDBNavbarLink,
-  MDBContainer,
-  MDBInput,
-  MDBCheckbox,
+  MDBInput
 } from 'mdb-react-ui-kit';
 
-
-//import { useAuth0 } from '@auth0/auth0-react'
-
-import {useSelector} from 'react-redux'
-import Login from './Login';
+import { useSelector } from 'react-redux'
 
 function Navbar() {
 
-
   const useSessionStorage = (keyName, defaultValue) => {
-		const [storedValue, setStoredValue] = React.useState(() => {
-		  try {
-			const value = window.sessionStorage.getItem(keyName);
-	  
-			if (value) {
-			  return JSON.parse(value);
-			} else {
-//			  window.sessionStorage.setItem(keyName, JSON.stringify(defaultValue));
-			  return defaultValue;
-			}
-		  } catch (err) {
-			return defaultValue;
-		  }
-		});
-	  
-		const setValue = newValue => {
-		  try {
-			window.sessionStorage.setItem(keyName, JSON.stringify(newValue));
-		  } catch (err) {}
-		  setStoredValue(newValue);
-		};
-	  
-		return [storedValue, setValue];
-	};
+    const [storedValue, setStoredValue] = React.useState(() => {
+      try {
+        const value = window.sessionStorage.getItem(keyName);
+
+        if (value) {
+          return JSON.parse(value);
+        } else {
+          //			  window.sessionStorage.setItem(keyName, JSON.stringify(defaultValue));
+          return defaultValue;
+        }
+      } catch (err) {
+        return defaultValue;
+      }
+    });
+
+    const setValue = newValue => {
+      try {
+        window.sessionStorage.setItem(keyName, JSON.stringify(newValue));
+      } catch (err) { }
+      setStoredValue(newValue);
+    };
+
+    return [storedValue, setValue];
+  };
+
+  const [user, setUser] = useSessionStorage('usuario', '');
+  const userLog = useSelector(state => state.user)
+  //const points= useSelector(state =>state.points)
 
 
-const [user, setUser] = useSessionStorage('usuario','');
+  //Esto es para el modal:
+  const [basicModal, setBasicModal] = useState(false);
+  const toggleShow = () => setBasicModal(!basicModal);
 
-
-  //const { loginWithRedirect } = useAuth0();
-   const userLog= useSelector(state =>state.user)
-   //const points= useSelector(state =>state.points)
 
   return (
     <div>
       <div>
-      <Link to='/' >
-        <span className='gitclub-logo'></span>
-      </Link>
+        <Link to='/' >
+          <span className='gitclub-logo'></span>
+        </Link>
         <ul className='lista-boton-carrito'>
           <li id="icono_li">
             <MDBNavbarLink id="icono" to='#'>
               <MDBIcon fas icon='shopping-cart' />
             </MDBNavbarLink>
           </li>
-              <li>
-                  <div>
-                    {userLog.name}
-                  </div>
-                  <div>
-                    {userLog.points} Puntos
-                  </div>
-              </li>
-           <li>
+          <li>
+            <div>
+              {userLog.name}
+            </div>
+            <div>
+              {userLog.points} Puntos
+            </div>
+          </li>
+          <li>
+            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2' color='primary'>
+              Ingresar
+            </MDBBtn>
+            <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
+              <MDBModalDialog>
+                <MDBModalContent>
+                  <MDBModalHeader>
+                    <MDBModalTitle>Inicie sesión</MDBModalTitle>
+                    <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
+                  </MDBModalHeader>
+                  <MDBModalBody>
+                    <MDBInput wrapperClass='col-12 mb-2' label='Email' id='form1' type='email' />
+                    <MDBInput wrapperClass='col-12' label='Contraseña' id='form2' type='password' />
+                    <div className="d-flex justify-content-between mx-2 mb-2">
+                    </div>
+                    <MDBBtn className="col-12 mb-2">Ingresar</MDBBtn>
 
-           </li>
+                    <div className="text-center">
+                      <p>¿Te olvidaste la contraseña?</p>
+                      <MDBBtn color='secondary'>Enviar e-mail</MDBBtn>
+                    </div>
+                  </MDBModalBody>
+                  <MDBModalFooter>
+                    <MDBBtn color='danger' onClick={toggleShow}>
+                      CERRAR
+                    </MDBBtn>
+                  </MDBModalFooter>
+                </MDBModalContent>
+              </MDBModalDialog>
+            </MDBModal>
+          </li>
         </ul>
       </div>
       <div className="menuBackground">
@@ -97,7 +121,7 @@ const [user, setUser] = useSessionStorage('usuario','');
         </div>
       </div>
     </div>
-      
+
   );
 }
 
