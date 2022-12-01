@@ -1,6 +1,6 @@
 import React from 'react'
-import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import { Link, useNavigate } from 'react-router-dom';
+import { MDBCol } from 'mdb-react-ui-kit';
+import {useNavigate } from 'react-router-dom';
 import '../styles/product.css'
 const Product = ({ props }) => {
 
