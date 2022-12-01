@@ -18,7 +18,7 @@ const Categories = () => {
     <div>
       <Navbar />
       <MDBContainer>
-        <h2 className='tex-canjea d-flex justify-content-center'>Canjeá tus puntos acumulados en el catálogo</h2>
+        <h2 className='tex-canjea d-flex justify-content-center'>Canjeá tus puntos acumulados con los productos de las diferentes categorías:</h2>
         <div className='container d-flex'>
           <MDBRow className='d-flex justify-content-center'>
             {
