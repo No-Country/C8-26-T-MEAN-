@@ -38,7 +38,7 @@ const apiShoppingCartController = {
     //     res.redirect('/usuarios/carrito');
     // },
 
-    // checkout: async (req,res) => {
+    // checkoutOld: async (req,res) => {
     //     const order_id = parseInt(req.params.id);
     //     let orderDetail = JSON.parse(JSON.stringify(req.body));
     //     let total_quantity = 0;
@@ -125,6 +125,18 @@ const apiShoppingCartController = {
         const products = await queries.OrderDetail.getCartById(currentUser.id);
         
         res.status(200).json({products})
-            }
+    },
+
+    checkout: async (req, res) => {
+        let currentUser = req.body.user;
+        
+        order = await orderQueries.find(currentUser.id)
+
+        await queries.Order.update({
+                    id:order.id
+                });
+
+
+    }
     }
 module.exports = apiShoppingCartController;

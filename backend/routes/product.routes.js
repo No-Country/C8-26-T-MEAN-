@@ -24,5 +24,7 @@ router.post('/agregar', apiShoppingCartController.addProduct)
 //MOSTRAR PRODUCTOS DEL CARRITO
 router.get ('/cart', apiShoppingCartController.showPending)
 
+//FINALIZAR PEDIDO
+router.put ('/checkout', apiShoppingCartController.checkout)
 
 module.exports = router;

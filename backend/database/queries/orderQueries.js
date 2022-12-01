@@ -54,9 +54,9 @@ module.exports = {
     }),
     
     update: async (order) => await db.Order.update({
-            items_q: order.totalQuantity,
+            // items_q: order.totalQuantity,
             status_id: 3,  
-            ammount: order.ammount
+            // ammount: order.ammount
         },
         {
             where: {
