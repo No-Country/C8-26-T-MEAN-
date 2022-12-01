@@ -71,7 +71,7 @@ const apiUserController = {
             // console.log(user);
             if (user !== null && bcrypt.compareSync(decryptedPassword, user.password)){
                 
-                const orderPoints = await orderQueries.findAmmount(user.id)
+                const orderSales = await orderQueries.findAmmount(user.id)
 
                 res.status(200).json({
                     access: "Granted",
@@ -83,7 +83,7 @@ const apiUserController = {
                         role: user.roles.name,
                         image: user.image_url,
                         address: user.address,
-                        orderPoints:orderPoints
+                        orderSales:orderSales,
                     } 
                 })
             } else {

@@ -39,7 +39,7 @@ module.exports = {
             user_id: userId,
             status_id: 1
         },
-        attributes: ['ammount'],
+        attributes: ['ammount','items_q'],
     }),
 
     create: async (user) => await db.Order.create({

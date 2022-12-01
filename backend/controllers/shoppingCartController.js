@@ -187,11 +187,6 @@ const apiShoppingCartController = {
         
         res.status(200).json({products})
 
-        // order = await orderDetailQueries.find(currentOrderDetail.id)
-
-        // await queries.Order.delete({
-        //             id:order.id
-        //         });
     }
 
     }
