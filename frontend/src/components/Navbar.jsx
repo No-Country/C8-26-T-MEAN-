@@ -114,9 +114,9 @@ function Navbar() {
           <label htmlFor="show-menu" className="show-menu">¡BIENVENIDO!</label>
           {/*<input type="checkbox" id="show-menu" role="button" />*/}
           <ul id="menu">
-            <li><a><Link to='/' >INICIO</Link></a></li>
-            <li><a><Link to='/Categories' >CATÁLOGO</Link></a></li>
-            <li><a><Link to='/Gift' >FAQ's</Link></a></li>
+            <li><Link to='/' >INICIO</Link></li>
+            <li><Link to='/Categories' >CATÁLOGO</Link></li>
+            <li><Link to='/Gift' >FAQ's</Link></li>
           </ul>
         </div>
       </div>
