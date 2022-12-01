@@ -117,5 +117,19 @@ module.exports = {
                     product_id: productDetail.product_id
                 }
             }
-        )
+        ),
+
+        find: async (userId) => await db.Order.findOne({
+            where: {
+                user_id: userId
+            },
+            include: [
+                {
+                    association: 'status_orders',
+                    where: {
+                        name: 'Pendiente'
+                    }
+                }
+            ]
+        }),
 }

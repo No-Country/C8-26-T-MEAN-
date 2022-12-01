@@ -2,6 +2,10 @@ const { validationResult } = require('express-validator');
 
 const queries = require('../database/queries/index');
 const orderQueries = require("../database/queries/orderQueries");
+const orderDetailQueries = require("../database/queries/orderDetailQueries");
+
+const db = require('../database/models');
+
 
 const apiShoppingCartController = {
     // showAll: async (req, res) => {
@@ -136,7 +140,59 @@ const apiShoppingCartController = {
                     id:order.id
                 });
 
+        res.status(200).json({order})
 
+    },
+
+    deleteFromCart:  async (req, res) => {
+        
+        let currentUser = req.body.user;
+        let currentOrder = req.body.order;
+        let currentOrderDetail = req.body.orderDetail;
+        let currentOrderDetailQ = req.body.orderDetail.quantity;
+        let currentOrderDetailP = req.body.orderDetail.price;
+        let currentOrderItem_q = req.body.order.item_q;
+        let currentOrderAmmount = req.body.order.ammount;
+
+        let updatedItem_q = currentOrderItem_q - currentOrderDetailQ
+        let updatedAmmount = currentOrderAmmount - currentOrderDetailP
+
+        if (updatedItem_q !== 0) {
+
+            await db.Order.update({
+                items_q: updatedItem_q,
+                ammount: updatedAmmount
+            },
+            {
+                where: {
+                    id: currentOrder.id
+                }
+        })} else {
+            await db.Order.destroy({
+                where: {
+                    id: currentOrder.id
+                }
+            })
+        }
+
+        
+        await db.OrderDetail.destroy({
+            where: {
+                id: currentOrderDetail.id
+            }
+        })
+
+
+        const products = await queries.OrderDetail.getCartById(currentUser.id);
+        
+        res.status(200).json({products})
+
+        // order = await orderDetailQueries.find(currentOrderDetail.id)
+
+        // await queries.Order.delete({
+        //             id:order.id
+        //         });
     }
+
     }
 module.exports = apiShoppingCartController;
