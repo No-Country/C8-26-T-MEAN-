@@ -12,7 +12,7 @@ const Categorie = ({ props }) => {
           alt=''
         />
       </Link>
-      <a className='a-product'><Link to='/Products' >{props.name}</Link></a>
+      <Link to='/Products' className='a-product'>{props.name}</Link>
     </MDBCol>
   )
 }

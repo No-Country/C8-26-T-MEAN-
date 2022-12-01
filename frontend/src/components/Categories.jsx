@@ -17,7 +17,7 @@ const Categories = () => {
   return (
     <div>
       <Navbar />
-      <h1 class="tex-canjea">Canjeá tus puntos acumulados en el catálogo</h1>
+      <h1 className='tex-canjea'>Canjeá tus puntos acumulados en el catálogo</h1>
       <div className='container d-flex'>
         <MDBRow className='d-flex justify-content-center'>
           {
