@@ -1,6 +1,6 @@
 .Product-square {
     border-style: dotted;
-    color: #56042c;
+    color: #fec310;
     border-radius: 15px;
     padding-top: 15px;
 }
@@ -9,4 +9,5 @@
     line-height: 3;
     font-weight: bold;
     font-size: 17px;
+    color: #56042c;
 }
