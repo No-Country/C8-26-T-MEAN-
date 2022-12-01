@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setValue } from '../store/slices/users.slice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {getProductThunk} from '../store/slices/products.slice'
 
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -80,8 +81,8 @@ function Login(){
 					const points=data.user.points
 					const role=data.user.role
 					const address=data.user.adress
-
-                   dispatch(setValue({id,name,email,orderPoints,points,role,address}))     
+					dispatch(setValue({id,name,email,orderPoints,points,role,address}))     
+					dispatch(getProductThunk({id}))
                   // dispatch(setValuePoints(data.user.points))     
                    notifySucces()
 				   

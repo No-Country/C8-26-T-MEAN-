@@ -67,7 +67,7 @@ function Navbar() {
           <li id="icono_li">
             <MDBNavbarLink id="icono" to='#'>
               <MDBIcon fas icon='shopping-cart' />
-              {product.cant}
+                {product.cant}
             </MDBNavbarLink>
           </li>
           <li>
