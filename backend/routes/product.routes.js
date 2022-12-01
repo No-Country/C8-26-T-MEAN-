@@ -21,5 +21,8 @@ router.get('/categories', apiCategoryController.list);
 //AGREGAR AL CARRITO
 router.post('/agregar', apiShoppingCartController.addProduct)
 
+//MOSTRAR PRODUCTOS DEL CARRITO
+router.get ('/cart', apiShoppingCartController.showPending)
+
 
 module.exports = router;

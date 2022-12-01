@@ -1,9 +1,9 @@
 
 -- Poblar la tabla CATEGORIAS DE PRODUCTOS
-INSERT INTO categories (name, image_url) VALUES ('ESPECIAL MUNDIAL', http://localhost:3000/categorias-copa-mundial.png);
-INSERT INTO categories (name, image_url) VALUES ('VIAJES', http://localhost:3000/categorias-viajar.png);
-INSERT INTO categories (name, image_url) VALUES ('ELECTRO', http://localhost:3000/categorias-electrodomesticos.png);
-INSERT INTO categories (name, image_url) VALUES ('SERVICIOS', http://localhost:3000/categorias-servicios.png);
+INSERT INTO categories (name, image_url) VALUES ('ESPECIAL MUNDIAL', 'http://localhost:3000/categorias-copa-mundial.png');
+INSERT INTO categories (name, image_url) VALUES ('VIAJES', 'http://localhost:3000/categorias-viajar.png');
+INSERT INTO categories (name, image_url) VALUES ('ELECTRO', 'http://localhost:3000/categorias-electrodomesticos.png');
+INSERT INTO categories (name, image_url) VALUES ('SERVICIOS', 'http://localhost:3000/categorias-servicios.png');
 
 
 -- Poblar la tabla de PRODUCTOS
