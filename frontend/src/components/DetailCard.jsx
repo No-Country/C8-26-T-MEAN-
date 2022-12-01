@@ -6,13 +6,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useSelector} from 'react-redux'
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 
 
 const DetailCard = ({ product }) => {
   const navigate = useNavigate() 
   const user = useSelector(state =>state.user)
- 
+	const dispatch = useDispatch();
  const notifySuccess = () => toast("Agregado al Carrito")
  const notifyError = (e) => toast(`Error al adicionar al carrito ${e}`)
  
@@ -36,6 +37,8 @@ const handleClick =()=>{
     }
     axios.post(url, data)
     .then(res =>{
+     // const cant =
+     // dispatch(setValueProduct({cant}))
       console.log(res.data)
       notifySuccess()
       setTimeout(() => {

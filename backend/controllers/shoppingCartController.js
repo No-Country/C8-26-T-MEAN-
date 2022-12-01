@@ -117,8 +117,14 @@ const apiShoppingCartController = {
         } catch (e) {
             console.log(e);
         }
-}
+    },
 
-}
-
+    showPending: async (req, res) => {
+        
+        let currentUserId = req.params.id
+        const products = await queries.OrderDetail.getCartById(currentUserId);
+        
+        res.status(200).json({products})
+            }
+    }
 module.exports = apiShoppingCartController;

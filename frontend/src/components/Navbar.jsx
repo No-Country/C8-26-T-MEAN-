@@ -16,6 +16,7 @@ import {
 } from 'mdb-react-ui-kit';
 
 import { useSelector } from 'react-redux'
+import { productSlice } from '../store/slices/products.slice';
 
 function Navbar() {
 
@@ -47,6 +48,7 @@ function Navbar() {
 
   const [user, setUser] = useSessionStorage('usuario', '');
   const userLog = useSelector(state => state.user)
+  const product = useSelector(state => state.product)
   //const points= useSelector(state =>state.points)
 
 
@@ -65,6 +67,7 @@ function Navbar() {
           <li id="icono_li">
             <MDBNavbarLink id="icono" to='#'>
               <MDBIcon fas icon='shopping-cart' />
+              {product.cant}
             </MDBNavbarLink>
           </li>
           <li>

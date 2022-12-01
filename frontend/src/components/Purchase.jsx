@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useState,useEffect }from 'react'
 import Navbar from './Navbar'
 import tasa from '../assets/taza.png'
 import { Link } from 'react-router-dom'
 import '../styles/purchase.css'
 import { MDBContainer } from 'mdb-react-ui-kit';
+import { useDispatch, useSelector } from 'react-redux'
+import axios from 'axios'
+import {getProductThunk, setValueProduct} from '../store/slices/products.slice'
 const Purchase = () => {
+
+ const [cart, setCart] = useState()
+
+  const user = useSelector(state =>state.user)
+	const dispatch = useDispatch();
+  useEffect(() => {
+    const URL =`http://localhost:3001/cart/${user.id}`
+    axios.get(URL)
+    .then(res =>{
+      console.log(res.data)
+      setCart(res.data)
+      const cant =res.data.products.length
+      console.log(cant)
+      dispatch(setValueProduct({cant}))
+    })
+    .catch(e =>console.log(e))
+  }, [])
+
+
   return (
     <div className='purchase'>
       <Navbar />
