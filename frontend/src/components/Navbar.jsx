@@ -72,14 +72,14 @@ const [user, setUser] = useSessionStorage('usuario','');
               <MDBIcon fas icon='shopping-cart' />
             </MDBNavbarLink>
           </li>
-          <li>
-              <div>
-                {userLog.name}
-              </div>
-              <div>
-                {userLog.points} Puntos
-              </div>
-          </li>
+              <li>
+                  <div>
+                    {userLog.name}
+                  </div>
+                  <div>
+                    {userLog.points} Puntos
+                  </div>
+              </li>
            <li>
 
            </li>
