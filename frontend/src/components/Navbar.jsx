@@ -131,11 +131,21 @@ const handleClick = () =>{
           <span className='gitclub-logo'></span>
         </Link>
         <ul className='lista-boton-carrito'>
+            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2' color='primary'>
+           { !session ? "ingresar": "salir"}
+            </MDBBtn>
           <li id="icono_li">
-            <MDBNavbarLink id="icono" onClick={handleClick}>
-              <MDBIcon fas icon='shopping-cart' />
-                {product.cant}
-            </MDBNavbarLink>
+            {
+              session ?
+                <div>
+                <MDBNavbarLink id="icono" onClick={handleClick}>
+                  <MDBIcon fas icon='shopping-cart' />
+                    {product.cant}
+                </MDBNavbarLink>
+                </div>
+              :
+              ""
+            }
           </li>
           <li>
              <div className='logo'>
@@ -156,10 +166,8 @@ const handleClick = () =>{
               ""
             }
           </li>
+
           <li>
-            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2' color='primary'>
-           { !session ? "ingresar": "salir"}
-            </MDBBtn>
             <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
               <MDBModalDialog>
                 <MDBModalContent>

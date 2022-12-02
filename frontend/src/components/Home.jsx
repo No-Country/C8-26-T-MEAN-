@@ -6,6 +6,7 @@ import CarouselOfi from './CarouselOfi'
 import Categorie from './Categorie'
 import '../styles/categories.css'
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import Footer from './Footer';
 
 const Home = () => {
 
@@ -34,6 +35,8 @@ const Home = () => {
                }
             </MDBRow>
          </div>
+
+         <Footer/>
       </div>
    );
 }
