@@ -6,13 +6,11 @@ import '../styles/purchase.css'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import {setValueProduct} from '../store/slices/products.slice'
-
-
 const Purchase = () => {
-  
  const [products, setProducts] = useState([])
-
-  const user = useSelector(state =>state.user)
+ const [deleteProduct, setDeleteProduct] = useState(false)
+ const [purchase, setPurchase] = useState(false)
+   const user = useSelector(state =>state.user)
 	const dispatch = useDispatch();
   useEffect(() => {
     let URL ="http://localhost:3001/cart/2"
@@ -27,9 +25,28 @@ const Purchase = () => {
      dispatch(setValueProduct({cant}))
     })
     .catch(e =>console.log(e))
-  }, [])
-   console.log(products)
+  }, [deleteProduct,purchase])
 
+  const handleClick = () =>{
+    let URL ="http://localhost:3001/checkout"
+    if(user){
+      axios.post(URL,{user})
+      .then(res =>{
+        
+       console.log(res.data)
+          setPurchase(true)
+     //  dispatch(setValueProduct({cant}))
+      })
+      .catch(e =>{
+        console.log(e)
+        setPurchase(false) 
+      })
+    }else{
+      console.log("error al comprar")
+    }
+   
+  }
+   
   return (
     <div className='purchase'>
       <Navbar />
@@ -44,7 +61,7 @@ const Purchase = () => {
             <div>
             {
             products.map(product =>(
-               <ProductCart  product={product} key={product.id}/>
+               <ProductCart  product={product}  setDeleteProduct={setDeleteProduct} key={product.id}/>
             ))
             }   
             </div>
@@ -67,7 +84,7 @@ const Purchase = () => {
 
                 <button className='purchase-btn1'> <span>  + </span>  CANJEAR MÁS PRODUCTOS</button>
               </Link>
-              <button className='purchase-btn2'> FINALIZAR PEDIDO</button>
+              <button className='purchase-btn2'   onClick={handleClick}> FINALIZAR PEDIDO</button>
             </div>
           </div>
 

@@ -12,26 +12,36 @@ import {
   MDBIcon
 }  from 'mdb-react-ui-kit';
 import axios from 'axios';
-const ProductCart = ({product}) => {
+import {getUserThunk} from '../store/slices/users.slice'
+import { useDispatch, useSelector } from 'react-redux';
+const ProductCart = ({product,setDeleteProduct}) => {
+  const user = useSelector(state => state.user)
+    // console.log(product,"unidad")
 
+
+    const dispatch=useDispatch()
      const handleClick = () =>{
        const URL ="http://localhost:3001/delete"
 
-       let currentUser = req.body.user;
-       let currentOrder = req.body.order;
-       let currentOrderDetail = req.body.orderDetail;
-       let currentOrderDetailQ = req.body.orderDetail.quantity;
-       let currentOrderDetailP = req.body.orderDetail.price;
-       let currentOrderItem_q = req.body.order.item_q;
-       let currentOrderAmmount = req.body.order.ammount;
-      const data ={
-           user:""
-
-
+       const data ={
+           user:user,
+           orderDetail:{
+               id:product.id,
+               quantity:product.quantity,
+               price:product.price,
+           },
+           order:{
+             id:product.Order.id,
+            item_q:product.Order.items_q,
+            ammount:product.Order.ammount,
+           }
       }
-
-      axios.delete(URL,data)
-      .then(res => console.log(res-data))
+      axios.post(URL,data)
+      .then(res => {
+        setDeleteProduct(true)
+        dispatch(getUserThunk(user))
+       
+      })
       .catch(e =>console.log(e))
       
      }

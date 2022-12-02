@@ -25,9 +25,9 @@ router.post('/agregar', apiShoppingCartController.addProduct)
 router.get ('/cart/:id', apiShoppingCartController.showPending)
 
 //ELIMINAR PRODUCTO DEL CARRITO
-router.delete ('/delete', apiShoppingCartController.deleteFromCart)
+router.post('/delete', apiShoppingCartController.deleteFromCart)
 
 //FINALIZAR PEDIDO
-router.put ('/checkout', apiShoppingCartController.checkout)
+router.post ('/checkout', apiShoppingCartController.checkout)
 
 module.exports = router;

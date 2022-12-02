@@ -5,6 +5,7 @@ import { setValue } from '../store/slices/users.slice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {getProductThunk,setValueProduct} from '../store/slices/products.slice'
+import {getUserThunk} from '../store/slices/users.slice'
 import crypto from 'crypto-js'
 import axios from 'axios';
 import '../styles/navbar.css'
@@ -33,23 +34,25 @@ const Navbar= () =>{
     const usuario=JSON.parse(local)
     console.log(usuario,"adsasdasd")
         if(usuario){
-          const address=usuario.address || "dasd"
-            const email=usuario.email
-          const id=usuario.id
-          const image=usuario.image
+        //  dispatch(getUserThunk(usuario))
+
+           const address=usuario.address || "dasd"
+             const email=usuario.email
+           const id=usuario.id
+           const image=usuario.image
           const name=usuario.name
-          const points=usuario.points
-          const role=usuario.role
+           const points=usuario.points
+           const role=usuario.role
           
-          if(usuario.orderSales!==0){
-             let orderPoints=usuario.orderSales.ammount
-             let cant=usuario.orderSales.items_q
+           if(usuario.orderSales!==0){
+              let orderPoints=usuario.orderSales.ammount
+              let cant=usuario.orderSales.items_q
              dispatch(setValueProduct({cant}))
-            dispatch(setValue({id,name,email,points,role,address,orderPoints,cant,image}))
-          }else{
-            dispatch(setValueProduct({cant:0}))
-            dispatch(setValue({id,name,email,points,role,address,orderPoints:0,cant:0,image}))
-          }
+             dispatch(setValue({id,name,email,points,role,address,orderPoints,cant,image}))
+           }else{
+             dispatch(setValueProduct({cant:0}))
+             dispatch(setValue({id,name,email,points,role,address,orderPoints:0,cant:0,image}))
+           }
           setSession(true)
         }
   }, [])
