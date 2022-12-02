@@ -97,7 +97,6 @@ function Navbar() {
         if (value) {
           return JSON.parse(value);
         } else {
-          //			  window.sessionStorage.setItem(keyName, JSON.stringify(defaultValue));
           return defaultValue;
         }
       } catch (err) {
