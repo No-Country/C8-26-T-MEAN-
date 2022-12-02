@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/navbar.css'
+
 import {
   MDBBtn,
   MDBIcon,
@@ -48,14 +49,18 @@ function Navbar() {
 
   const [user, setUser] = useSessionStorage('usuario', '');
   const userLog = useSelector(state => state.user)
+  const img =userLog.image
   const product = useSelector(state => state.product)
   //const points= useSelector(state =>state.points)
 
 
   //Esto es para el modal:
+  const navigate = useNavigate() 
   const [basicModal, setBasicModal] = useState(false);
   const toggleShow = () => setBasicModal(!basicModal);
-
+   const handleClick =()=>{
+    navigate("/Purchase")
+   }
 
   return (
     <div>
@@ -65,13 +70,19 @@ function Navbar() {
         </Link>
         <ul className='lista-boton-carrito'>
           <li id="icono_li">
-            <MDBNavbarLink id="icono" to='#'>
+            <MDBNavbarLink id="icono" onClick={handleClick}>
               <MDBIcon fas icon='shopping-cart' />
-                {product.cant}
+                {userLog.cant}
             </MDBNavbarLink>
           </li>
           <li>
-            <div>
+
+             <div className='logo'>
+              <img src={userLog.image} alt="" />
+             </div>
+          </li>
+          <li>
+               <div>
               {userLog.name}
             </div>
             <div>

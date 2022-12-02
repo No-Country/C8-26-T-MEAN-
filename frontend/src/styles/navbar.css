@@ -1,6 +1,9 @@
 body {
     margin: 0
 }
+.logo{
+    max-width: 45px;
+}
 
 .gitclub-logo {
     position: absolute;

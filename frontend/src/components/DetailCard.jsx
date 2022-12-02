@@ -15,7 +15,7 @@ const DetailCard = ({ product }) => {
   const user = useSelector(state =>state.user)
 	const dispatch = useDispatch();
  const notifySuccess = () => toast("Agregado al Carrito")
- const notifyError = (e) => toast(`Error al adicionar al carrito ${e}`)
+ const notifyError = (e) => toast(`Error al adicionar al carrito: ${e}`)
  
 
 const handleClick =()=>{
@@ -25,10 +25,10 @@ const handleClick =()=>{
           id:user.id,
           email:user.email,
           name:user.name,
-          orderPoints:user.orderPoints,
+          orderPoints:user.orderPoints ,
           points:user.points,
           role:user.role,
-          address:user.address
+          address:user.address || "dasdasd"
       },
        product:{
          id:product.id,
@@ -48,8 +48,8 @@ const handleClick =()=>{
 
     })
     .catch(e=>{
-      notifyError("error")
       console.log(e)
+      notifyError(e.response.data.message)
     })
 }
   return (

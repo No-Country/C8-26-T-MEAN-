@@ -7,6 +7,9 @@
 }
 .purchase-global-left{
 }
+.purchase-img{
+    max-width: 150px;
+}
 .purchase-global-title{
     display: flex;
     align-items: center;

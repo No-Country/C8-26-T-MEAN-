@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { redirect } from "react-router-dom";
-// import { Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setValue } from '../store/slices/users.slice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {getProductThunk} from '../store/slices/products.slice'
+import {getProductThunk,setValueProduct} from '../store/slices/products.slice'
 
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -21,6 +19,8 @@ import {
   MDBIcon
 }  from 'mdb-react-ui-kit';
 import crypto from 'crypto-js'
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 const BACKEND_ADDRESS = 'http://localhost:3001';
 
 function Login(){
@@ -32,10 +32,9 @@ function Login(){
 	const [loginError, setLoginError] = useState(false);
 	const [redirect, setRedirect] = useState(false);
 	const dispatch = useDispatch();
-
-
 	const notifySucces = () => toast("Ingreso correctamente");
 	const notifyError = () => toast("Error al Ingresar");
+
 
 	const loginFetch = (e) => {
 		e.preventDefault();
@@ -62,27 +61,29 @@ function Login(){
 			}
 		}
 	
-		fetch(`${BACKEND_ADDRESS}/users/auth`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		})
-			.then(response => response.json())
-			.then(data => 
+		axios.post(`${BACKEND_ADDRESS}/users/auth`,data)
+			.then(res =>
 				{
+					const data =res.data
 					console.log(data.user)
 					registerLogin(data)
-					const id=data.user.id
-					const name=data.user.name
+					const address=data.user.adress
 					const email=data.user.email
-					const orderPoints=data.user.orderPoints
+					const id=data.user.id
+					const image=data.user.image
+					const name=data.user.name
 					const points=data.user.points
 					const role=data.user.role
-					const address=data.user.adress
-					dispatch(setValue({id,name,email,orderPoints,points,role,address}))     
-					dispatch(getProductThunk({id}))
+					
+					if(data.orderSales!==null){
+						 let orderPoints=data.user.orderSales.ammount
+						 let cant=data.user.orderSales.items_q
+						 dispatch(setValueProduct({cant}))
+						dispatch(setValue({id,name,email,points,role,address,orderPoints,cant,image}))
+					}else{
+						dispatch(setValueProduct({cant:0}))
+						dispatch(setValue({id,name,email,points,role,address,orderPoints:0,cant:0,image}))
+					}
                   // dispatch(setValuePoints(data.user.points))     
                    notifySucces()
 				   
@@ -113,7 +114,7 @@ function Login(){
 	 								<input type="password" ref={password} className="form-control" id="password"/>
 	 							</div>
 	 								<button className="btn btn-info" onClick={loginFetch}>Login</button>
-					{redirect ? <redirect to="/"/> : ''}
+					{redirect ? <Link to="/"/> : ''}
 					<div className="text-center">
 					  <p>Olvidé mi usuario o contraseña. :(</p>
 					</div>

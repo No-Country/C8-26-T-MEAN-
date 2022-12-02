@@ -1,36 +1,39 @@
-import React, { useState,useEffect }from 'react'
+import React, { useState,useEffect} from 'react'
 import Navbar from './Navbar'
-import tasa from '../assets/taza.png'
+import ProductCart from './ProductCart'
 import { Link } from 'react-router-dom'
 import '../styles/purchase.css'
-import { MDBContainer } from 'mdb-react-ui-kit';
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import {getProductThunk, setValueProduct} from '../store/slices/products.slice'
-const Purchase = () => {
+import {setValueProduct} from '../store/slices/products.slice'
 
- const [cart, setCart] = useState()
+
+const Purchase = () => {
+  
+ const [products, setProducts] = useState([])
 
   const user = useSelector(state =>state.user)
 	const dispatch = useDispatch();
   useEffect(() => {
-    const URL =`http://localhost:3001/cart/${user.id}`
+    let URL ="http://localhost:3001/cart/2"
+    if(user!==""){
+       URL =`http://localhost:3001/cart/${user.id}`
+     }
     axios.get(URL)
     .then(res =>{
-      console.log(res.data)
-      setCart(res.data)
+      setProducts(res.data.products)
       const cant =res.data.products.length
-      console.log(cant)
-      dispatch(setValueProduct({cant}))
+     // console.log(cant)
+     dispatch(setValueProduct({cant}))
     })
     .catch(e =>console.log(e))
   }, [])
-
+   console.log(products)
 
   return (
     <div className='purchase'>
       <Navbar />
-      <MDBContainer className='d-flex justify-content-center'>
+    
         <div className='purchase-global'>
           <div className='purchase-global-left'>
             <h2 className='purchase-global-title'>Carrito de Compras</h2>
@@ -38,24 +41,12 @@ const Purchase = () => {
           </div>
           <div className='purchase-box'>
             <h3 className='purchase-box-title'>DETALLE DE PRODUCTOS</h3>
-            <div className='purchase-product'>
-              <div>
-                <img src={tasa} alt="" />
-              </div>
-              <div >
-                <h3 className='tex-product'>Taza mundialista</h3>
-                <p>400 Puntos</p>
-                <p>Subtotal : 400 puntos</p>
-              </div>
-              <div className='purchase-product-change'>
-                <p>CANTIDAD</p>
-                <select name="" id=""> 1
-                  <option value="">1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                </select>
-                <button>Eliminar producto</button>
-              </div>
+            <div>
+            {
+            products.map(product =>(
+               <ProductCart  product={product} key={product.id}/>
+            ))
+            }   
             </div>
             <div className='purchase-total'>
 
@@ -81,7 +72,7 @@ const Purchase = () => {
           </div>
 
         </div>
-      </MDBContainer>
+    
     </div>
   )
 }
