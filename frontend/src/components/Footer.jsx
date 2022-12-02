@@ -5,7 +5,6 @@ import {
   MDBRow,
   MDBCol,
   MDBIcon,
-  MDBInput,
   MDBRipple
 } from 'mdb-react-ui-kit';
 
@@ -18,11 +17,11 @@ const Footer = () => {
             <MDBRow className='mt-3'>
               <MDBCol lg='3' md='12' className='mx-auto mb-4'>
                 <h6 className='text-uppercase'>GiftClub</h6>
-
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-                  Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam,
-                  est atque cumque eum delectus sint!
+                  Es un sistema de puntos acumulables que pueden ser canjeados por cualquiera
+                  de los productos que se encuentran dentro del catálogo de este sitio. <br />
+                  A más puntos tenga el usuario, habrá màs posibilidad de llevarse todos los
+                  productos.
                 </p>
               </MDBCol>
               <MDBCol lg='9' md='12' className='mx-auto mb-4'>
@@ -117,9 +116,9 @@ const Footer = () => {
             </MDBRow>
           </MDBContainer>
         </section>
-        <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+        <div className='text-center p-4 fw-bold' style={{ backgroundColor: 'rgba(254, 195, 16)' }}>
           © 2022 Copyright:
-          <a className='text-reset fw-bold'> C8-26-T-MEAN</a>
+          <a className='fw-bold'> C8-26-T-MEAN</a>
         </div>
       </MDBFooter>
 
