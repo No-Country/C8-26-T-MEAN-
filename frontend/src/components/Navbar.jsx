@@ -1,5 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { productSlice } from '../store/slices/products.slice';
+import { setValue } from '../store/slices/users.slice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { getProductThunk } from '../store/slices/products.slice'
+import crypto from 'crypto-js'
+
 import '../styles/navbar.css'
 import {
   MDBBtn,
@@ -15,10 +24,70 @@ import {
   MDBInput
 } from 'mdb-react-ui-kit';
 
-import { useSelector } from 'react-redux'
-import { productSlice } from '../store/slices/products.slice';
+const BACKEND_ADDRESS = 'http://localhost:3001';
 
 function Navbar() {
+
+  //Código sacado del componente Login.jsx
+  const privateSeed = 'DigitalHouse';
+
+  const username = useRef();
+  const password = useRef();
+  console.log(username);
+  const [loginError, setLoginError] = useState(false);
+  const [redirect, setRedirect] = useState(false);
+  const dispatch = useDispatch();
+
+
+  const notifySucces = () => toast("Ingreso correctamente");
+  const notifyError = () => toast("Error al Ingresar");
+
+  const loginFetch = (e) => {
+    e.preventDefault();
+    setLoginError(false);
+
+    const cryptedPassword = crypto.AES.encrypt(password.current.value, privateSeed).toString();
+    const data = {
+      username: username.current.value,
+      password: cryptedPassword,
+    }
+
+    const registerLogin = data => {
+      if (data.access === 'Granted') {
+        sessionStorage.setItem('usuario', JSON.stringify(data.user));
+        setRedirect(true);
+      } else {
+        setLoginError(true);
+        sessionStorage.removeItem('usuario');
+      }
+    }
+    fetch(`${BACKEND_ADDRESS}/users/auth`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.user)
+        registerLogin(data)
+        const id = data.user.id
+        const name = data.user.name
+        const email = data.user.email
+        const orderPoints = data.user.orderPoints
+        const points = data.user.points
+        const role = data.user.role
+        const address = data.user.adress
+        dispatch(setValue({ id, name, email, orderPoints, points, role, address }))
+        dispatch(getProductThunk({ id }))
+        notifySucces()
+      }).catch(e => {
+        console.log(e)
+        notifyError()
+      });
+  }
+  //Fin
 
   const useSessionStorage = (keyName, defaultValue) => {
     const [storedValue, setStoredValue] = React.useState(() => {
@@ -55,7 +124,7 @@ function Navbar() {
   //Esto es para el modal:
   const [basicModal, setBasicModal] = useState(false);
   const toggleShow = () => setBasicModal(!basicModal);
-
+  //
 
   return (
     <div>
@@ -67,7 +136,7 @@ function Navbar() {
           <li id="icono_li">
             <MDBNavbarLink id="icono" to='#'>
               <MDBIcon fas icon='shopping-cart' />
-                {product.cant}
+              {product.cant}
             </MDBNavbarLink>
           </li>
           <li>
@@ -89,17 +158,18 @@ function Navbar() {
                     <MDBModalTitle>Inicie sesión</MDBModalTitle>
                     <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
                   </MDBModalHeader>
-                  <MDBModalBody>
-                    <MDBInput wrapperClass='col-12 mb-2' label='Email' id='form1' type='email' />
-                    <MDBInput wrapperClass='col-12' label='Contraseña' id='form2' type='password' />
+                  <MDBModalBody className="form-group">
+                    <MDBInput wrapperClass='col-12 mb-2' label='Email' type='email' ref={username} className="form-control" id="email" />
+                    <MDBInput wrapperClass='col-12' label='Contraseña' type='password' ref={password} className="form-control" id="password" />
                     <div className="d-flex justify-content-between mx-2 mb-2">
                     </div>
-                    <MDBBtn className="col-12 mb-2">Ingresar</MDBBtn>
-
+                    <MDBBtn className="col-12 mb-2" onClick={loginFetch}>Ingresar</MDBBtn>
+                    {redirect ? <redirect to="/" /> : ''}
                     <div className="text-center">
                       <p>¿Te olvidaste la contraseña?</p>
                       <MDBBtn color='secondary'>Enviar e-mail</MDBBtn>
                     </div>
+                    {loginError ? <div className="alert alert-danger text-center my-4 fs-2">Usuario o contraseña incorrecta</div> : <></>}
                   </MDBModalBody>
                   <MDBModalFooter>
                     <MDBBtn color='danger' onClick={toggleShow}>
@@ -109,6 +179,18 @@ function Navbar() {
                 </MDBModalContent>
               </MDBModalDialog>
             </MDBModal>
+            <ToastContainer
+              position="top-center"
+              autoClose={1000}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </li>
         </ul>
       </div>
