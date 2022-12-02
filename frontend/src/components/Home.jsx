@@ -22,10 +22,6 @@ const Home = () => {
       <div>
          <Navbar />
          <CarouselOfi />
-       {
-       /*<Login />*/
-      } 
-         
          <div className='container d-flex'>
             <MDBRow className='d-flex justify-content-center'>
                {
@@ -35,8 +31,7 @@ const Home = () => {
                }
             </MDBRow>
          </div>
-
-         <Footer/>
+         <Footer />
       </div>
    );
 }
