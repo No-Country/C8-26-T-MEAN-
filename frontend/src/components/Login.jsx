@@ -28,7 +28,7 @@ function Login(){
 
 	const username = useRef();
 	const password = useRef();
-	console.log(username);
+	
 	const [loginError, setLoginError] = useState(false);
 	const [redirect, setRedirect] = useState(false);
 	const dispatch = useDispatch();
@@ -47,6 +47,7 @@ function Login(){
 			username: username.current.value,
 			password: cryptedPassword,
 		}
+		console.log(data)
 
 		const registerLogin = data => {
 			if (data.access === 'Granted') {
@@ -60,7 +61,6 @@ function Login(){
 				
 			}
 		}
-	
 		axios.post(`${BACKEND_ADDRESS}/users/auth`,data)
 			.then(res =>
 				{
@@ -75,7 +75,7 @@ function Login(){
 					const points=data.user.points
 					const role=data.user.role
 					
-					if(data.orderSales!==null){
+					if(data.orderSales){
 						 let orderPoints=data.user.orderSales.ammount
 						 let cant=data.user.orderSales.items_q
 						 dispatch(setValueProduct({cant}))
@@ -112,8 +112,9 @@ function Login(){
 	 								<input type="text" ref={username} className="form-control" id="email"/>
 	 								<label htmlFor="">Contraseña:</label>
 	 								<input type="password" ref={password} className="form-control" id="password"/>
-	 							</div>
+	 				</div>
 	 								<button className="btn btn-info" onClick={loginFetch}>Login</button>
+					
 					{redirect ? <Link to="/"/> : ''}
 					<div className="text-center">
 					  <p>Olvidé mi usuario o contraseña. :(</p>
