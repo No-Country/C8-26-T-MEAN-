@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './Navbar'
 import Categorie from './Categorie';
 import '../styles/categories.css'
-import { MDBRow} from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow } from 'mdb-react-ui-kit';
 const Categories = () => {
   const [categories, setCategories] = useState()
   useEffect(() => {
@@ -17,16 +17,18 @@ const Categories = () => {
   return (
     <div>
       <Navbar />
-      <h1 className='tex-canjea'>Canjeá tus puntos acumulados en el catálogo</h1>
-      <div className='container d-flex'>
-        <MDBRow className='d-flex justify-content-center'>
-          {
-            categories?.map(categorie => (
-              <Categorie props={categorie} key={categorie.id} />
-            ))
-          }
-        </MDBRow>
-      </div>
+      <MDBContainer>
+        <h2 className='tex-canjea d-flex justify-content-center'>Canjeá tus puntos acumulados con los productos de las diferentes categorías:</h2>
+        <div className='container d-flex'>
+          <MDBRow className='d-flex justify-content-center'>
+            {
+              categories?.map(categorie => (
+                <Categorie props={categorie} key={categorie.id} />
+              ))
+            }
+          </MDBRow>
+        </div>
+      </MDBContainer>
     </div>
   );
 }

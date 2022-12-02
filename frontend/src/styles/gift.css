@@ -96,13 +96,14 @@
 
 /*CATALOGO*/
 .tex-canjea {
-    color: rgb(255, 255, 255);
+    color: black;
     text-align: center;
-    background-color: rgb(172, 38, 143);
+    background-color: #fec310;
     padding: 15px;
     border-radius: 550px;
-    width: 75%;
-    margin-left: 140px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 .tex-product {

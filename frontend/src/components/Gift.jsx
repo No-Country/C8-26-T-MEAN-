@@ -9,7 +9,7 @@ const Gift = () => {
     <div>
       <Navbar />
       <div className='gift'>
-        <img src={logo} alt="logo" class="img-preg" />
+        <img src={logo} alt="logo" className="img-preg" />
         <MDBAccordion borderless initialActive={1}>
           <MDBAccordionItem collapseId={1} headerTitle='¿Qué es GiftClub?'>
             GiftClub es un sistema de puntos acumulables que pueden ser canjeados
