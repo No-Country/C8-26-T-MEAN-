@@ -46,6 +46,20 @@ const Footer = () => {
                       rippleColor='light'
                       className='bg-image hover-overlay shadow-1-strong rounded'
                     >
+                      <img src='https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp' className='w-100' />
+                      <a href='#!'>
+                        <div
+                          className='mask'
+                          style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
+                        ></div>
+                      </a>
+                    </MDBRipple>
+                  </MDBCol>
+                  <MDBCol lg='2' md='6' className='mb-4 mb-md-0'>
+                    <MDBRipple
+                      rippleColor='light'
+                      className='bg-image hover-overlay shadow-1-strong rounded'
+                    >
                       <img src='https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp' className='w-100' />
                       <a href='#!'>
                         <div
@@ -117,8 +131,8 @@ const Footer = () => {
           </MDBContainer>
         </section>
         <div className='text-center p-4 fw-bold' style={{ backgroundColor: 'rgba(254, 195, 16)' }}>
-          © 2022 Copyright:
-          <a className='fw-bold'> C8-26-T-MEAN</a>
+          © 2022 |
+          <a className='fw-bold'> Un proyecto del equipo: C8-26-T-MEAN</a>
         </div>
       </MDBFooter>
 
