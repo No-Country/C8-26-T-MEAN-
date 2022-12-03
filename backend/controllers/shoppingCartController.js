@@ -36,9 +36,12 @@ const apiShoppingCartController = {
         //Agrego el producto si no existe
         orderDetail = await queries.OrderDetail.create(order.id,productId)
 
+        const orderUpdated = await orderQueries.find(currentUser.id)
+        const orderDetailUpdated = await orderDetailQueries.findMatch(orderUpdated.id,productId)
+
         res.status(200).json({
-            order,
-            orderDetail
+            orderUpdated,
+            orderDetailUpdated
             })
         }
         } else {
@@ -53,9 +56,13 @@ const apiShoppingCartController = {
             //Agrego el producto si no existe
         order = await orderQueries.find(currentUser.id)
         orderDetail = await queries.OrderDetail.create(order.id,productId)
+
+        const orderUpdated = await orderQueries.find(currentUser.id)
+        const orderDetailUpdated = await orderDetailQueries.findMatch(orderUpdated.id,productId)
+
         res.status(200).json({
-            order,
-            orderDetail
+            orderUpdated,
+            orderDetailUpdated
             })
             }
         }
@@ -97,9 +104,9 @@ const apiShoppingCartController = {
         })
         
         const user = await userQueries.findById(currentUser.id)
-        const order2 = await orderQueries.findOrderClosed(currentUser.id)
+        const orderUpdated = await orderQueries.findOrderClosed(currentUser.id)
 
-        res.status(200).json({order2,user})
+        res.status(200).json({orderUpdated,user})
 
     },
 
