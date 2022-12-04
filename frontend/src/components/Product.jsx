@@ -9,7 +9,7 @@ const Product = ({ props }) => {
     navigate(`/DetailProduct/${props.id}`);
   }
   return (
-    <MDBCol lg='3' md='2' className='mb-4 hover-zoom'>
+    <MDBCol lg='3' md='6' className='mb-4 hover-zoom'>
       <article onClick={handleClick} >
         <div className='Product-square'>
 
