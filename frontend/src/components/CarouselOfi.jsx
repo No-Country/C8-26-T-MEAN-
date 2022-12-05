@@ -10,7 +10,7 @@ export default function CarouselOfi() {
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={1}
-        src="https://ik.imagekit.io/tjlqeq3ql/GiftClub/ban_espcialMundial2_KgT4WfoeT?ik-sdk-version=javascript-1.4.3&updatedAt=1669184322727" /*1320px 583px*/
+        src="src/assets/slider_1.png" /*1320px 583px*/
         alt="copa fifa"
       >
       </MDBCarouselItem>
@@ -25,7 +25,7 @@ export default function CarouselOfi() {
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={3}
-        src='https://ik.imagekit.io/tjlqeq3ql/GiftClub/ban_espcialMundial2_KgT4WfoeT?ik-sdk-version=javascript-1.4.3&updatedAt=1669184322727'
+        src='src/assets/slider_3.png'
         alt='...'
       >
       </MDBCarouselItem>
