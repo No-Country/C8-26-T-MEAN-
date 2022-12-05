@@ -4,9 +4,10 @@ import Login from './Login'
 import Navbar from './Navbar'
 import CarouselOfi from './CarouselOfi'
 import Categorie from './Categorie'
+import Footer from './Footer';
 import '../styles/categories.css'
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import Footer from './Footer';
+
 
 const Home = () => {
 
