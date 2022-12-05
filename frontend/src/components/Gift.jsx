@@ -9,7 +9,7 @@ const Gift = () => {
   return (
     <div>
       <Navbar />
-      <div className='gift'>
+      <div className='gift d-flex justify-content-center'>
         <img src={logo} alt="logo" className="img-preg" />
         <MDBAccordion borderless initialActive={1}>
           <MDBAccordionItem collapseId={1} headerTitle='¿Qué es GiftClub?'>
