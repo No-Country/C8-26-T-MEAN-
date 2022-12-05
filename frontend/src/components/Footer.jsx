@@ -127,27 +127,6 @@ const Footer = () => {
                   rippleColor='light'
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
-                  <img src='src/assets/team_mb1.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
-                    <div
-                      className='mask'
-                      style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
-                    ></div>
-                  </a>
-                  <div className='mask'>
-                    <div className='bottom-0 d-flex align-items-end h-100 text-center justify-content-center'>
-                      <div>
-                        <p className='fw-bold text-white mb-4'>Back</p>
-                      </div>
-                    </div>
-                  </div>
-                </MDBRipple>
-              </MDBCol>
-              <MDBCol lg='1' md='12' className='mb-4 mb-md-0'>
-                <MDBRipple
-                  rippleColor='light'
-                  className='bg-image hover-overlay shadow-1-strong rounded'
-                >
                   <img src='src/assets/team_mb2.jpg' className='w-100 rounded-circle' />
                   <a href='#!'>
                     <div
