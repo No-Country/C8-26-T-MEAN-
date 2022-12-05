@@ -34,6 +34,20 @@ module.exports = {
         ]
     }),
 
+    findOrderClosed: async (userId) => await db.Order.findOne({
+        where: {
+            user_id: userId
+        },
+        include: [
+            {
+                association: 'status_orders',
+                where: {
+                    name: 'Finalizado'
+                }
+            }
+        ]
+    }),
+
     findAmmount: async (userId) => await db.Order.findOne({
         where: {
             user_id: userId,
