@@ -1,8 +1,9 @@
 import React from 'react'
 import logo from '../assets/logo.png'
+import Navbar from './Navbar'
+import Footer from './Footer';
 import '../styles/gift.css'
 import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
-import Navbar from './Navbar'
 
 const Gift = () => {
   return (
@@ -30,6 +31,7 @@ const Gift = () => {
           </MDBAccordionItem>
         </MDBAccordion>
       </div>
+      <Footer />
     </div>
   )
 }
