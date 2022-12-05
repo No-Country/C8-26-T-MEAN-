@@ -17,7 +17,7 @@ export default function CarouselOfi() {
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={2}
-        src='https://ik.imagekit.io/tjlqeq3ql/GiftClub/_Bienvenido_a_GIFTCLUB__OyitpXYS5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670031312145'
+        src='src/assets/slider_2.png'
         alt='...'
       >
       </MDBCarouselItem>
