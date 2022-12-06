@@ -19,7 +19,9 @@ const DetailCard = ({ product }) => {
  
 
 const handleClick =()=>{
-   const url='http://localhost:3001/agregar';
+   if(user){
+    
+    const url='http://localhost:3001/agregar';
     const data={
       user:{
           id:user.id,
@@ -51,6 +53,13 @@ const handleClick =()=>{
       console.log(e)
       notifyError(e.response.data.message)
     })
+
+    }else{
+      
+      notifyError("Debe ingresar con su cuenta para agregar el producto al Carrito")
+   }
+
+  
 }
   return (
     <div className='detail--product d-flex'>
