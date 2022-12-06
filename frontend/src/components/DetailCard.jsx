@@ -25,18 +25,19 @@ const DetailCard = ({ product }) => {
   const notifySuccess = () => toast("Agregado al Carrito")
   const notifyError = (e) => toast(`Error al adicionar al carrito: ${e}`)
 
-
-  const handleClick = () => {
-    const url = 'http://localhost:3001/agregar';
-    const data = {
-      user: {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        orderPoints: user.orderPoints,
-        points: user.points,
-        role: user.role,
-        address: user.address || "dasdasd"
+const handleClick =()=>{
+   if(user){
+    
+    const url='http://localhost:3001/agregar';
+    const data={
+      user:{
+          id:user.id,
+          email:user.email,
+          name:user.name,
+          orderPoints:user.orderPoints ,
+          points:user.points,
+          role:user.role,
+          address:user.address || "dasdasd"
       },
       product: {
         id: product.id,
@@ -54,12 +55,19 @@ const DetailCard = ({ product }) => {
           navigate("/Purchase")
         }, "1000")
 
-      })
-      .catch(e => {
-        console.log(e)
-        notifyError(e.response.data.message)
-      })
-  }
+    })
+    .catch(e=>{
+      console.log(e)
+      notifyError(e.response.data.message)
+    })
+
+    }else{
+      
+      notifyError("Debe ingresar con su cuenta para agregar el producto al Carrito")
+   }
+
+  
+}
   return (
     <div className='detail--product d-flex justify-content-center'>
 

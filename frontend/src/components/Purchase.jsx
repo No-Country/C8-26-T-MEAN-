@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
 import { setValueProduct } from '../store/slices/products.slice'
 import Navbar from './Navbar'
 import ProductCart from './ProductCart'
@@ -22,6 +23,8 @@ const Purchase = () => {
   const [products, setProducts] = useState([])
   const [deleteProduct, setDeleteProduct] = useState(false)
   const [purchase, setPurchase] = useState(false)
+  const [compra, setCompra] = useState(0)
+  const [total, setTotal] = useState(0)
   const user = useSelector(state => state.user)
   const dispatch = useDispatch();
   useEffect(() => {
@@ -34,12 +37,16 @@ const Purchase = () => {
         setProducts(res.data.products)
         const cant = res.data.products.length
         // console.log(cant)
+         if(cant){
+          setCompra(res.data.products[0].Order.ammount)
+          setTotal(user.points-res.data.products[0].Order.ammount)
+         }
         dispatch(setValueProduct({ cant }))
       })
       .catch(e => console.log(e))
   }, [deleteProduct, purchase])
 
-  /*
+  
   const handleClick = () =>{
     let URL ="http://localhost:3001/checkout"
     if(user){
@@ -48,22 +55,31 @@ const Purchase = () => {
         
        console.log(res.data)
           setPurchase(true)
+          toggleShow()
+          notifySuccess() 
+         // dispatch(setValueProduct({user}))
+
      //  dispatch(setValueProduct({cant}))
       })
       .catch(e =>{
         console.log(e)
         setPurchase(false) 
+        toggleShow()
+        notifyError("error")
       })
     }else{
       console.log("error al comprar")
     }
   }
-  */
+
 
   //Para el modal:
   const [basicModal, setBasicModal] = useState(false);
   const toggleShow = () => setBasicModal(!basicModal);
 
+
+  const notifySuccess = () => toast("¡Felicidades! tus puntos fueron canjeados con exito ")
+  const notifyError = (e) => toast(`Error al al realizar la Compra: ${e}`)
 
   return (
     <div className='purchase'>
@@ -91,9 +107,9 @@ const Purchase = () => {
               <span> Puntos restantes:</span>
             </div>
             <div className='purchase-total-number'>
-              <span> 3200</span>
-              <span> -400</span>
-              <span> 2800</span>
+              <span>{user.points} </span>
+              <span> {compra} </span>
+              <span> {total}</span>
             </div>
 
           </div>
@@ -108,16 +124,22 @@ const Purchase = () => {
             <MDBModalDialog>
               <MDBModalContent>
                 <MDBModalHeader>
-                  <MDBModalTitle>¡Felicidades!</MDBModalTitle>
+                  <MDBModalTitle>¡Confirmacion!</MDBModalTitle>
                   <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
                 </MDBModalHeader>
                 <MDBModalBody>
-                  Tus puntos fueron canjeados exitosamente con los siguientes productos:
-                  Aquí los productos sean nombre y/o imágenes.
-                  Te enviaremos un correo electrónico a tu e-mail para darte mayor información.
+                 Los Puntos seran canjeados por un total de:  
+
+                  <div className='purchase-total-text-msg' >
+                    
+                     <span    >
+                      {compra} Puntos
+                     </span>
+                  </div>
+                  Te enviaremos un correo electrónico a tu e-mail para darte mayor información  para la entrega de los productos seleccionados.
                 </MDBModalBody>
                 <MDBModalFooter>
-                  <MDBBtn color='dark' onClick={toggleShow}>CERRAR</MDBBtn>
+                  <MDBBtn color='dark' onClick={handleClick}>ACEPTAR</MDBBtn>
                 </MDBModalFooter>
               </MDBModalContent>
             </MDBModalDialog>
@@ -125,6 +147,20 @@ const Purchase = () => {
         </div>
       </div>
       <Footer />
+
+      <ToastContainer 
+		position="top-center"
+		autoClose={1000}
+		hideProgressBar
+		newestOnTop={false}
+		closeOnClick ={false}
+		rtl={false}
+		pauseOnFocusLoss
+		draggable
+		pauseOnHover
+		theme="dark"
+		  />
+
     </div>
   )
 }
