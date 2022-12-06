@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/footer.css'
 import {
   MDBFooter,
   MDBContainer,
@@ -13,9 +14,9 @@ const Footer = () => {
   return (
     <div>
       <MDBFooter className='text-center' color='white' bgColor='dark'>
-        <div className='p-4 text-center text-white d-flex justify-content-center'>
+        <div className='p-4 text-center text-white d-flex justify-content-center '>
           <section>
-            <MDBRow className='d-flex justify-content-center'>
+            <MDBRow className='d-flex justify-content-center img-team '>
               <p className='fw-bold'>NUESTRO EQUIPO:</p>
               <MDBCol lg='1' md='12' className='mb-4 mb-md-0'>
                 <MDBRipple

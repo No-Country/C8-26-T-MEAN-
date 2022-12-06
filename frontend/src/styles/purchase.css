@@ -5,8 +5,7 @@
     align-items: center;
     padding-top: 25px;
 }
-.purchase-global-left{
-}
+
 .purchase-img{
     max-width: 150px;
 }
@@ -25,7 +24,6 @@
     border-radius: 20px;
     width: 255px;
     height: 40px;
-  
 }
 .purchase-box{ 
     border: 2px solid #FEC310;
@@ -138,4 +136,17 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
+}
+.purchase-total-text-msg{
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    color:  #56042C;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 40px;
 }

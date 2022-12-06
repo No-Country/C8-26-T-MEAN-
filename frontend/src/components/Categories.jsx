@@ -5,6 +5,7 @@ import Categorie from './Categorie';
 import Footer from './Footer';
 import '../styles/categories.css'
 import { MDBRow } from 'mdb-react-ui-kit';
+import categoriaSlice from '../store/slices/categoria.slice';
 const Categories = () => {
   const [categories, setCategories] = useState()
   useEffect(() => {
@@ -14,7 +15,7 @@ const Categories = () => {
       .catch(e => { console.log(e) })
   }, [])
 
-  // console.log(categories)
+   console.log(categories)
   return (
     <div>
       <Navbar />
@@ -24,7 +25,8 @@ const Categories = () => {
           <MDBRow className='d-flex justify-content-center'>
             {
               categories?.map(categorie => (
-                <Categorie props={categorie} key={categorie.id} />
+              
+               <Categorie props={categorie} key={categorie.id} />
               ))
             }
           </MDBRow>

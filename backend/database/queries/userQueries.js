@@ -5,8 +5,8 @@ const { Op } = require("sequelize");
 module.exports = {
     search: async (query,limit,page) => await db.User.findAll({
         include: [
-            { association: 'interests' },
-            { association: 'genders' },
+            // { association: 'interests' },
+            // { association: 'genders' },
             { association: 'roles' }
         ],
         limit,
@@ -27,8 +27,8 @@ module.exports = {
 
     findById: async (id) => await db.User.findByPk(id,{
         include: [
-            { association: 'interests' },
-            { association: 'genders' },
+            // { association: 'interests' },
+            // { association: 'genders' },
             { association: 'roles' }
         ] 
     }),
@@ -76,8 +76,8 @@ module.exports = {
     lastUser: async () => 
             await db.User.findOne({
                     include: [
-                        { association: 'interests' },
-                        { association: 'genders' },
+                        // { association: 'interests' },
+                        // { association: 'genders' },
                         { association: 'roles' }
                     ],
                     order: [
