@@ -3,8 +3,11 @@ import axios from 'axios'
 import Navbar from './Navbar'
 import { MDBRow, MDBContainer } from 'mdb-react-ui-kit';
 import Product from './Product';
+import {  useSelector } from 'react-redux'
 
 const Products = () => {
+
+  const cate= useSelector(state => state.cate)
   const [products, setProducts] = useState([])
   useEffect(() => {
     const url = "http://localhost:3001/products"
@@ -21,6 +24,7 @@ const Products = () => {
         <MDBRow className='d-flex justify-content-center'>
           {
             products.map(product => {
+                 if(product.category_id==cate)
               return <Product props={product} key={product.id} />
             })
           }

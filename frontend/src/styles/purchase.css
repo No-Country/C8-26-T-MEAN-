@@ -137,3 +137,16 @@
     font-size: 16px;
     line-height: 24px;
 }
+.purchase-total-text-msg{
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    color:  #56042C;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 40px;
+}

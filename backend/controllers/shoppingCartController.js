@@ -5,68 +5,10 @@ const orderQueries = require("../database/queries/orderQueries");
 const orderDetailQueries = require("../database/queries/orderDetailQueries");
 
 const db = require('../database/models');
+const userQueries = require('../database/queries/userQueries');
 
 
 const apiShoppingCartController = {
-    // showAll: async (req, res) => {
-    //     let orders = await queries.Order.showAll();
-    //     res.render('users/userOrders',{ orders });
-    // },
-
-    // showByUserId: async (req, res) => {
-    //     let orders = await queries.Order.search(res.locals.userLogged.id);
-    //     res.render('users/userOrders',{ orders });
-    // },
-
-    // showPending: async (req, res) => {
-    //     const id = res.locals.userLogged.id;
-    //     const products = await queries.OrderDetail.getCartById(id);
-      
-    //     let total = 0;
-    //     products.map(detail => total += detail.quantity * detail.price);
-
-    //     res.render('users/userShoppingCart',{ products, total });
-    // },
-    
-
-    // addProductOld: async (req,res) => {
-    //     let currentUser = res.locals.userLogged;
-
-    //     //Me fijo si el usuario ya tiene una orden pendiente, sino creo una
-    //     let order = await queries.Order.find(currentUser.id)
-    //     if ( order === null ) order = await queries.Order.create(currentUser);
-
-    //     //Agrego el producto si no existe
-    //     await queries.OrderDetail.create(order.id,req.params.id)
-
-    //     res.redirect('/usuarios/carrito');
-    // },
-
-    // checkoutOld: async (req,res) => {
-    //     const order_id = parseInt(req.params.id);
-    //     let orderDetail = JSON.parse(JSON.stringify(req.body));
-    //     let total_quantity = 0;
-
-    //     for (let index in orderDetail.product_id){
-    //         total_quantity += parseInt(orderDetail.quantity[index]);
-
-    //         await queries.OrderDetail.update({
-    //             order_id: order_id,
-    //             product_quantity: orderDetail.quantity[index],
-    //             product_id: orderDetail.product_id[index],
-    //         });
-    //     }
-
-    //     const [[{total_price}]] = await queries.OrderDetail.getTotalPriceById(order_id);
-
-    //     await queries.Order.update({
-    //         totalQuantity: total_quantity,
-    //         ammount: total_price,
-    //         id: order_id
-    //     });
-
-    //     res.redirect('/');
-    // }
     addProduct: async (req,res) => {
         
         let currentUser = req.body.user;
@@ -94,9 +36,12 @@ const apiShoppingCartController = {
         //Agrego el producto si no existe
         orderDetail = await queries.OrderDetail.create(order.id,productId)
 
+        const orderUpdated = await orderQueries.find(currentUser.id)
+        const orderDetailUpdated = await orderDetailQueries.findMatch(orderUpdated.id,productId)
+
         res.status(200).json({
-            order,
-            orderDetail
+            orderUpdated,
+            orderDetailUpdated
             })
         }
         } else {
@@ -111,9 +56,13 @@ const apiShoppingCartController = {
             //Agrego el producto si no existe
         order = await orderQueries.find(currentUser.id)
         orderDetail = await queries.OrderDetail.create(order.id,productId)
+
+        const orderUpdated = await orderQueries.find(currentUser.id)
+        const orderDetailUpdated = await orderDetailQueries.findMatch(orderUpdated.id,productId)
+
         res.status(200).json({
-            order,
-            orderDetail
+            orderUpdated,
+            orderDetailUpdated
             })
             }
         }
@@ -133,14 +82,31 @@ const apiShoppingCartController = {
 
     checkout: async (req, res) => {
         let currentUser = req.body.user;
+        let currentOrderPoints = req.body.user.orderPoints;
+        let currentUserPoints = req.body.user.points;
         
-        order = await orderQueries.find(currentUser.id)
+
+        const updatedPoints = currentUserPoints - currentOrderPoints
+
+        const order = await orderQueries.find(currentUser.id)
 
         await queries.Order.update({
                     id:order.id
                 });
 
-        res.status(200).json({order})
+        await db.User.update({
+            points: updatedPoints
+            },
+            {
+                where: {
+                    id: currentUser.id
+                }
+        })
+        
+        const user = await userQueries.findById(currentUser.id)
+        const orderUpdated = await orderQueries.findOrderClosed(currentUser.id)
+
+        res.status(200).json({orderUpdated,user})
 
     },
 
