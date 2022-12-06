@@ -125,7 +125,7 @@ const Navbar= () =>{
     }
   } 
 const handleClick = () =>{
-     navigate("/Purchase")
+      navigate("/Purchase")
 }
   return (
     <div>
@@ -134,8 +134,8 @@ const handleClick = () =>{
           <span className='gitclub-logo'></span>
         </Link>
         <ul className='lista-boton-carrito'>
-            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2' color='primary'>
-           { !session ? "ingresar": "salir"}
+            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2 asd' color='primary'>
+            { !session ? "ingresar": "salir"}
             </MDBBtn>
           <li id="icono_li">
             {
@@ -151,18 +151,18 @@ const handleClick = () =>{
             }
           </li>
           <li>
-             <div className='logo'>
+            <div className='logo'>
               <img src={userLog.image} alt="" />
-             </div>
+            </div>
           </li>
           <li>
-               <div>
+              <div>
               {userLog.name}
             </div>
             {
               session? 
               <div>
-                 {userLog.points} Puntos
+                {userLog.points} Puntos
 
             </div>
               :

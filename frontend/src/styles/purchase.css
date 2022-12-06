@@ -5,8 +5,7 @@
     align-items: center;
     padding-top: 25px;
 }
-.purchase-global-left{
-}
+
 .purchase-img{
     max-width: 150px;
 }
@@ -25,7 +24,6 @@
     border-radius: 20px;
     width: 255px;
     height: 40px;
-  
 }
 .purchase-box{ 
     border: 2px solid #FEC310;

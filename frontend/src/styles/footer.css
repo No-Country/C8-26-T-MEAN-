@@ -1,0 +1,6 @@
+@media (max-width: 600px){
+    .img-team {
+        max-width: 120px;
+        min-width: 100px;     
+    }
+}

@@ -11,6 +11,7 @@ body {
     height: 60px;
     left: 38px;
     top: 10px;
+    margin-top: 20px;
     background: url(../assets/logo_2.png);
 }
 
@@ -47,6 +48,8 @@ li {
 .lista-boton-carrito {
     display: flex;
     flex-flow: row-reverse wrap-reverse;
+    margin-bottom: 30px;
+    margin-top: 30px
 }
 
 #icono {
@@ -176,5 +179,16 @@ input[type=checkbox]:checked~#menu {
         padding-top: 10px;
         padding-bottom: 10px;
         font-size: 19px
+    }
+
+    .asd {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px){
+    #icono_li a{
+        min-width: 80px;
+        background: #fff;
     }
 }
