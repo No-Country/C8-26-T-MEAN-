@@ -19,9 +19,8 @@ const DetailProduct = () => {
   return (
     <div>
       <Navbar />
-      <MDBBtn rounded className='btn-categ-prod' color='dark'>CATEGORÍAS</MDBBtn>
+      {/*<MDBBtn rounded className='btn-categ-prod' color='dark'>CATEGORÍAS</MDBBtn>*/}
       <MDBContainer className='d-flex justify-content-center'>
-        products
         <DetailCard product={product} />
       </MDBContainer>
     </div >
