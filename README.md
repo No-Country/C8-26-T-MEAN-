@@ -10,9 +10,7 @@ El proyecto a desarrollar apunta a empresas que en función de su estrategia de 
 
 Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por productos / merchandising del mundial.
 
-### Tecnologías :
-
-### ¿Cómo inicializar el proyecto en mi ordenador? 👩🏻‍💻👨🏽‍💻:
+### Tecnologías 👩🏻‍💻👨🏽‍💻:
 
 ### Integrantes 🚀: 
 * Lucía Riva: [LinkedIn](https://www.linkedin.com/in/lucia-riva) | [GitHub](https://github.com/LuciaRiva)
