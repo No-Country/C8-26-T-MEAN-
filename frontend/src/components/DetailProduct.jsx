@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from './Navbar'
 import DetailCard from './DetailCard'
+import Footer from './Footer';
 import '../styles/detailProduct.css'
 import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
 
@@ -23,6 +24,7 @@ const DetailProduct = () => {
       <MDBContainer className='d-flex justify-content-center'>
         <DetailCard product={product} />
       </MDBContainer>
+      <Footer />
     </div >
 
   )
