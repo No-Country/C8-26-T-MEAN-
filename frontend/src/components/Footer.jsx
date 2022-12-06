@@ -24,7 +24,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_ef.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/emilcefernandez'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -45,7 +45,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_lr.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/lucia-riva'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -66,7 +66,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_kb.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='(https://pe.linkedin.com/in/kimberllynbarrazat/es'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -87,7 +87,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_fq.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/florencio-quelca-mamani-8741ba84/'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -108,7 +108,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_pg.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/pablo-gianferro'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -129,7 +129,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_mb2.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='http://linkedin.com/in/miguel-ernesto-bazzarelli-8b5029247'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -150,7 +150,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_vb.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/valentin-banegas-27415b218/'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
