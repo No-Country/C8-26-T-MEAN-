@@ -44,27 +44,6 @@ const Footer = () => {
                   rippleColor='light'
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
-                  <img src='src/assets/team_lr.jpg' className='w-100 rounded-circle' />
-                  <a href='https://www.linkedin.com/in/lucia-riva'>
-                    <div
-                      className='mask'
-                      style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
-                    ></div>
-                  </a>
-                  <div className='mask'>
-                    <div className='bottom-0 d-flex align-items-end h-100 text-center justify-content-center'>
-                      <div>
-                        <p className='fw-bold text-white mb-4'>Front</p>
-                      </div>
-                    </div>
-                  </div>
-                </MDBRipple>
-              </MDBCol>
-              <MDBCol lg='1' md='12' className='mb-4 mb-md-0'>
-                <MDBRipple
-                  rippleColor='light'
-                  className='bg-image hover-overlay shadow-1-strong rounded'
-                >
                   <img src='src/assets/team_kb.jpg' className='w-100 rounded-circle' />
                   <a href='(https://pe.linkedin.com/in/kimberllynbarrazat/es'>
                     <div
@@ -170,7 +149,7 @@ const Footer = () => {
         </div>
         <div className='text-center p-3 fw-bold' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           © 2022 | Un proyecto de:
-          <a className='text-white fw-bold'> C8-26-T-MEAN</a>
+          <a className='text-white fw-bold' href='https://github.com/No-Country/C8-26-T-MEAN-'> C8-26-T-MEAN</a>
         </div>
       </MDBFooter>
 
