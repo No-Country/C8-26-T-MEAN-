@@ -132,7 +132,7 @@ const Purchase = () => {
 
       <div className='purchase-global'>
         <div className='purchase-global-left'>
-          <h2 className='purchase-global-title'>Carrito de Compras</h2>
+          <h2 className='purchase-global-title'>CARRITO DE CANJE</h2>
 
         </div>
         <div className='purchase-box'>
