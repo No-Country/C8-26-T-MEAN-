@@ -168,19 +168,6 @@ const Footer = () => {
             </MDBRow>
           </section>
         </div>
-
-        <MDBContainer className='p-4'>
-
-          <section className='mb-4 text-white'>
-            <p>
-              ¿Qué es GiftClub?<br />Es un sistema de puntos acumulables que pueden ser canjeados por cualquiera
-              de los productos que se encuentran dentro del catálogo de este sitio. <br />
-              A más puntos tenga el usuario, habrá más posibilidad de llevarse todos los
-              productos.
-            </p>
-          </section>
-        </MDBContainer>
-
         <div className='text-center p-3 fw-bold' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           © 2022 | Un proyecto de:
           <a className='text-white fw-bold'> C8-26-T-MEAN</a>
