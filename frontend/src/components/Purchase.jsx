@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
@@ -56,7 +56,7 @@ const Purchase = () => {
       
   }, [deleteProduct, purchase])
 
-  
+  const navigate =useNavigate()
   const handleClick = () =>{
     let URL ="http://localhost:3001/checkout"
     //console.log("usuario",user)
@@ -94,9 +94,10 @@ const Purchase = () => {
             name:user.name,
             orderSales:0,
             role:user.role,
-            
+          
           }));
           dispatch(setValueProduct({cant:0}))
+          navigate('/')
      //  dispatch(setValueProduct({cant}))
       })
       .catch(e =>{
@@ -113,7 +114,13 @@ const Purchase = () => {
 
   //Para el modal:
   const [basicModal, setBasicModal] = useState(false);
-  const toggleShow = () => setBasicModal(!basicModal);
+  const toggleShow = () => {
+     if(compra){
+       setBasicModal(!basicModal);
+     }else{
+      notifyError("Carrito Vacio")
+     }
+  }
 
 
   const notifySuccess = () => toast("¡Felicidades! tus puntos fueron canjeados con exito ")
