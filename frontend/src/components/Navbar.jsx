@@ -136,7 +136,7 @@ const handleClick = () =>{
           </li>
           <li>
             <div className='logo'>
-              <img src={userLog.image} alt="" />
+              <img className='rounded-circle' src={userLog.image} alt="" />
             </div>
           </li>
           <li>
