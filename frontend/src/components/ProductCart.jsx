@@ -1,18 +1,9 @@
 import React from 'react'
 import '../styles/purchase.css'
 import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBCheckbox,
-  MDBIcon
+  MDBBtn
 }  from 'mdb-react-ui-kit';
 import axios from 'axios';
-import {getUserThunk} from '../store/slices/users.slice'
 import { setValueProduct } from '../store/slices/products.slice'
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -57,13 +48,13 @@ const ProductCart = ({product,setDeleteProduct,deleteProduct}) => {
     </div>
     <div >
       <h3 className='tex-product'>{product.Product.product_name}</h3>
-      <p>{product.Product.price}</p>
-      <p>Subtotal : {product.price}</p>
+      <p>{product.Product.price} puntos por unidad.<br />
+      Subtotal : {product.price} puntos.</p>
     </div>
     <div className='purchase-product-change'>
-      <p>CANTIDAD: {product.quantity}</p>
+      <p className='p-cantidad'>CANTIDAD: {product.quantity}</p>
 
-      <MDBBtn className="col-12 mb-2"  onClick={handleClick} >ELIMINAR PRODUCTO</MDBBtn>
+      <MDBBtn rounded className="col-12 mb-2 btn-eliminar-prod"  onClick={handleClick} >ELIMINAR PRODUCTO</MDBBtn>
     </div>
   </div>
   )
