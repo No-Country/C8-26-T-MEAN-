@@ -22,12 +22,12 @@ router.get('/categories', apiCategoryController.list);
 router.post('/agregar', apiShoppingCartController.addProduct)
 
 //MOSTRAR PRODUCTOS DEL CARRITO
-router.get ('/cart/:id', apiShoppingCartController.showPending)
+router.get('/cart/:id', apiShoppingCartController.showPending)
 
 //ELIMINAR PRODUCTO DEL CARRITO
 router.post('/delete', apiShoppingCartController.deleteFromCart)
 
 //FINALIZAR PEDIDO
-router.post ('/checkout', apiShoppingCartController.checkout)
+router.post('/checkout', apiShoppingCartController.checkout)
 
 module.exports = router;

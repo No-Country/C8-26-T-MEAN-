@@ -13,9 +13,12 @@ import {
 }  from 'mdb-react-ui-kit';
 import axios from 'axios';
 import {getUserThunk} from '../store/slices/users.slice'
+import { setValueProduct } from '../store/slices/products.slice'
 import { useDispatch, useSelector } from 'react-redux';
-const ProductCart = ({product,setDeleteProduct}) => {
+
+const ProductCart = ({product,setDeleteProduct,deleteProduct}) => {
   const user = useSelector(state => state.user)
+  const cant = useSelector(state => state.product)
     // console.log(product,"unidad")
 
 
@@ -38,8 +41,9 @@ const ProductCart = ({product,setDeleteProduct}) => {
       }
       axios.post(URL,data)
       .then(res => {
-        setDeleteProduct(true)
-        dispatch(getUserThunk(user))
+        setDeleteProduct(!deleteProduct)
+        //dispatch(getUserThunk(user))
+        dispatch(setValueProduct({cant:cant.cant-product.quantity}))
        
       })
       .catch(e =>console.log(e))
@@ -59,7 +63,7 @@ const ProductCart = ({product,setDeleteProduct}) => {
     <div className='purchase-product-change'>
       <p>CANTIDAD: {product.quantity}</p>
 
-      <MDBBtn className="col-12 mb-2"  onClick={handleClick} >DELETE PRODUCT</MDBBtn>
+      <MDBBtn className="col-12 mb-2"  onClick={handleClick} >ELIMINAR PRODUCTO</MDBBtn>
     </div>
   </div>
   )

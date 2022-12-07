@@ -13,40 +13,45 @@ const apiShoppingCartController = {
         
         let currentUser = req.body.user;
         let currentUserPoints = req.body.user.points
-        let currentProductPoints = req.body.product.points
-        let currentUserOrderPoints = req.body.user.orderPoints
+        let currentProductPoints = req.body.product.price
         let productId = req.body.product.id
         
         try {
-
-        //Me fijo si el usuario ya tiene una orden pendiente, sino creo una
-        let order = await queries.Order.find(currentUser.id)
-        
-        if ( order === null ) {
-            let total = (currentUserPoints - currentProductPoints)
-            if (total < 0 ) {
-                {
-                    res.status(401).json({
-                        message: "Puntos insuficientes",
+            
+            //Me fijo si el usuario ya tiene una orden pendiente, sino creo una
+            let order = await queries.Order.find(currentUser.id)
+            
+            if ( order === null ) {
+                let total = (currentUserPoints - currentProductPoints)
+                if (total < 0 ) {
+                    {
+                        res.status(401).json({
+                            message: "Puntos insuficientes",
+                        })
+                    }
+                } else {
+                    //Creo la orden en blanco        
+                    order = await queries.Order.create(currentUser);
+                    //Agrego el producto si no existe
+                    orderDetail = await queries.OrderDetail.create(order.id,productId)
+                    
+                    const orderUpdated = await orderQueries.find(currentUser.id)
+                    const orderDetailUpdated = await orderDetailQueries.findMatch(orderUpdated.id,productId)
+                    
+                    res.status(200).json({
+                        orderUpdated,
+                        orderDetailUpdated
                     })
-                }
-            } else {
-        //Creo la orden en blanco        
-        order = await queries.Order.create(currentUser);
-        //Agrego el producto si no existe
-        orderDetail = await queries.OrderDetail.create(order.id,productId)
-
-        const orderUpdated = await orderQueries.find(currentUser.id)
-        const orderDetailUpdated = await orderDetailQueries.findMatch(orderUpdated.id,productId)
-
-        res.status(200).json({
-            orderUpdated,
-            orderDetailUpdated
-            })
         }
         } else {
-            let totalWithOrder = (currentUserPoints - currentUserOrderPoints - currentProductPoints)
-            if (totalWithOrder < 0 ) {
+            let order = await queries.Order.find(currentUser.id)
+            let currentUserOrderPoints = order.ammount
+            console.log(order)
+           // let  total = req.body.total
+            let totalWithOrder = (currentUserPoints - currentUserOrderPoints  - currentProductPoints)
+           // let totalWithOrder = total
+            
+           if (totalWithOrder < 0 ) {
                 {
                     res.status(401).json({
                         message: "Puntos insuficientes",

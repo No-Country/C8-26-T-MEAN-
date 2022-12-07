@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux'
+import { setValueProduct } from '../store/slices/products.slice'
+import {getUserThunk} from '../store/slices/users.slice'
 import axios from 'axios';
 import '../styles/detailProduct.css'
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,6 +23,7 @@ import {
 const DetailCard = ({ product }) => {
   const navigate = useNavigate()
   const user = useSelector(state => state.user)
+  const cant = useSelector(state => state.product)
   const dispatch = useDispatch();
   const notifySuccess = () => toast("Agregado al Carrito")
   const notifyError = (e) => toast(`Error al adicionar al carrito: ${e}`)
@@ -29,25 +32,53 @@ const handleClick =()=>{
    if(user){
     
     const url='http://localhost:3001/agregar';
-    const data={
-      user:{
-          id:user.id,
-          email:user.email,
-          name:user.name,
-          orderPoints:user.orderPoints ,
-          points:user.points,
-          role:user.role,
-          address:user.address || "dasdasd"
-      },
-      product: {
-        id: product.id,
-        points: product.price
+    let data={}
+     if(user.orderSales==0){
+      data={
+        user:{
+            id:user.id,
+            email:user.email,
+            name:user.name,
+            orderSales:user.orderSales,
+            points:user.points,
+            role:user.role,
+            address:user.address || "dasdasd"
+        },
+        product: {
+          id: product.id,
+          price: product.price
+        },
+     
       }
-    }
+     }else{
+      data={
+        user:{
+            id:user.id,
+            email:user.email,
+            name:user.name,
+            points:user.points,
+            orderSales:user.orderSales,
+            address:user.address || "dasdasd"
+          },
+          product: {
+            id: product.id,
+            price: product.price
+          },
+         
+      }
+
+     }
+     console.log(data)
     axios.post(url, data)
       .then(res => {
         // const cant =
-        // dispatch(setValueProduct({cant}))
+          if(cant.cant){
+            dispatch(setValueProduct({cant:cant.cant+1}))
+          }else{
+            dispatch(setValueProduct({cant:1}))
+
+          }
+    //  dispatch(getUserThunk(user))
         console.log(res.data)
         notifySuccess()
         setTimeout(() => {

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import { setValueProduct } from '../store/slices/products.slice'
+import { getUserThunk ,setValue} from '../store/slices/users.slice'
 import Navbar from './Navbar'
 import ProductCart from './ProductCart'
 import Footer from './Footer';
@@ -26,44 +27,81 @@ const Purchase = () => {
   const [compra, setCompra] = useState(0)
   const [total, setTotal] = useState(0)
   const user = useSelector(state => state.user)
+  const canti = useSelector(state => state.product)
   const dispatch = useDispatch();
   useEffect(() => {
-    let URL = "http://localhost:3001/cart/2"
+    //let URL = "http://localhost:3001/cart/2"
     if (user !== "") {
       URL = `http://localhost:3001/cart/${user.id}`
-    }
-    axios.get(URL)
+      axios.get(URL)
       .then(res => {
+        console.log(res.data)
         setProducts(res.data.products)
         const cant = res.data.products.length
+        
         // console.log(cant)
-         if(cant){
+        if(cant){
           setCompra(res.data.products[0].Order.ammount)
           setTotal(user.points-res.data.products[0].Order.ammount)
-         }
-        dispatch(setValueProduct({ cant }))
+        }else{
+          setCompra(0)
+          setTotal(0)
+
+        }
+       // let canti=res.data.Order.items_q 
+       // dispatch(setValueProduct({  canti}))
       })
       .catch(e => console.log(e))
+    }
+      
   }, [deleteProduct, purchase])
 
   
   const handleClick = () =>{
     let URL ="http://localhost:3001/checkout"
+    //console.log("usuario",user)
     if(user){
-      axios.post(URL,{user})
+      axios.post(URL,{
+        user:{
+          id:user.id,
+          orderPoints:compra,
+          points:user.points
+        }
+      })
       .then(res =>{
         
-       console.log(res.data)
-          setPurchase(true)
+          //console.log(res.data)
+          setPurchase(!purchase)
+          dispatch(setValue({
+            points:total,
+            id:user.id,
+            address:user.address,
+            email:user.email,
+            image:user.image,
+            name:user.name,
+            orderSales:0,
+            role:user.role,
+            
+          }))
           toggleShow()
           notifySuccess() 
-         // dispatch(setValueProduct({user}))
-
+          sessionStorage.setItem('usuario', JSON.stringify({
+            points:total,
+            id:user.id,
+            address:user.address,
+            email:user.email,
+            image:user.image,
+            name:user.name,
+            orderSales:0,
+            role:user.role,
+            
+          }));
+          dispatch(setValueProduct({cant:0}))
      //  dispatch(setValueProduct({cant}))
       })
       .catch(e =>{
         console.log(e)
-        setPurchase(false) 
+        setPurchase(!purchase) 
         toggleShow()
         notifyError("error")
       })
@@ -95,7 +133,7 @@ const Purchase = () => {
           <div>
             {
               products.map(product => (
-                <ProductCart product={product} setDeleteProduct={setDeleteProduct} key={product.id} />
+                <ProductCart product={product} setDeleteProduct={setDeleteProduct} deleteProduct={deleteProduct} key={product.id} />
               ))
             }
           </div>
