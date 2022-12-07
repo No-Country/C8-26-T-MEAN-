@@ -118,7 +118,7 @@ const handleClick = () =>{
           <span className='gitclub-logo'></span>
         </Link>
         <ul className='lista-boton-carrito'>
-            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2 asd' color='primary'>
+            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2 btn-ingresar-responsive' color='primary'>
             { !session ? "ingresar": "salir"}
             </MDBBtn>
           <li id="icono_li">

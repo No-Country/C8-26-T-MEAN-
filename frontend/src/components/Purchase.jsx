@@ -160,8 +160,7 @@ const Purchase = () => {
           </div>
           <div className='purchase-btn'>
             <Link to="/Products">
-
-              <button className='purchase-btn1'> <span>  + </span>  CANJEAR MÁS PRODUCTOS</button>
+              <button className='purchase-btn1'> <span>+</span>  CANJEAR MÁS PRODUCTOS</button>
             </Link>
             <button className='purchase-btn2' onClick={toggleShow}> FINALIZAR PEDIDO</button>
           </div>

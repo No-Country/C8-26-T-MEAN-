@@ -165,5 +165,11 @@
 @media (max-width: 600px) {
     .gift {
         flex-wrap: wrap;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .img-preg {
+        display: none;
     }
 }
