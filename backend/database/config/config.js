@@ -1,20 +1,17 @@
-// import { createPool } from 'mysql2/promise';
+const DB_DATABASE = require('../../configdos')
+const DB_HOST = require('../../configdos')
+const DB_PASSWORD = require('../../configdos')
+const DB_USER = require('../../configdos')
+const PORT = require('../../configdos')
 
-// export const pool = createPool({
-//   host: 'localhost',
-//   port: 3306,
-//   user: 'root',
-//   password: 'Al4m0.t1gr3.t4ng0',
-//   database: 'giftclub_db'
-// })
 module.exports = {
     "development": {
-        "username": "sqluser",
-        "password": "password",
-        "database": "giftclub_db",
-        "host": "127.0.0.1",
+        "username": DB_USER,
+        "password": DB_PASSWORD,
+        "database": DB_DATABASE,
+        "host": DB_HOST,
         "dialect": "mysql",
-        "port": "3306"
+        "port": PORT
     },
     "test": {
         "username": "root",
