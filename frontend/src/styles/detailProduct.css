@@ -35,4 +35,8 @@ img {
     margin-left: 20px;
 }
 
-.detail--product-text {}
+@media (max-width: 600px) {
+    .nombre-product {
+        font-size: 16px;
+      }
+}
