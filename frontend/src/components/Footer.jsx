@@ -24,7 +24,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_ef.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/emilcefernandez'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -44,29 +44,8 @@ const Footer = () => {
                   rippleColor='light'
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
-                  <img src='src/assets/team_lr.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
-                    <div
-                      className='mask'
-                      style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
-                    ></div>
-                  </a>
-                  <div className='mask'>
-                    <div className='bottom-0 d-flex align-items-end h-100 text-center justify-content-center'>
-                      <div>
-                        <p className='fw-bold text-white mb-4'>Front</p>
-                      </div>
-                    </div>
-                  </div>
-                </MDBRipple>
-              </MDBCol>
-              <MDBCol lg='1' md='12' className='mb-4 mb-md-0'>
-                <MDBRipple
-                  rippleColor='light'
-                  className='bg-image hover-overlay shadow-1-strong rounded'
-                >
                   <img src='src/assets/team_kb.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='(https://pe.linkedin.com/in/kimberllynbarrazat/es'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -87,7 +66,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_fq.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/florencio-quelca-mamani-8741ba84/'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -108,7 +87,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_pg.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/pablo-gianferro'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -129,7 +108,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_mb2.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='http://linkedin.com/in/miguel-ernesto-bazzarelli-8b5029247'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -150,7 +129,7 @@ const Footer = () => {
                   className='bg-image hover-overlay shadow-1-strong rounded'
                 >
                   <img src='src/assets/team_vb.jpg' className='w-100 rounded-circle' />
-                  <a href='#!'>
+                  <a href='https://www.linkedin.com/in/valentin-banegas-27415b218/'>
                     <div
                       className='mask'
                       style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
@@ -168,22 +147,9 @@ const Footer = () => {
             </MDBRow>
           </section>
         </div>
-
-        <MDBContainer className='p-4'>
-
-          <section className='mb-4 text-white'>
-            <p>
-              ¿Qué es GiftClub?<br />Es un sistema de puntos acumulables que pueden ser canjeados por cualquiera
-              de los productos que se encuentran dentro del catálogo de este sitio. <br />
-              A más puntos tenga el usuario, habrá más posibilidad de llevarse todos los
-              productos.
-            </p>
-          </section>
-        </MDBContainer>
-
         <div className='text-center p-3 fw-bold' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           © 2022 | Un proyecto de:
-          <a className='text-white fw-bold'> C8-26-T-MEAN</a>
+          <a className='text-white fw-bold' href='https://github.com/No-Country/C8-26-T-MEAN-'> C8-26-T-MEAN</a>
         </div>
       </MDBFooter>
 

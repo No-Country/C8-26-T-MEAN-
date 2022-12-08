@@ -6,32 +6,10 @@
     padding: 0 100px
 }
 
-.faq-p {
-    font-size: 19px;
-    font-weight: 300;
-    color: #000000;
-    font-style: normal;
-    text-align: left;
-    line-height: 35px;
-}
-
-
 .arrow {
     font-size: 30px;
 }
 
-.faq-text {
-    font-weight: 600;
-    font-size: 19px;
-    margin: 50px 0;
-
-}
-
-.faq-p {
-    font-weight: 600;
-    text-align: center;
-
-}
 
 .faq-span {
     font-weight: 200;
@@ -165,5 +143,11 @@
 @media (max-width: 600px) {
     .gift {
         flex-wrap: wrap;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .img-preg {
+        display: none;
     }
 }

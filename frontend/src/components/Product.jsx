@@ -16,7 +16,7 @@ const Product = ({ props }) => {
           <h3 className="tex-product">{props.product_name} </h3>
           <img
             src={props.image_url}
-            className='img-fluid rounded-circle'
+            className='img-fluid rounded-circle img-prod-responsive'
             alt=''
           />
 

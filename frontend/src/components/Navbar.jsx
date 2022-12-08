@@ -28,31 +28,16 @@ const BACKEND_ADDRESS = 'http://localhost:3001';
 
 const Navbar= () =>{
    
+  const dispatch = useDispatch();
  useEffect(() => {
     const local =sessionStorage.getItem('usuario');
   //  console.log(local,"1231")
     const usuario=JSON.parse(local)
-    console.log(usuario,"adsasdasd")
+   // console.log(usuario,"adsasdasd")
         if(usuario){
-        //  dispatch(getUserThunk(usuario))
-
-           const address=usuario.address || "dasd"
-             const email=usuario.email
-           const id=usuario.id
-           const image=usuario.image
-          const name=usuario.name
-           const points=usuario.points
-           const role=usuario.role
+          //  console.log(usuario)
+       //  dispatch(getUserThunk(usuario))
           
-           if(usuario.orderSales!==0){
-              let orderPoints=usuario.orderSales.ammount
-              let cant=usuario.orderSales.items_q
-             dispatch(setValueProduct({cant}))
-             dispatch(setValue({id,name,email,points,role,address,orderPoints,cant,image}))
-           }else{
-             dispatch(setValueProduct({cant:0}))
-             dispatch(setValue({id,name,email,points,role,address,orderPoints:0,cant:0,image}))
-           }
           setSession(true)
         }
   }, [])
@@ -61,7 +46,6 @@ const Navbar= () =>{
   const username = useRef();
   const password = useRef();
   const [session, setSession] = useState(false);
-  const dispatch = useDispatch();
   const notifySucces = () => toast("Wellcome to GifClub");
   const notifyError = (e) => toast(`Error: ${e}`);
   const loginFetch = (e) => {
@@ -84,14 +68,15 @@ const Navbar= () =>{
         const name=data.user.name
         const points=data.user.points
         const role=data.user.role
-        if(data.orderSales!==0){
-           let orderPoints=data.user.orderSales.ammount
-           let cant=data.user.orderSales.items_q
-           dispatch(setValueProduct({cant}))
-          dispatch(setValue({id,name,email,points,role,address,orderPoints,cant,image}))
-        }else{
+        const ordersalesofi=data.orderSales
+        if(ordersalesofi==0){
           dispatch(setValueProduct({cant:0}))
-          dispatch(setValue({id,name,email,points,role,address,orderPoints:0,cant:0,image}))
+          dispatch(setValue({id,name,email,points,role,address,orderSales:0,cant:0,image}))
+        }else{
+          let orderSales=data.user.orderSales.ammount
+          let cant=data.user.orderSales.items_q
+          dispatch(setValueProduct({cant}))
+         dispatch(setValue({id,name,email,points,role,address,orderSales,cant,image}))
         }
         // dispatch(setValuePoints(data.user.points))     
         notifySucces()
@@ -117,11 +102,10 @@ const Navbar= () =>{
      }else{
 
       sessionStorage.removeItem('usuario');
-      dispatch(setValueProduct(""))
+      dispatch(setValueProduct({cant:0}))
       dispatch(setValue(""))
-      console.log("dasdasd")
-    
-    setSession(false)
+    //  console.log("dasdasd")
+      setSession(false)
     }
   } 
 const handleClick = () =>{
@@ -134,7 +118,7 @@ const handleClick = () =>{
           <span className='gitclub-logo'></span>
         </Link>
         <ul className='lista-boton-carrito'>
-            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2 asd' color='primary'>
+            <MDBBtn onClick={toggleShow} size='lg' rounded className='mx-2 btn-ingresar-responsive' color='primary'>
             { !session ? "ingresar": "salir"}
             </MDBBtn>
           <li id="icono_li">
@@ -152,7 +136,7 @@ const handleClick = () =>{
           </li>
           <li>
             <div className='logo'>
-              <img src={userLog.image} alt="" />
+              <img className='rounded-circle' src={userLog.image} alt="" />
             </div>
           </li>
           <li>

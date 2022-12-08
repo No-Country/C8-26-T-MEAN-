@@ -181,7 +181,7 @@ input[type=checkbox]:checked~#menu {
         font-size: 19px
     }
 
-    .asd {
+    .btn-ingresar-responsive {
         display: none !important;
     }
 }
