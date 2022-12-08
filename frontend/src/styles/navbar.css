@@ -1,8 +1,13 @@
 body {
     margin: 0
 }
-.logo{
+
+.logo {
     max-width: 45px;
+}
+
+.menu-hamburguesa-resp {
+    display: none;
 }
 
 .gitclub-logo {
@@ -13,6 +18,10 @@ body {
     top: 10px;
     margin-top: 20px;
     background: url(../assets/logo_2.png);
+}
+
+.user-name-info {
+    font-weight: bold;
 }
 
 .menuBackground {
@@ -186,9 +195,27 @@ input[type=checkbox]:checked~#menu {
     }
 }
 
-@media (max-width: 600px){
-    #icono_li a{
+@media (max-width: 600px) {
+    #icono_li a {
         min-width: 80px;
         background: #fff;
+    }
+
+    .menu-hamburguesa-resp {
+        display: block;
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    .gitclub-logo {
+        margin-left: 28px;
+        width: 63px;
+        height: 50px;
+        background: url(../assets/logo_responsive.png);
+    }
+
+    .user-point-info {
+        font-size: 14.5px;
     }
 }
