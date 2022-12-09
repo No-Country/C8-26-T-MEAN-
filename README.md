@@ -22,4 +22,7 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 * Miguel Bazzarelli: [LinkedIn](http://linkedin.com/in/miguel-ernesto-bazzarelli-8b5029247) | [GitHub](https://github.com/Migbazz)
 
 ### Team Leader:
-* Sebastian Sanchez  
+* Sebastian Sanchez 
+
+### Link al proyecto Deployado:
+* https://giftclub.netlify.app/
