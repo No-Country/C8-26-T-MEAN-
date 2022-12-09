@@ -11,6 +11,10 @@ El proyecto a desarrollar apunta a empresas que en función de su estrategia de 
 Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por productos / merchandising del mundial.
 
 ### Tecnologías 👩🏻‍💻👨🏽‍💻:
+* FrontEnd: ReactJS | JSX | Redux | CSS 
+* BackEnd: Javascript | Node.js | Express.js | MySQL | Sequelize 
+* Diseño UX: Figma.
+* Testing: Cypress.
 
 ### Integrantes 🚀: 
 * Emilce Fernandez: [LinkedIn](https://www.linkedin.com/in/emilcefernandez) | [GitHub](https://github.com/EmilceF)
