@@ -13,9 +13,8 @@ Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por
 ### Tecnologías 👩🏻‍💻👨🏽‍💻:
 
 ### Integrantes 🚀: 
-* Lucía Riva: [LinkedIn](https://www.linkedin.com/in/lucia-riva) | [GitHub](https://github.com/LuciaRiva)
-* Kimberlly Barraza: [LinkedIn](https://pe.linkedin.com/in/kimberllynbarrazat/es) | [GitHub](https://github.com/KNBT)
 * Emilce Fernandez: [LinkedIn](https://www.linkedin.com/in/emilcefernandez) | [GitHub](https://github.com/EmilceF)
+* Kimberlly Barraza: [LinkedIn](https://pe.linkedin.com/in/kimberllynbarrazat/es) | [GitHub](https://github.com/KNBT)
 * Florencio Quelca: [LinkedIn](https://www.linkedin.com/in/florencio-quelca-mamani-8741ba84/) | [GitHub](https://github.com/FlorencioQuelca)
 * Pablo Gianferro: [LinkedIn](https://www.linkedin.com/in/pablo-gianferro/) | [GitHub](https://github.com/pgianferro)
 * Valentin Banegas: [LinkedIn](https://www.linkedin.com/in/valentin-banegas-27415b218/) | [GitHub](https://github.com/ValenUNPL)
