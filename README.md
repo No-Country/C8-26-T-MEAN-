@@ -9,13 +9,13 @@ Este proyecto apunta a empresas que en función de su estrategia de retención d
 Partimos del supuesto de que esta empresa  o empresas tienen clientes registrados con un mail y les han asignado puntos por sus compras por lo que los invita a hacer uso de los mismos en GiftClub.
 Con los puntos obtenidos se accederá a la posibilidad de canjear los mismos por productos / merchandising del mundial, entre otros.
 
-### Tecnologías 👩🏻‍💻👨🏽‍💻📌:
+### Tecnologías 🚀:
 * FrontEnd: ReactJS | JSX | Redux | CSS 
 * BackEnd: Javascript | Node.js | Express.js | MySQL | Sequelize 
 * Diseño UX: Figma.
 * Testing: Cypress.
 
-### Integrantes 🚀: 
+### Integrantes 👩🏻‍💻👨🏽‍💻: 
 * (Diseño UX) Emilce Fernandez: [LinkedIn](https://www.linkedin.com/in/emilcefernandez) | [GitHub](https://github.com/EmilceF)
 * (FrontEnd) Kimberlly Barraza: [LinkedIn](https://pe.linkedin.com/in/kimberllynbarrazat/es) | [GitHub](https://github.com/KNBT)
 * (FrontEnd) Florencio Quelca: [LinkedIn](https://www.linkedin.com/in/florencio-quelca-mamani-8741ba84/) | [GitHub](https://github.com/FlorencioQuelca)
