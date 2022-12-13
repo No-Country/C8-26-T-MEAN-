@@ -1,0 +1,221 @@
+body {
+    margin: 0
+}
+
+.logo {
+    max-width: 45px;
+}
+
+.menu-hamburguesa-resp {
+    display: none;
+}
+
+.gitclub-logo {
+    position: absolute;
+    width: 76px;
+    height: 60px;
+    left: 38px;
+    top: 10px;
+    margin-top: 20px;
+    background: url(../assets/logo_2.png);
+}
+
+.user-name-info {
+    font-weight: bold;
+}
+
+.menuBackground {
+    background: #49BCE3;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+#menuContainer {
+    text-align: center;
+}
+
+.fa-solid,
+.fas {
+    font-size: xx-large;
+}
+
+/*Strip the ul of padding and list styling*/
+ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+}
+
+/*Crear una lista horizontal con espacio*/
+li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1px;
+}
+
+.lista-boton-carrito {
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+    margin-bottom: 30px;
+    margin-top: 30px
+}
+
+#icono {
+    min-width: 160px;
+}
+
+#icono_li a {
+    min-width: 160px;
+    background: white;
+}
+
+/*Estilo para los links del menú*/
+
+.btn-lg,
+.btn-group-lg>.btn {
+    padding: .75rem 1.6875rem .6875rem 1.6875rem;
+    padding-right: 50px;
+    padding-left: 50px;
+    line-height: 1.6;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+li a {
+    display: block;
+    min-width: 270px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    background: #49BCE3;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/*Hover state para los links principales del navbar*/
+li:hover a {
+    background: #49BCE3
+}
+
+/*Estilos para los dropdpws links (en caso sea necesario)*/
+li:hover ul a {
+    background: rgb(105, 105, 105);
+    color: #49BCE3;
+    height: 40px;
+    line-height: 40px
+}
+
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    background: #FEC310;
+    color: #fff
+}
+
+/*Hide dropdown links until they are needed*/
+li ul {
+    position: absolute;
+    display: none
+}
+
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
+}
+
+/*Prevent text wrapping*/
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px
+}
+
+/*Display the dropdown on hover*/
+ul li a:hover+.hidden,
+.hidden:hover {
+    display: block
+}
+
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background: #49BCE3;
+    text-align: center;
+    padding: 16px 0;
+    display: none;
+    width: 100% !important
+}
+
+/*Hide checkbox*/
+input[type=checkbox] {
+    display: none
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked~#menu {
+    display: block;
+    margin: 0 auto
+}
+
+/*Responsive Styles*/
+@media screen and (max-width : 760px) {
+
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+        white-space: initial;
+    }
+
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px
+    }
+
+    /*Make all menu links full width*/
+    ul li,
+    li a {
+        width: auto
+    }
+
+    /*Display 'show menu' link*/
+    .show-menu {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 19px
+    }
+
+    .btn-ingresar-responsive {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #icono_li a {
+        min-width: 80px;
+        background: #fff;
+    }
+
+    .menu-hamburguesa-resp {
+        display: block;
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    .gitclub-logo {
+        margin-left: 28px;
+        width: 63px;
+        height: 50px;
+        background: url(../assets/logo_responsive.png);
+    }
+
+    .user-point-info {
+        font-size: 14.5px;
+    }
+}
